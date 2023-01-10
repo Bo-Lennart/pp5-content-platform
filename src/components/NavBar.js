@@ -14,7 +14,8 @@ const NavBar = () => {
           <Nav className="me-auto">
             <Nav.Link href="#features">P O S T S</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
-            <NavDropdown title="C A T E G O R Y" id="collasible-nav-dropdown">
+          </Nav>
+          <NavDropdown title="C A T E G O R Y" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -25,7 +26,6 @@ const NavBar = () => {
                 Separated link
               </NavDropdown.Item>
             </NavDropdown>
-          </Nav>
           <Nav>
             <Nav.Link href="#deets">More deets</Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
