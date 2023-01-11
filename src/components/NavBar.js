@@ -4,10 +4,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo_dagoy from '../assets/logo_dagoy.png';
+import styles from '../styles/NavBar.module.css';
 
 const NavBar = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" variant="dark" className={styles.NavBar}>
       <Container>
         <Navbar.Brand>
             <img src={logo_dagoy} alt='logo' height="45" />
