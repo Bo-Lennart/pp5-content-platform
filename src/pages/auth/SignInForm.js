@@ -8,7 +8,7 @@ import axios from 'axios';
 
 import { Form, Button, Image, Col, Row, Container, Alert, } from "react-bootstrap";
 
-function SignUpForm() {
+function SignInForm() {
 
     const [logInData, setlogInData] = useState({
         username: '',
@@ -91,4 +91,4 @@ function SignUpForm() {
     );
 };
 
-export default SignUpForm;
+export default SignInForm;
