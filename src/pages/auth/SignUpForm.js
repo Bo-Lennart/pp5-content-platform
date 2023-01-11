@@ -9,6 +9,7 @@ import axios from 'axios';
 import { Form, Button, Image, Col, Row, Container, Alert, } from "react-bootstrap";
 
 const SignUpForm = () => {
+
     const [signUpData, setSignUpData] = useState({
         username: '',
         password1: '',
@@ -33,7 +34,7 @@ const SignUpForm = () => {
         event.preventDefault();
         try {
             await axios.post('/dj-rest-auth/registration/', signUpData);
-            navigate('/login');
+                navigate('/signin');
         } catch (err) {
             setErrors(err.response?.data);
         }
