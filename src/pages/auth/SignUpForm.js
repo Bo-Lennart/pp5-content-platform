@@ -15,15 +15,22 @@ const SignUpForm = () => {
           <h1 className={styles.Header}>sign up</h1>
 
             <Form>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email adress</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email"></Form.Control>
+                <Form.Group controlId="username">
+                    <Form.Label>username</Form.Label>
+                    <Form.Control type="text" placeholder="username"></Form.Control>
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="password"></Form.Control>
                 </Form.Group>
+
+                <Form.Group controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type="password" placeholder="password"></Form.Control>
+                </Form.Group>
+
+                <Button variant="primary" type="submit">Submit</Button>
             </Form>
 
         </Container>
