@@ -54,12 +54,6 @@ function SignUpForm() {
                                 name="username"
                                 value={username}
                                 onChange={handleOnChange} />
-                        </Form.Group>
-                        {errors.username?.map((message, idx) => (
-                        <Alert variant="danger" key={idx}>
-                            {message}
-                        </Alert>
-        ))}
 
 
                         <Form.Group controlId="password">
