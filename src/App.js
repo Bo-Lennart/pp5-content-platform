@@ -11,7 +11,7 @@ import {
 import './api/axiosDefault';
 import SignUpForm from './pages/auth/SignUpForm';
 import SignInForm from './pages/auth/SignInForm';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from 'axios';
 
 function App() {
@@ -25,6 +25,10 @@ function App() {
       console.log(err)
     }
   }
+
+  useEffect(() => {
+    handleMount()
+  }, [])
 
   return (
     <div className={styles.App}>
