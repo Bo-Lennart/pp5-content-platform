@@ -65,6 +65,11 @@ function SignInForm() {
                                 value={password}
                                 onChange={handleOnChange} />
                         </Form.Group>
+                        {errors.password?.map((message, idx) => (
+                        <Alert variant="danger" key={idx}>
+                            {message}
+                        </Alert>
+                        ))}
 
                         <Button variant="primary" type="submit">Sign in</Button>
                     </Form>
