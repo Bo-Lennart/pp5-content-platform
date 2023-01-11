@@ -1,9 +1,10 @@
 import React, {useState} from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
+import axios from "axios";
 
 import { Form, Button, Image, Col, Row, Container } from "react-bootstrap";
 
@@ -15,12 +16,23 @@ const SignUpForm = () => {
     })
 
     const {username, password1, password2} = signUpData;
+    const history = useHistory();
 
     const handleOnChange = (e) => {
         setSignUpData({
             ...signUpData, [e.target.name]: e.target.value
         });
     };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await axios.post('/dj-rest-auth/registration/', signUpData)
+            history.push('/signin')
+        } catch(err) {
+
+        }
+    }
 
   return (
     <Row className={styles.Row}>
