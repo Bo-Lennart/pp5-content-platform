@@ -69,7 +69,7 @@ function SignUpForm() {
                         <Button variant="primary" type="submit">Sign in</Button>
                     </Form>
 
-                    {errors.username?.map((message, idx) => (
+                    {errors.non_field_errors?.map((message, idx) => (
                         <Alert variant="danger" key={idx}>
                             {message}
                         </Alert>
