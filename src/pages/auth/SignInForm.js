@@ -71,8 +71,8 @@ function SignUpForm() {
 
                 </Container>
                 <Container className={`mt-3 ${appStyles.Content}`}>
-                    <Link className={styles.Link} to="/signin">
-                        Already have an account? <span>Sign in</span>
+                    <Link className={styles.Link} to="/signup">
+                        Don't have an account yet? <span>Sign up</span>
                     </Link>
                 </Container>
             </Col>
