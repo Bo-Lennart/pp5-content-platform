@@ -12,9 +12,19 @@ import './api/axiosDefault';
 import SignUpForm from './pages/auth/SignUpForm';
 import SignInForm from './pages/auth/SignInForm';
 import { useState } from "react";
+import axios from 'axios';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
+
+  const handleMount = async () => {
+    try {
+      const {data} = await axios.get("dj-rest-auth/user/")
+      setCurrentUser(data)
+    } catch(err){
+      console.log(err)
+    }
+  }
 
   return (
     <div className={styles.App}>
