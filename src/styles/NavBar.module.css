@@ -3,3 +3,28 @@
     border: 1px solide gray;
     color: white;
 }
+
+.NavLink {
+    font-family: 'Sofia Sans', sans-serif;
+    color: #ffffff8c;
+    text-decoration: none;
+    padding: 8px;
+}
+
+.NavLinkCategory {
+    font-family: 'Sofia Sans', sans-serif;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+.NavLinkCategory:hover {
+    color: rgb(0, 0, 0);
+}
+
+
+.NavLink:hover {
+    color: rgb(255, 255, 255);
+}
+
+i {
+    padding-right: 3px;
+}

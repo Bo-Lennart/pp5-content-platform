@@ -26,49 +26,49 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Link to="/"><i className='fas fa-home'></i> H O M E</Link>
-            <Link to="posts">P O S T S</Link>
+            <Link to="/" className={styles.NavLink}><i className='fas fa-home'></i> H O M E</Link>
+            <Link to="posts" className={styles.NavLink}>P O S T S</Link>
             <NavDropdown title="C A T E G O R I E S" id="collasible-nav-dropdown">
               <NavDropdown.Item>
-                <Link to="/world">
+                <Link to="/world" className={styles.NavLinkCategory}>
                 W O R L D
                 </Link>
               </NavDropdown.Item>
 
               <NavDropdown.Item>
-                <Link to="/business">
+                <Link to="/business" className={styles.NavLinkCategory}>
                 B U S I N E S S
                 </Link>
               </NavDropdown.Item>
 
               <NavDropdown.Item>
-                <Link to="/food">
+                <Link to="/food" className={styles.NavLinkCategory}>
                 F O O D
                 </Link>
               </NavDropdown.Item>
 
               <NavDropdown.Item>
-                <Link to="/culture">
+                <Link to="/culture" className={styles.NavLinkCategory}>
                 C U L T U R E
                 </Link>
               </NavDropdown.Item>
 
               <NavDropdown.Item>
-                <Link to="/music">
+                <Link to="/music" className={styles.NavLinkCategory}>
                 M U S I C
                 </Link>
               </NavDropdown.Item>
 
               <NavDropdown.Item>
-                <Link to="/tech">
+                <Link to="/tech" className={styles.NavLinkCategory}>
                 T E C H
                 </Link>
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
-            <Link to="signin"><i className='fas fa-sign-in-alt'></i> Sign in</Link>
-            <Link to="signup"><i className='fas fa-user-plus'></i> Sign up</Link>
+            <Link to="signin" className={styles.NavLink}><i className='fas fa-sign-in-alt'></i> Sign in</Link>
+            <Link to="signup" className={styles.NavLink}><i className='fas fa-user-plus'></i> Sign up</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
