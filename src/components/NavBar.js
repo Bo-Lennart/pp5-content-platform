@@ -31,14 +31,39 @@ const NavBar = () => {
             <NavDropdown title="C A T E G O R I E S" id="collasible-nav-dropdown">
               <NavDropdown.Item>
                 <Link to="/world">
-                  W O R L D
+                W O R L D
                 </Link>
               </NavDropdown.Item>
-              <NavDropdown.Item>B U S I N E S S</NavDropdown.Item>
-              <NavDropdown.Item>F O O D</NavDropdown.Item>
-              <NavDropdown.Item>C U L T U R E</NavDropdown.Item>
-              <NavDropdown.Item>M U S I C</NavDropdown.Item>
-              <NavDropdown.Item>T E C H</NavDropdown.Item>
+
+              <NavDropdown.Item>
+                <Link to="/business">
+                B U S I N E S S
+                </Link>
+              </NavDropdown.Item>
+
+              <NavDropdown.Item>
+                <Link to="/food">
+                F O O D
+                </Link>
+              </NavDropdown.Item>
+
+              <NavDropdown.Item>
+                <Link to="/culture">
+                C U L T U R E
+                </Link>
+              </NavDropdown.Item>
+
+              <NavDropdown.Item>
+                <Link to="/music">
+                M U S I C
+                </Link>
+              </NavDropdown.Item>
+
+              <NavDropdown.Item>
+                <Link to="/tech">
+                T E C H
+                </Link>
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
