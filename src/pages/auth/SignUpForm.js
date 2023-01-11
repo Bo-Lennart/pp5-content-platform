@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
@@ -19,7 +19,7 @@ const SignUpForm = () => {
 
     const [errors, setErrors] = useState({});
 
-    const history = useHistory();
+    const history = useNavigate();
 
     const handleOnChange = (e) => {
         setSignUpData({
@@ -53,6 +53,7 @@ const SignUpForm = () => {
                     value={username}
                     onChange={handleOnChange} />
                 </Form.Group>
+                
 
                 <Form.Group controlId="password1">
                     <Form.Label className="d-none">Password</Form.Label>
