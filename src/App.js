@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import './api/axiosDefault';
 import SignUpForm from './pages/auth/SignUpForm';
+import SignInForm from './pages/auth/SignInForm';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
           <Route path="/tech" element={<h1>T E C H</h1>} />
         
 
-          <Route path="/signin" element={<h1>Sign in</h1>} />
+          <Route path="/signin" element={<SignInForm />} />
           <Route path="/signup" element={<SignUpForm />} />
         </Routes>
       </Container>

@@ -48,7 +48,7 @@ const SignUpForm = () => {
 
                     <Form onSubmit={handleSubmit}>
                         <Form.Group controlId="username">
-                            <Form.Label className="d-none">Ssername</Form.Label>
+                            <Form.Label className="d-none">Username</Form.Label>
                             <Form.Control
                                 type="text"
                                 placeholder="username"
