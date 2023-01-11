@@ -54,7 +54,7 @@ function SignUpForm() {
                                 name="username"
                                 value={username}
                                 onChange={handleOnChange} />
-
+                        </Form.Group>
 
                         <Form.Group controlId="password">
                             <Form.Label className="d-none">Password</Form.Label>
