@@ -8,15 +8,14 @@ import axios from 'axios';
 
 import { Form, Button, Image, Col, Row, Container, Alert, } from "react-bootstrap";
 
-const SignUpForm = () => {
+function SignUpForm() {
 
     const [signUpData, setSignUpData] = useState({
         username: '',
-        password1: '',
-        password2: '',
+        password: '',
     })
 
-    const { username, password1, password2 } = signUpData;
+    const { username, password } = signUpData;
 
     const [errors, setErrors] = useState({});
 
@@ -63,23 +62,13 @@ const SignUpForm = () => {
         ))}
 
 
-                        <Form.Group controlId="password1">
+                        <Form.Group controlId="password">
                             <Form.Label className="d-none">Password</Form.Label>
                             <Form.Control
                                 type="password"
                                 placeholder="Password"
-                                name="password1"
-                                value={password1}
-                                onChange={handleOnChange} />
-                        </Form.Group>
-
-                        <Form.Group controlId="password2">
-                            <Form.Label className="d-none">Confirm password</Form.Label>
-                            <Form.Control
-                                type="password"
-                                placeholder="Confirm password"
-                                name="password2"
-                                value={password2}
+                                name="password"
+                                value={password}
                                 onChange={handleOnChange} />
                         </Form.Group>
 
