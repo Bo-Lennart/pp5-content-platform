@@ -30,12 +30,12 @@ const SignUpForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('/dj-rest-auth/registration/', signUpData)
-            history.push('/signin')
-        } catch(err) {
-            setErrors(err.response?.data)
+          await axios.post("/dj-rest-auth/registration/", signUpData);
+          history.push("/signin");
+        } catch (err) {
+          setErrors(err.response?.data);
         }
-    }
+      };
 
   return (
     <Row className={styles.Row}>
@@ -53,7 +53,11 @@ const SignUpForm = () => {
                     value={username}
                     onChange={handleOnChange} />
                 </Form.Group>
-                
+                {errors.username?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                {message}
+                </Alert>
+            ))}
 
                 <Form.Group controlId="password1">
                     <Form.Label className="d-none">Password</Form.Label>
