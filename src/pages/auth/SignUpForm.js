@@ -6,7 +6,7 @@ import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import axios from 'axios';
 
-import { Form, Button, Image, Col, Row, Container, Alert } from "react-bootstrap";
+import { Form, Button, Image, Col, Row, Container, Alert, } from "react-bootstrap";
 
 const SignUpForm = () => {
     const [signUpData, setSignUpData] = useState({
@@ -19,7 +19,7 @@ const SignUpForm = () => {
 
     const [errors, setErrors] = useState({});
 
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     const handleOnChange = (e) => {
         setSignUpData({
@@ -33,7 +33,7 @@ const SignUpForm = () => {
         event.preventDefault();
         try {
             await axios.post('/dj-rest-auth/registration/', signUpData);
-            history.push('/login');
+            navigate('/login');
         } catch (err) {
             setErrors(err.response?.data);
         }
@@ -56,10 +56,10 @@ const SignUpForm = () => {
                                 onChange={handleOnChange} />
                         </Form.Group>
                         {errors.username?.map((message, idx) => (
-                            <Alert variant="danger" key={idx}>
-                                {message}
-                            </Alert>
-                        ))}
+                        <Alert variant="danger" key={idx}>
+                            {message}
+                        </Alert>
+        ))}
 
 
                         <Form.Group controlId="password1">
