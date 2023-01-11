@@ -8,6 +8,8 @@ import {
   Link,
   Outlet,
 } from "react-router-dom";
+import './api/axiosDefault';
+
 function App() {
   return (
     <div className={styles.App}>
