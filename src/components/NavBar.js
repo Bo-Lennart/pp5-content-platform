@@ -26,10 +26,14 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Link to="/signup"><i className='fas fa-home'></i> H O M E</Link>
-            <Nav.Link>P O S T S</Nav.Link>
+            <Link to="/"><i className='fas fa-home'></i> H O M E</Link>
+            <Link to="posts">P O S T S</Link>
             <NavDropdown title="C A T E G O R I E S" id="collasible-nav-dropdown">
-              <NavDropdown.Item>W O R L D</NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link to="/world">
+                  W O R L D
+                </Link>
+              </NavDropdown.Item>
               <NavDropdown.Item>B U S I N E S S</NavDropdown.Item>
               <NavDropdown.Item>F O O D</NavDropdown.Item>
               <NavDropdown.Item>C U L T U R E</NavDropdown.Item>
@@ -38,8 +42,8 @@ const NavBar = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link ><i className='fas fa-sign-in-alt'></i> Sign in</Nav.Link>
-            <Nav.Link><i className='fas fa-user-plus'></i> Sign up</Nav.Link>
+            <Link to="signin"><i className='fas fa-sign-in-alt'></i> Sign in</Link>
+            <Link to="signup"><i className='fas fa-user-plus'></i> Sign up</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
