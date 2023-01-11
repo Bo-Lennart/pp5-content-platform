@@ -10,20 +10,20 @@ import { Form, Button, Image, Col, Row, Container, Alert, } from "react-bootstra
 
 function SignUpForm() {
 
-    const [signUpData, setSignUpData] = useState({
+    const [logInData, setlogInData] = useState({
         username: '',
         password: '',
     })
 
-    const { username, password } = signUpData;
+    const { username, password } = logInData;
 
     const [errors, setErrors] = useState({});
 
     const navigate = useNavigate();
 
     const handleOnChange = (e) => {
-        setSignUpData({
-            ...signUpData, [e.target.name]: e.target.value
+        setlogInData({
+            ...logInData, [e.target.name]: e.target.value
         });
     };
 
@@ -32,7 +32,7 @@ function SignUpForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await axios.post('/dj-rest-auth/login/', signUpData);
+            await axios.post('/dj-rest-auth/login/', logInData);
                 navigate('/');
         } catch (err) {
             setErrors(err.response?.data);
