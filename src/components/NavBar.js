@@ -5,22 +5,28 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo_dagoy from '../assets/logo_dagoy.png';
 import styles from '../styles/NavBar.module.css';
-import { NavLink } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+  Outlet,
+} from "react-router-dom";
 
 const NavBar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" variant="dark" className={styles.NavBar}>
       <Container>
-        <NavLink to="/">
+        <Link to="/">
           <Navbar.Brand>
               <img src={logo_dagoy} alt='logo' height="45" />
           </Navbar.Brand>
-        </NavLink>
+        </Link>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <NavLink to="signin"><i className='fas fa-home'></i> H O M E</NavLink>
+            <Link to="/signup"><i className='fas fa-home'></i> H O M E</Link>
             <Nav.Link>P O S T S</Nav.Link>
             <NavDropdown title="C A T E G O R I E S" id="collasible-nav-dropdown">
               <NavDropdown.Item>W O R L D</NavDropdown.Item>
@@ -32,8 +38,8 @@ const NavBar = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-            <NavLink to="/signin"><i className='fas fa-sign-in-alt'></i> Sign in</NavLink>
-            <NavLink to="/signup"><i className='fas fa-user-plus'></i> Sign up</NavLink>
+            <Nav.Link ><i className='fas fa-sign-in-alt'></i> Sign in</Nav.Link>
+            <Nav.Link><i className='fas fa-user-plus'></i> Sign up</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
