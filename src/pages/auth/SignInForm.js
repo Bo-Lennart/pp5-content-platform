@@ -32,8 +32,8 @@ function SignUpForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await axios.post('/dj-rest-auth/registration/', signUpData);
-                navigate('/signin');
+            await axios.post('/dj-rest-auth/login/', signUpData);
+                navigate('/');
         } catch (err) {
             setErrors(err.response?.data);
         }
