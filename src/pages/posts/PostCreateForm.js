@@ -20,18 +20,8 @@ function PostCreateForm() {
   const textFields = (
     <div className="text-center">
       {/* Add your form fields here */}
-
-    
-    
-      <Button
-        className={``}
-        onClick={() => {}}
-      >
-        cancel
-      </Button>
-      <Button className={``} type="submit">
-        create
-      </Button>
+      <Button className={``} onClick={() => { }}>cancel</Button>
+      <Button className={``} type="submit">create</Button>
     </div>
   );
 
@@ -40,16 +30,14 @@ function PostCreateForm() {
       <Row>
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
           <Container
-            className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
-          >
+            className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}>
             <Form.Group className="text-center">
-              
-                <Form.Label
-                  className="d-flex justify-content-center"
-                  htmlFor="image-upload"
-                >
-                  <Asset src={Upload} message="Click to upload image" />
-                </Form.Label>
+
+              <Form.Label
+                className="d-flex justify-content-center"
+                htmlFor="image-upload">
+                <Asset src={Upload} message="Click to upload image" />
+              </Form.Label>
 
             </Form.Group>
             <div className="d-md-none">{textFields}</div>
