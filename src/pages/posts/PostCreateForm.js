@@ -93,15 +93,17 @@ function PostCreateForm() {
                   </div>
                 </>
               ) : (
-                <Form.Label className="d-flex justify-content-center" htmlFor="image-upload">
+                <>
                   <figure>
                     <Asset src={Upload} />
                   </figure>
                   <div>
-                    <Form.Control type="file" accept="image/*" onChange={handleChangeImage} />
-                  </div>
+                    <Form.Label className="d-flex justify-content-center" htmlFor="image-upload">
 
-                </Form.Label>
+                      <Form.Control type="file" accept="image/*" onChange={handleChangeImage} />
+                    </Form.Label>
+                  </div>
+                </>
               )}
 
 
