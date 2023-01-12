@@ -11,10 +11,10 @@ import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import Asset from "../../components/Asset";
 import { Image } from "react-bootstrap";
-import axios from "axios";
 import { axiosReq } from "../../api/axiosDefault";
 import { useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
+
 
 
 function PostCreateForm() {
@@ -22,7 +22,7 @@ function PostCreateForm() {
 
   const [postData, setPostData] = useState({
     title: '',
-    content:'',
+    content: '',
     image: '',
     category: '',
   });
@@ -43,20 +43,20 @@ function PostCreateForm() {
       URL.revokeObjectURL(image);
       setPostData({
         ...postData,
-        image: URL.createObjectURL(event.target.image[0]),
+        image: URL.createObjectURL(event.target.files[0]),
       });
     }
   };
 
   console.log(postData)
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+  const handleSubmit = async (event) => {
+    event.preventDefault()
     const formData = new FormData();
 
     formData.append('title', title)
     formData.append('content', content)
-    formData.append('image', postData.image)
+    formData.append('image', imageInput.current.files[0])
     formData.append('category', category)
 
     try {
@@ -72,7 +72,7 @@ function PostCreateForm() {
 
   const textFields = (
     <div className="text-center">
-      <Form.Group>
+      <Form.Group controlId="formFile">
         <Form.Label>Title</Form.Label>
         <Form.Control type="text" name="title" value={title} onChange={handleChange} />
       </Form.Group>
@@ -82,7 +82,7 @@ function PostCreateForm() {
         </Alert>
       ))}
 
-      <Form.Group>
+      <Form.Group controlId="formFile">
         <Form.Label>Content</Form.Label>
         <Form.Control as="textarea" rows={6} name="content" value={content} onChange={handleChange} />
       </Form.Group>
@@ -95,20 +95,20 @@ function PostCreateForm() {
 
       <Form.Group>
         <Form.Label>Category</Form.Label>
-          <Form.Control
+        <Form.Control
           as="select"
           defaultValue="Choose category..."
           name="category"
           onChange={handleChange}
           aria-label="category choice"
-          >
-            <option value="WORLD">WORLD</option>
-            <option value="BUSINESS">BUSINESS</option>
-            <option value="FOOD">FOOD</option>
-            <option value="CULTURE">CULTURE</option>
-            <option value="MUSIC">MUSIC</option>
-            <option value="TECH">TECH</option>
-          </Form.Control>
+        >
+          <option value="WORLD">WORLD</option>
+          <option value="BUSINESS">BUSINESS</option>
+          <option value="FOOD">FOOD</option>
+          <option value="CULTURE">CULTURE</option>
+          <option value="MUSIC">MUSIC</option>
+          <option value="TECH">TECH</option>
+        </Form.Control>
       </Form.Group>
       {errors?.category?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
@@ -144,23 +144,24 @@ function PostCreateForm() {
                   </div>
                 </>
               ) : (
-                <>
-                  <figure>
-                    <Asset src={Upload} />
-                  </figure>
-                  <div>
-                    <Form.Label className="d-flex justify-content-center" htmlFor="image-upload">
-
-                      <Form.Control 
-                          type='file'
-                          id='image-file'
-                          label='Choose File'
-                          custom
-                          onChange={handleChangeImage} ref={imageInput} />
-                    </Form.Label>
-                  </div>
-                </>
+                  <Form.Label
+                    className="d-flex justify-content-center"
+                    htmlFor="image-upload"
+                  >
+                    <Asset
+                      src={Upload}
+                      message="Click or tap to upload an image"
+                    />
+                  </Form.Label>
               )}
+
+              <Form.Control
+              type="file"
+                id="image-upload"
+                accept="image/*"
+                onChange={handleChangeImage}
+                ref={imageInput}
+              />
 
             </Form.Group>
             {errors?.image?.map((message, idx) => (
