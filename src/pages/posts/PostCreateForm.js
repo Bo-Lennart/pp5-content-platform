@@ -43,7 +43,7 @@ function PostCreateForm() {
       URL.revokeObjectURL(image);
       setPostData({
         ...postData,
-        image: URL.createObjectURL(event.target.files[0]),
+        image: URL.createObjectURL(event.target.image[0]),
       });
     }
   };
@@ -151,7 +151,12 @@ function PostCreateForm() {
                   <div>
                     <Form.Label className="d-flex justify-content-center" htmlFor="image-upload">
 
-                      <Form.Control id="image-upload" type="file" accept="image/*" onChange={handleChangeImage} ref={imageInput} />
+                      <Form.Control 
+                          type='file'
+                          id='image-file'
+                          label='Choose File'
+                          custom
+                          onChange={handleChangeImage} ref={imageInput} />
                     </Form.Label>
                   </div>
                 </>
