@@ -10,6 +10,7 @@ import Upload from "../../assets/upload.png"
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import Asset from "../../components/Asset";
+import { Image } from "react-bootstrap";
 
 
 function PostCreateForm() {
@@ -30,6 +31,15 @@ function PostCreateForm() {
     });
   };
 
+  const handleChangeImage = (e) => {
+    if (e.target.files.length) {
+      URL.revokeObjectURL(image);
+      setPostData({
+        ...postData,
+        image: URL.createObjectURL(e.target.files[0])
+      });
+    }
+  };
 
   const textFields = (
     <div className="text-center">
@@ -45,7 +55,7 @@ function PostCreateForm() {
 
       <Form.Group>
         <Form.Label>Category</Form.Label>
-        <Form.Select aria-label="Default select example">
+        <Form.Select aria-label="Default select example" value={category} onChange={handleChange}>
           <option>Pick category</option>
           <option value="world" name="world">W O R L D</option>
           <option value="business" name="business">B U S I N E S S</option>
@@ -69,21 +79,23 @@ function PostCreateForm() {
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}>
             <Form.Group className="text-center">
 
-              <Form.Label
+            <Form.Label
                 className="d-flex justify-content-center"
                 htmlFor="image-upload">
-                <Asset src={Upload} message="Click to upload image" />
-              </Form.Label>
+              <Asset src={Upload} message="Click to upload image" />
+            </Form.Label>
 
-            </Form.Group>
-            <div className="d-md-none">{textFields}</div>
-          </Container>
-        </Col>
-        <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
-          <Container className={appStyles.Content}>{textFields}</Container>
-        </Col>
-      </Row>
-    </Form>
+            <input type="file" conChange={handleChangeImage}></input>
+
+          </Form.Group>
+          <div className="d-md-none">{textFields}</div>
+        </Container>
+      </Col>
+      <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
+        <Container className={appStyles.Content}>{textFields}</Container>
+      </Col>
+    </Row>
+    </Form >
   );
 }
 
