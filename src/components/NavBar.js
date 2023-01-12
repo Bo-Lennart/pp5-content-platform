@@ -80,8 +80,8 @@ const NavBar = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-                {currentUser ? loggedInIcons : loggedOutIcons}
-              </Nav>
+            {currentUser ? loggedInIcons : loggedOutIcons}
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
