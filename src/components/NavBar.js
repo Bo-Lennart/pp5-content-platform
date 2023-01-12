@@ -30,7 +30,7 @@ const NavBar = () => {
   }
 
   const addBlogPostIcon = (
-    <Link to="/blogposts/create" className={styles.NavLink}><i className='far fa-plus-square'></i>P O S T</Link>
+    <Link to="/blogposts/create" className={styles.NavLink}><i className='far fa-plus-square'></i>C R E A T E</Link>
   )
   const loggedInIcons = <>
     <Link to="/bookmarks" className={styles.NavLink}><i class="fa-solid fa-book-bookmark"></i>B O O K M A R K S</Link>
