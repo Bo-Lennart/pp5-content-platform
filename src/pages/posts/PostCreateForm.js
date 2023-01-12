@@ -74,7 +74,7 @@ function PostCreateForm() {
                 htmlFor="image-upload">
                 <Asset src={Upload} message="Click to upload image" />
               </Form.Label>
-
+              <Form.File id="image-upload" accept="image/*" />
             </Form.Group>
             <div className="d-md-none">{textFields}</div>
           </Container>
