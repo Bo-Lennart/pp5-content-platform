@@ -40,12 +40,12 @@ function PostCreateForm() {
 
       <Form.Group>
         <Form.Label>Content</Form.Label>
-        <Form.Control as="textarea" rows={6} name="content" value={title} onChange={handleChange} />
+        <Form.Control as="textarea" rows={6} name="content" value={content} onChange={handleChange} />
       </Form.Group>
 
       <Form.Group>
         <Form.Label>Category</Form.Label>
-        <Form.Select aria-label="Default select example">
+        <Form.Select aria-label="Default select example" value={category} onChange={handleChange}>
           <option>Pick category</option>
           <option value="world" name="world">W O R L D</option>
           <option value="business" name="business">B U S I N E S S</option>
