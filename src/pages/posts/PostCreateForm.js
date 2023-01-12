@@ -31,12 +31,12 @@ function PostCreateForm() {
     });
   };
 
-  const handleChangeImage = (e) => {
-    if (e.target.files.length) {
+  const handleChangeImage = (event) => {
+    if (event.target.files.length) {
       URL.revokeObjectURL(image);
       setPostData({
         ...postData,
-        image: URL.createObjectURL(e.target.files[0])
+        image: URL.createObjectURL(event.target.files[0]),
       });
     }
   };
@@ -79,22 +79,37 @@ function PostCreateForm() {
             className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}>
             <Form.Group className="text-center">
 
-            <Form.Label
-                className="d-flex justify-content-center"
-                htmlFor="image-upload">
-              <Asset src={Upload} message="Click to upload image" />
-            </Form.Label>
+              {image ? (
+                <>
+                  <figure>
+                    <Image className={appStyles.Image} src={image} rounded></Image>
+                  </figure>
 
-            <input type="file" conChange={handleChangeImage}></input>
+                  <div>
+                    <Form.Label htmlFor="image-upload">
+                      Change image
+                    </Form.Label>
+                  </div>
+                </>
+              ) : (
+                <Form.Label className="d-flex justify-content-center" htmlFor="image-upload">
+                  <Asset src={Upload} message="Click to upload image" />
+                </Form.Label>
+              )}
 
-          </Form.Group>
-          <div className="d-md-none">{textFields}</div>
-        </Container>
-      </Col>
-      <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
-        <Container className={appStyles.Content}>{textFields}</Container>
-      </Col>
-    </Row>
+              <Form.Control type="file" accept="image/*" onChange={handleChangeImage} />
+
+
+              {/* <input type="file" conChange={handleChangeImage}></input> */}
+
+            </Form.Group>
+            <div className="d-md-none">{textFields}</div>
+          </Container>
+        </Col>
+        <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
+          <Container className={appStyles.Content}>{textFields}</Container>
+        </Col>
+      </Row>
     </Form >
   );
 }
