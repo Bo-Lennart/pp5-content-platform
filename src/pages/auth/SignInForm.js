@@ -5,12 +5,12 @@ import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 import axios from 'axios';
-import { SetCurrentUserContext } from "../../app";
+import { SetCurrentUserContext } from "../../App";
 
 import { Form, Button, Image, Col, Row, Container, Alert, } from "react-bootstrap";
 
 function SignInForm() {
-    const setCurrentUser = useContext(SetCurrentUserContext)
+    const setCurrentUser = useContext(SetCurrentUserContext);
 
     const [logInData, setlogInData] = useState({
         username: '',
@@ -34,9 +34,9 @@ function SignInForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const {data} = await axios.post('/dj-rest-auth/login/', logInData);
+            const { data } = await axios.post('/dj-rest-auth/login/', logInData);
             setCurrentUser(data.user)
-                navigate('/');
+            navigate('/');
         } catch (err) {
             setErrors(err.response?.data);
         }
@@ -69,9 +69,9 @@ function SignInForm() {
                                 onChange={handleOnChange} />
                         </Form.Group>
                         {errors.password?.map((message, idx) => (
-                        <Alert variant="danger" key={idx}>
-                            {message}
-                        </Alert>
+                            <Alert variant="danger" key={idx}>
+                                {message}
+                            </Alert>
                         ))}
 
                         <Button variant="primary" type="submit">Sign in</Button>

@@ -12,17 +12,26 @@ import {
   Link,
   Outlet,
 } from "react-router-dom";
-import { SetCurrentUserContext } from "../../app";
+import { CurrentUserContext } from '../App';
 
 const NavBar = () => {
+  const currentUser = useContext(CurrentUserContext);
 
+  const loggedInIcons = <> {currentUser?.username}</>;
+
+  const loggedOutIcons = (
+    <>
+      <Link to="signin" className={styles.NavLink}><i className='fas fa-sign-in-alt'></i> Sign in</Link>
+      <Link to="signup" className={styles.NavLink}><i className='fas fa-user-plus'></i> Sign up</Link>
+    </>
+  );
 
   return (
     <Navbar collapseOnSelect expand="lg" variant="dark" className={styles.NavBar}>
       <Container>
         <Link to="/">
           <Navbar.Brand>
-              <img src={logo_dagoy} alt='logo' height="45" />
+            <img src={logo_dagoy} alt='logo' height="45" />
           </Navbar.Brand>
         </Link>
 
@@ -34,45 +43,45 @@ const NavBar = () => {
             <NavDropdown title="C A T E G O R I E S" id="collasible-nav-dropdown">
               <NavDropdown.Item>
                 <Link to="/world" className={styles.NavLinkCategory}>
-                W O R L D
+                  W O R L D
                 </Link>
               </NavDropdown.Item>
 
               <NavDropdown.Item>
                 <Link to="/business" className={styles.NavLinkCategory}>
-                B U S I N E S S
+                  B U S I N E S S
                 </Link>
               </NavDropdown.Item>
 
               <NavDropdown.Item>
                 <Link to="/food" className={styles.NavLinkCategory}>
-                F O O D
+                  F O O D
                 </Link>
               </NavDropdown.Item>
 
               <NavDropdown.Item>
                 <Link to="/culture" className={styles.NavLinkCategory}>
-                C U L T U R E
+                  C U L T U R E
                 </Link>
               </NavDropdown.Item>
 
               <NavDropdown.Item>
                 <Link to="/music" className={styles.NavLinkCategory}>
-                M U S I C
+                  M U S I C
                 </Link>
               </NavDropdown.Item>
 
               <NavDropdown.Item>
                 <Link to="/tech" className={styles.NavLinkCategory}>
-                T E C H
+                  T E C H
                 </Link>
               </NavDropdown.Item>
+
             </NavDropdown>
           </Nav>
           <Nav>
-            <Link to="signin" className={styles.NavLink}><i className='fas fa-sign-in-alt'></i> Sign in</Link>
-            <Link to="signup" className={styles.NavLink}><i className='fas fa-user-plus'></i> Sign up</Link>
-          </Nav>
+                {currentUser ? loggedInIcons : loggedOutIcons}
+              </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>

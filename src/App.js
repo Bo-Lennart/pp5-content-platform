@@ -11,8 +11,11 @@ import {
 import './api/axiosDefault';
 import SignUpForm from './pages/auth/SignUpForm';
 import SignInForm from './pages/auth/SignInForm';
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import axios from 'axios';
+
+export const CurrentUserContext = createContext();
+export const SetCurrentUserContext = createContext();
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
@@ -27,11 +30,11 @@ function App() {
   }
 
   useEffect(() => {
-    handleMount()
-  }, [])
+    handleMount();
+  }, []);
 
   return (
-    <CurrentUserContext.Providers value={currentUser}>
+    <CurrentUserContext.Provider value={currentUser}>
       <SetCurrentUserContext.Provider value={setCurrentUser}>
         <div className={styles.App}>
           <NavBar />
@@ -55,7 +58,7 @@ function App() {
           </Container>
         </div>
       </SetCurrentUserContext.Provider>
-    </CurrentUserContext.Providers>
+    </CurrentUserContext.Provider>
   );
 }
 
