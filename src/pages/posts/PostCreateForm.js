@@ -13,20 +13,22 @@ import Asset from "../../components/Asset";
 import { Image } from "react-bootstrap";
 import axios from "axios";
 import { axiosReq } from "../../api/axiosDefault";
+import { useNavigate } from "react-router-dom";
+import { Alert } from "react-bootstrap";
 
 
 function PostCreateForm() {
   const [errors, setErrors] = useState({});
 
   const [postData, setPostData] = useState({
-    title: "",
-    content: "",
-    image: "",
-    category: "",
+    title: '',
+    content:'',
+    image: '',
+    category: '',
   });
   const { title, content, image, category } = postData;
 
-  const imageInput = useRef(null)
+  const imageInput = useRef();
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -46,27 +48,27 @@ function PostCreateForm() {
     }
   };
 
-  const handleSubmit = async(e) => {
+  console.log(postData)
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const formData = new FormData();
 
     formData.append('title', title)
     formData.append('content', content)
-    formData.append('image', imageInput.current.files[0])
+    formData.append('image', postData.image)
     formData.append('category', category)
 
     try {
-      const {data} = await axiosReq.post('/blogposts/', formData);
+      const { data } = await axiosReq.post('/blogposts/', formData);
       navigate(`/posts/${data.id}`)
     } catch (err) {
       console.log(err)
-      if (err.response?.status !==401) {
+      if (err.response?.status !== 401) {
         setErrors(err.response?.data);
       }
     }
   }
-
-  
 
   const textFields = (
     <div className="text-center">
@@ -74,24 +76,46 @@ function PostCreateForm() {
         <Form.Label>Title</Form.Label>
         <Form.Control type="text" name="title" value={title} onChange={handleChange} />
       </Form.Group>
+      {errors?.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Form.Group>
         <Form.Label>Content</Form.Label>
         <Form.Control as="textarea" rows={6} name="content" value={content} onChange={handleChange} />
       </Form.Group>
+      {errors?.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
 
       <Form.Group>
         <Form.Label>Category</Form.Label>
-        <Form.Select aria-label="Default select example" value={category} onChange={handleChange}>
-          <option>Pick category</option>
-          <option value="world" name="world">W O R L D</option>
-          <option value="business" name="business">B U S I N E S S</option>
-          <option value="food" name="food">F O O D</option>
-          <option value="culture" name="culture">C U L T U R E</option>
-          <option value="music" name="music">M U S I C</option>
-          <option value="tech" name="tech">T E C H</option>
-        </Form.Select>
+          <Form.Control
+          as="select"
+          defaultValue="Choose category..."
+          name="category"
+          onChange={handleChange}
+          aria-label="category choice"
+          >
+            <option value="WORLD">WORLD</option>
+            <option value="BUSINESS">BUSINESS</option>
+            <option value="FOOD">FOOD</option>
+            <option value="CULTURE">CULTURE</option>
+            <option value="MUSIC">MUSIC</option>
+            <option value="TECH">TECH</option>
+          </Form.Control>
       </Form.Group>
+      {errors?.category?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
 
       <Button className={``} onClick={() => { }}>cancel</Button>
       <Button className={``} type="submit">create</Button>
@@ -99,7 +123,7 @@ function PostCreateForm() {
   );
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Row>
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
           <Container
@@ -115,7 +139,7 @@ function PostCreateForm() {
                   <div>
                     <Form.Label type="file" htmlFor="image-upload" onClick={handleChangeImage}>
                       <p>Change image:</p>
-                      <Form.Control type="file" accept="image/*" onChange={handleChangeImage} name="Change img" />
+                      <Form.Control id="image-upload" type="file" accept="image/*" onChange={handleChangeImage} name="Change img" />
                     </Form.Label>
                   </div>
                 </>
@@ -127,13 +151,19 @@ function PostCreateForm() {
                   <div>
                     <Form.Label className="d-flex justify-content-center" htmlFor="image-upload">
 
-                      <Form.Control type="file" accept="image/*" onChange={handleChangeImage} ref={imageInput}/>
+                      <Form.Control id="image-upload" type="file" accept="image/*" onChange={handleChangeImage} ref={imageInput} />
                     </Form.Label>
                   </div>
                 </>
               )}
 
             </Form.Group>
+            {errors?.image?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
+
             <div className="d-md-none">{textFields}</div>
           </Container>
         </Col>
