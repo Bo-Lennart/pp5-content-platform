@@ -30,15 +30,6 @@ function PostCreateForm() {
     });
   };
 
-  const handleChangeImage = (e) => {
-    if (e.target.files.length) {
-      URL.revokeObjectURL(image);
-      setPostData({
-        ...postData,
-        image: URL.createObjectURL(e.target.files[0])
-      });
-    }
-  }
 
   const textFields = (
     <div className="text-center">
@@ -54,7 +45,7 @@ function PostCreateForm() {
 
       <Form.Group>
         <Form.Label>Category</Form.Label>
-        <Form.Select aria-label="Default select example" value={category} onChange={handleChange}>
+        <Form.Select aria-label="Default select example">
           <option>Pick category</option>
           <option value="world" name="world">W O R L D</option>
           <option value="business" name="business">B U S I N E S S</option>
@@ -83,7 +74,7 @@ function PostCreateForm() {
                 htmlFor="image-upload">
                 <Asset src={Upload} message="Click to upload image" />
               </Form.Label>
-              <Form.File id="image-upload" accept="image/*" onChange={handleChangeImage} />
+
             </Form.Group>
             <div className="d-md-none">{textFields}</div>
           </Container>
