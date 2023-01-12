@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -11,6 +11,8 @@ import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import Asset from "../../components/Asset";
 import { Image } from "react-bootstrap";
+import axios from "axios";
+import { axiosReq } from "../../api/axiosDefault";
 
 
 function PostCreateForm() {
@@ -23,6 +25,9 @@ function PostCreateForm() {
     category: "",
   });
   const { title, content, image, category } = postData;
+
+  const imageInput = useRef(null)
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setPostData({
@@ -40,6 +45,28 @@ function PostCreateForm() {
       });
     }
   };
+
+  const handleSubmit = async(e) => {
+    e.preventDefault()
+    const formData = new FormData();
+
+    formData.append('title', title)
+    formData.append('content', content)
+    formData.append('image', imageInput.current.files[0])
+    formData.append('category', category)
+
+    try {
+      const {data} = await axiosReq.post('/blogposts/', formData);
+      navigate(`/posts/${data.id}`)
+    } catch (err) {
+      console.log(err)
+      if (err.response?.status !==401) {
+        setErrors(err.response?.data);
+      }
+    }
+  }
+
+  
 
   const textFields = (
     <div className="text-center">
@@ -100,14 +127,11 @@ function PostCreateForm() {
                   <div>
                     <Form.Label className="d-flex justify-content-center" htmlFor="image-upload">
 
-                      <Form.Control type="file" accept="image/*" onChange={handleChangeImage} />
+                      <Form.Control type="file" accept="image/*" onChange={handleChangeImage} ref={imageInput}/>
                     </Form.Label>
                   </div>
                 </>
               )}
-
-
-              {/* <input type="file" conChange={handleChangeImage}></input> */}
 
             </Form.Group>
             <div className="d-md-none">{textFields}</div>
