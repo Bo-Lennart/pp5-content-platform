@@ -36,7 +36,6 @@ const NavBar = () => {
             <img src={logo_dagoy} alt='logo' height="45" />
           </Navbar.Brand>
         </Link>
-        { currentUser && addBlogPostIcon }
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -79,8 +78,8 @@ const NavBar = () => {
                   T E C H
                 </Link>
               </NavDropdown.Item>
-
             </NavDropdown>
+            { currentUser && addBlogPostIcon }
           </Nav>
           <Nav>
             {currentUser ? loggedInIcons : loggedOutIcons}
