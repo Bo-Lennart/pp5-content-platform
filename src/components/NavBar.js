@@ -25,9 +25,8 @@ const NavBar = () => {
     <Link to="/bookmarks" className={styles.NavLink}><i class="fa-solid fa-book-bookmark"></i>B O O K M A R K S</Link>
     <Link to="/" className={styles.NavLink} onClick={() => {}}><i class='fas fa-sign-out-alt'></i>Sign out</Link>
 
-    <Link to={`/profiles/${currentUser?.profile_id}`} className={styles.NavLink} onClick={() => {}}>
-      <ProfileIcon src={currentUser?.profile_image} text="Profile" height={30} />
-      Sign out</Link>
+    <Link to={`/profile/${currentUser?.profile_id}`} className={styles.NavLink} onClick={() => {}}>
+      <ProfileIcon src={currentUser?.profile_image} text="Profile" height={30} /></Link>
   </>;
   const loggedOutIcons = (
     <>
