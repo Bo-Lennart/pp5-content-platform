@@ -19,7 +19,26 @@ function PostCreateForm() {
 
   const textFields = (
     <div className="text-center">
-      {/* Add your form fields here */}
+      <Form.Group>
+        <Form.Label>Title</Form.Label>
+        <Form.Control type="text" name="title" />
+      </Form.Group>
+
+      <Form.Group>
+        <Form.Label>Content</Form.Label>
+        <Form.Control as="textarea" rows={6} name="content" />
+      </Form.Group>
+
+      <Form.Group>
+        <Form.Label>Category</Form.Label>
+        <Form.Select aria-label="Default select example">
+          <option>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </Form.Select>
+      </Form.Group>
+
       <Button className={``} onClick={() => { }}>cancel</Button>
       <Button className={``} type="submit">create</Button>
     </div>
