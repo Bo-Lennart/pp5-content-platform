@@ -20,7 +20,10 @@ const NavBar = () => {
   const addBlogPostIcon = (
     <Link to="/blogposts/create" className={styles.NavLink}><i className='far fa-plus-square'></i>P O S T</Link>
   )
-  const loggedInIcons = <> {currentUser?.username}</>;
+  const loggedInIcons = <>
+    <Link to="/bookmarks" className={styles.NavLink}><i class="fa-solid fa-book-bookmark"></i>B O O K M A R K S</Link>
+    <Link to="/" className={styles.NavLink} onClick={() => {}}><i class="fa-solid fa-book-bookmark"></i>Sign out</Link>
+  </>;
   const loggedOutIcons = (
     <>
       <Link to="signin" className={styles.NavLink}><i className='fas fa-sign-in-alt'></i> Sign in</Link>
@@ -79,7 +82,7 @@ const NavBar = () => {
                 </Link>
               </NavDropdown.Item>
             </NavDropdown>
-            { currentUser && addBlogPostIcon }
+            {currentUser && addBlogPostIcon}
           </Nav>
           <Nav>
             {currentUser ? loggedInIcons : loggedOutIcons}
