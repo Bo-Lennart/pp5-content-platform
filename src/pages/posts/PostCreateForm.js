@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 
 import Form from "react-bootstrap/Form";
@@ -6,6 +5,10 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import Upload from "../../assets/Upload.png"
+
+import styles from "../../styles/PostCreateEditForm.module.css";
+import appStyles from "../../App.module.css";
 
 
 function PostCreateForm() {
@@ -36,7 +39,7 @@ function PostCreateForm() {
       <Row>
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
           <Container
-            className={`d-flex flex-column justify-content-center`}
+            className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
           >
             <Form.Group className="text-center">
               
@@ -52,7 +55,7 @@ function PostCreateForm() {
           </Container>
         </Col>
         <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
-          <Container >{textFields}</Container>
+          <Container className={appStyles.Content}>{textFields}</Container>
         </Col>
       </Row>
     </Form>
