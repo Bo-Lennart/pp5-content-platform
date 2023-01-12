@@ -86,18 +86,23 @@ function PostCreateForm() {
                   </figure>
 
                   <div>
-                    <Form.Label htmlFor="image-upload">
-                      Change image
+                    <Form.Label type="file" htmlFor="image-upload" onClick={handleChangeImage}>
+                      <p>Change image:</p>
+                      <Form.Control type="file" accept="image/*" onChange={handleChangeImage} name="Change img" />
                     </Form.Label>
                   </div>
                 </>
               ) : (
                 <Form.Label className="d-flex justify-content-center" htmlFor="image-upload">
-                  <Asset src={Upload} message="Click to upload image" />
+                  <figure>
+                    <Asset src={Upload} />
+                  </figure>
+                  <div>
+                    <Form.Control type="file" accept="image/*" onChange={handleChangeImage} />
+                  </div>
+
                 </Form.Label>
               )}
-
-              <Form.Control type="file" accept="image/*" onChange={handleChangeImage} />
 
 
               {/* <input type="file" conChange={handleChangeImage}></input> */}
