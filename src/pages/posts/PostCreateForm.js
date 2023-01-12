@@ -32,6 +32,7 @@ function PostCreateForm() {
 
   const handleChangeImage = (e) => {
     if (e.target.files.length) {
+      URL.revokeObjectURL(image);
       setPostData({
         ...postData,
         image: URL.createObjectURL(e.target.files[0])
@@ -82,7 +83,7 @@ function PostCreateForm() {
                 htmlFor="image-upload">
                 <Asset src={Upload} message="Click to upload image" />
               </Form.Label>
-              <Form.File id="image-upload" accept="image/*" />
+              <Form.File id="image-upload" accept="image/*" onChange={handleChangeImage} />
             </Form.Group>
             <div className="d-md-none">{textFields}</div>
           </Container>
