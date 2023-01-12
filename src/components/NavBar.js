@@ -12,7 +12,7 @@ import {
   Link,
   Outlet,
 } from "react-router-dom";
-import { useCurrentUser, useSetCurrentUser, setCurrentUser } from '../contexts/CurrentUserContext';
+import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import ProfileIcon from './ProfileIcon';
 import axios from 'axios';
 
