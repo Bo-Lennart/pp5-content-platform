@@ -30,6 +30,14 @@ function PostCreateForm() {
     });
   };
 
+  const handleChangeImage = (e) => {
+    if (e.target.files.length) {
+      setPostData({
+        ...postData,
+        image: URL.createObjectURL(e.target.files[0])
+      });
+    }
+  }
 
   const textFields = (
     <div className="text-center">
