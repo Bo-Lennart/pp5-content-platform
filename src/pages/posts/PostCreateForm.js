@@ -33,9 +33,12 @@ function PostCreateForm() {
         <Form.Label>Category</Form.Label>
         <Form.Select aria-label="Default select example">
           <option>Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <option value="world">W O R L D</option>
+          <option value="business">B U S I N E S S</option>
+          <option value="food">F O O D</option>
+          <option value="culture">C U L T U R E</option>
+          <option value="music">M U S I C</option>
+          <option value="tech">T E C H</option>
         </Form.Select>
       </Form.Group>
 
