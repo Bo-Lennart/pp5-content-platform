@@ -16,10 +16,10 @@ function PostCreateForm() {
   const [errors, setErrors] = useState({});
 
   const [postData, setPostData] = useState({
-    title:"",
-    content:"",
-    image:"",
-    category:"",
+    title: "",
+    content: "",
+    image: "",
+    category: "",
   });
   const { title, content, image, category } = postData;
 
@@ -35,12 +35,12 @@ function PostCreateForm() {
     <div className="text-center">
       <Form.Group>
         <Form.Label>Title</Form.Label>
-        <Form.Control type="text" name="title" />
+        <Form.Control type="text" name="title" value={title} onChange={handleChange} />
       </Form.Group>
 
       <Form.Group>
         <Form.Label>Content</Form.Label>
-        <Form.Control as="textarea" rows={6} name="content" />
+        <Form.Control as="textarea" rows={6} name="content" value={title} onChange={handleChange} />
       </Form.Group>
 
       <Form.Group>
