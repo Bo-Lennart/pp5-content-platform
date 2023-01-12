@@ -17,8 +17,10 @@ import { useCurrentUser } from '../contexts/CurrentUserContext';
 const NavBar = () => {
   const currentUser = useCurrentUser();
 
+  const addBlogPostIcon = (
+    <Link to="/blogposts/create" className={styles.NavLink}><i className='far fa-plus-square'></i>P O S T</Link>
+  )
   const loggedInIcons = <> {currentUser?.username}</>;
-
   const loggedOutIcons = (
     <>
       <Link to="signin" className={styles.NavLink}><i className='fas fa-sign-in-alt'></i> Sign in</Link>
@@ -34,12 +36,13 @@ const NavBar = () => {
             <img src={logo_dagoy} alt='logo' height="45" />
           </Navbar.Brand>
         </Link>
+        { currentUser && addBlogPostIcon }
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Link to="/" className={styles.NavLink}><i className='fas fa-home'></i> H O M E</Link>
-            <Link to="posts" className={styles.NavLink}>P O S T S</Link>
+            <Link to="posts" className={styles.NavLink}>N E W S</Link>
             <NavDropdown title="C A T E G O R I E S" id="collasible-nav-dropdown">
               <NavDropdown.Item>
                 <Link to="/world" className={styles.NavLinkCategory}>
