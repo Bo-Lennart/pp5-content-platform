@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import styles from "../../styles/SignInUpForm.module.css";
@@ -8,9 +8,10 @@ import axios from 'axios';
 import { SetCurrentUserContext } from "../../App";
 
 import { Form, Button, Image, Col, Row, Container, Alert, } from "react-bootstrap";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 function SignInForm() {
-    const setCurrentUser = useContext(SetCurrentUserContext);
+    const setCurrentUser = useSetCurrentUser();
 
     const [logInData, setlogInData] = useState({
         username: '',
