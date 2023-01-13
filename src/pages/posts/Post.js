@@ -2,6 +2,7 @@ import { Tooltip } from 'bootstrap';
 import React from 'react';
 import { Card, Image, OverlayTrigger } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
+import { axiosRes } from '../../api/axiosDefault';
 import ProfileIcon from '../../components/ProfileIcon';
 
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
@@ -23,7 +24,7 @@ const Post = (props) => {
         image,
         updated_at,
         postPage,
-
+        setPosts,
     } = props;
 
     const currentUser = useCurrentUser();
@@ -33,6 +34,23 @@ const Post = (props) => {
     const handleNoUserLikeBookmark = () => {
             navigate(`/signin`)
     }
+
+    const handleLike = async () => {
+        try {
+          const { data } = await axiosRes.post("/likes/", { post: id });
+          console.log("DATA", data)
+          setPosts((prevPosts) => ({
+            ...prevPosts,
+            results: prevPosts.results.map((post) => {
+              return post.id === id
+                ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
+                : post;
+            }),
+          }));
+        } catch (err) {
+          console.log(err);
+        }
+      };
 
     return <Card>
         <Card.Body>
@@ -59,7 +77,7 @@ const Post = (props) => {
                         <i className={`fa-solid fa-thumbs-up ${styles.ThumbUp}`} />
                     </span>
                 ) : currentUser ? (
-                    <span onClick={() => { }}>
+                    <span onClick={handleLike}>
                         <i className={`fa-solid fa-thumbs-up ${styles.ThumbUpOutline}`} />
                     </span>
                 ) : (
