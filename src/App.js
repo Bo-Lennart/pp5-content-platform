@@ -27,10 +27,9 @@ function App() {
           <Container className='Main'>
             <Routes>
               <Route path="/posts" element={<PostsFeed />} message="No result's found"/>
-              <Route path="/bookmarks" filter={`bookmark__owner__profile=${profile_id}&ordering=-bookmark__created_at&`} element={<PostsFeed />} message="No result's found"/>
+              <Route path="/bookmarks" filter={`bookmark__owner__profile=${profile_id}&ordering=-bookmark__created_at&`} element={<h1>Still todo</h1>} message="No result's found"/>
 
               <Route path="/" element={<PostsFeed />} message="No result's found" />
-              <Route path="/posts" element={<h1>P O S T S</h1>} />
               <Route path="/world" element={<h1>W O R L D</h1>} />
               <Route path="/business" element={<h1>B U S I N E S S</h1>} />
               <Route path="/food" element={<h1>F O O D</h1>} />
