@@ -25,6 +25,7 @@ const Post = (props) => {
         updated_at,
         postPage,
         setPosts,
+        isInPostPage = true
     } = props;
 
     const currentUser = useCurrentUser();
@@ -120,6 +121,7 @@ const Post = (props) => {
         <Card.Body>
 
             {content && <Card.Text>{content}</Card.Text>}
+            {isInPostPage && 
             <div className={styles.PostBar}>
                 {like_id ? (
                     <span onClick={handleUnlike}>
@@ -150,9 +152,8 @@ const Post = (props) => {
                     </span>
                 )}
                 {bookmarks_count}
-
-
             </div>
+            }
         </Card.Body>
     </Card>
 }

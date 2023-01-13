@@ -12,7 +12,7 @@ import './api/axiosDefault';
 import SignUpForm from './pages/auth/SignUpForm';
 import SignInForm from './pages/auth/SignInForm';
 import PostCreateForm from './pages/posts/PostCreateForm';
-import PostsPage from './pages/posts/PostsPage';
+import PostsFeed from './pages/posts/PostsFeed';
 import { useSetCurrentUser } from './contexts/CurrentUserContext';
 import PostPage from './pages/posts/PostPage';
 
@@ -26,10 +26,10 @@ function App() {
           <NavBar />
           <Container className='Main'>
             <Routes>
-              <Route path="/posts" element={<PostsPage />} message="No result's found"/>
-              <Route path="/bookmarks" filter={`bookmark__owner__profile=${profile_id}&ordering=-bookmark__created_at&`} element={<PostsPage />} message="No result's found"/>
+              <Route path="/posts" element={<PostsFeed />} message="No result's found"/>
+              <Route path="/bookmarks" filter={`bookmark__owner__profile=${profile_id}&ordering=-bookmark__created_at&`} element={<PostsFeed />} message="No result's found"/>
 
-              <Route path="/" element={<PostsPage />} message="No result's found" />
+              <Route path="/" element={<PostsFeed />} message="No result's found" />
               <Route path="/posts" element={<h1>P O S T S</h1>} />
               <Route path="/world" element={<h1>W O R L D</h1>} />
               <Route path="/business" element={<h1>B U S I N E S S</h1>} />

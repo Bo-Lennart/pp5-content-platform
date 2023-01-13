@@ -7,7 +7,7 @@ import { Container } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefault";
 
-function PostsPage({ message, filter = "" }) {
+function PostsFeed({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
@@ -35,7 +35,7 @@ function PostsPage({ message, filter = "" }) {
           <>
             {posts.results.length ? (
               posts.results.map((post) => (
-                <Post key={post.id} {...post} setPosts={setPosts} />
+                <Post key={post.id} {...post} setPosts={setPosts} isInPostPage={false}/>
               ))
             ) : (
               <Container >
@@ -56,4 +56,4 @@ function PostsPage({ message, filter = "" }) {
   );
 }
 
-export default PostsPage;
+export default PostsFeed;
