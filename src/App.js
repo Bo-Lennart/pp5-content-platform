@@ -26,8 +26,8 @@ function App() {
           <NavBar />
           <Container className='Main'>
             <Routes>
-              <Route path="/posts" element={PostsPage} message="No result's found"/>
-              <Route path="/bookmarks" filter={`bookmark__owner__profile=${profile_id}&ordering=-bookmark__created_at&`} element={PostsPage} message="No result's found"/>
+              <Route path="/posts" element={<PostsPage />} message="No result's found"/>
+              <Route path="/bookmarks" filter={`bookmark__owner__profile=${profile_id}&ordering=-bookmark__created_at&`} element={<PostsPage />} message="No result's found"/>
 
               <Route path="/" element={<h1>Home page</h1>} />
               <Route path="/posts" element={<h1>P O S T S</h1>} />
@@ -38,7 +38,7 @@ function App() {
               <Route path="/music" element={<h1>M U S I C</h1>} />
               <Route path="/tech" element={<h1>T E C H</h1>} />
 
-              <Route path="/posts/:id" element={<PostPage} />
+              <Route path="/posts/:id" element={<PostPage />} />
 
               <Route path="/signin" element={<SignInForm />} />
               <Route path="/signup" element={<SignUpForm />} />
