@@ -8,6 +8,7 @@ import Container from "react-bootstrap/Container";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
 import { useLocation } from "react-router-dom";
+import { axiosReq } from "../../api/axiosDefault";
 
 function PostsPage({ message, filter = "" }) {
   const [posts, setPosts] = useState({ results: [] });
@@ -16,10 +17,14 @@ function PostsPage({ message, filter = "" }) {
 
   useEffect(() => {
     try {
-      
+      const {data} = await axiosReq.get(`/posts/?${filter}`)
+      setPosts(data)
+      setHasLoaded(true)
     } catch (error) {
-      
+      console.log(error)
     }
+
+    
   })
 
   return (
