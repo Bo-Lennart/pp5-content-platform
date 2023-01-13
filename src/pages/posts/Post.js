@@ -1,7 +1,7 @@
 import { Tooltip } from 'bootstrap';
 import React from 'react';
 import { Card, Image, OverlayTrigger } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import ProfileIcon from '../../components/ProfileIcon';
 
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
@@ -28,6 +28,11 @@ const Post = (props) => {
 
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner
+    const navigate = useNavigate();
+
+    const handleNoUserLikeBookmark = () => {
+            navigate(`/signin`)
+    }
 
     return <Card>
         <Card.Body>
@@ -58,12 +63,9 @@ const Post = (props) => {
                         <i className={`fa-solid fa-thumbs-up ${styles.ThumbUpOutline}`} />
                     </span>
                 ) : (
-                    <OverlayTrigger
-                        placement="top"
-                        overlay={<Tooltip>Log in to like posts!</Tooltip>}
-                    >
-                        <i className="fa-solid fa-thumbs-up" />
-                    </OverlayTrigger>
+                    <span onClick={ handleNoUserLikeBookmark }>
+                        <i className={`fa-solid fa-thumbs-up ${styles.ThumbUpOutline}`} />
+                    </span>
                 )}
                 {likes_count}
 
@@ -76,12 +78,9 @@ const Post = (props) => {
                         <i className={`fa-solid fa-book-bookmark ${styles.ThumbUpOutline}`} />
                     </span>
                 ) : (
-                    <OverlayTrigger
-                        placement="top"
-                        overlay={<Tooltip>Log in to save posts!</Tooltip>}
-                    >
-                        <i class="fa-solid fa-book-bookmark"></i>
-                    </OverlayTrigger>
+                    <span onClick={ handleNoUserLikeBookmark }>
+                        <i className={`fa-solid fa-book-bookmark ${styles.ThumbUpOutline}`} />
+                    </span>
                 )}
                 {bookmark_count}
 
