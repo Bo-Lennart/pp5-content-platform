@@ -59,7 +59,7 @@ const NavBar = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Link to="/" className={styles.NavLink}><i className='fas fa-home'></i> H O M E</Link>
-            <Link to="posts" className={styles.NavLink}>N E W S</Link>
+            <Link to="posts" className={styles.NavLink}>P O S T S</Link>
             <NavDropdown title="C A T E G O R I E S" id="collasible-nav-dropdown">
               <NavDropdown.Item>
                 <Link to="/world" className={styles.NavLinkCategory}>
