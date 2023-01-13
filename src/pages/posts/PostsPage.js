@@ -18,7 +18,7 @@ function PostsPage({ message, filter = "" }) {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const {data} = await axiosReq.get(`/blogposts/?${filter}`);
+        const { data } = await axiosReq.get(`/blogposts/?${filter}`);
         setPosts(data);
         setHasLoaded(true);
       } catch (error) {
@@ -27,13 +27,23 @@ function PostsPage({ message, filter = "" }) {
     }
     setHasLoaded(false);
     fetchPosts();
-  }, [filter, pathname])
+  }, [filter, pathname]);
 
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <p>Popular profiles mobile</p>
-        <p>List of posts here</p>
+        {hasLoaded ? (
+          <>
+            {posts.results.length ? (
+              console.log('Mapping posts and render');
+            ) : (
+            console.log('no results');
+          )}
+          </>
+        ) : (
+          console.log("show loading page")
+        )}
       </Col>
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
         <p>Popular posts for desktop</p>
