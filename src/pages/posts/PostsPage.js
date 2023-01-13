@@ -1,5 +1,5 @@
 import React, { useEffect, useInsertionEffect, useState } from "react";
-
+import Post from "./Post";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -36,9 +36,11 @@ function PostsPage({ message, filter = "" }) {
         {hasLoaded ? (
           <>
             {posts.results.length ? (
-              console.log('Mapping posts and render');
+              posts.results.map(map => (
+                <Post key={Post.id} {...post} setPosts={setPosts} />
+              ))
             ) : (
-            console.log('no results');
+              console.log('no results');
           )}
           </>
         ) : (
