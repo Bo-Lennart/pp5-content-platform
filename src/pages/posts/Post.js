@@ -18,7 +18,7 @@ const Post = (props) => {
         likes_count,
         like_id,
         bookmark_id,
-        bookmark_count,
+        bookmarks_count,
         title,
         content,
         image,
@@ -54,9 +54,34 @@ const Post = (props) => {
 
     const handleUnlike = async () => {
         try {
-            
-        } catch (error) {
-            
+            await axiosRes.delete(`/likes/${like_id}/`);
+            setPosts((prevPosts) => ({
+                ...prevPosts,
+                results: prevPosts.results.map((post) => {
+                    return post.id === id
+                        ? { ...post, likes_count: post.likes_count - 1, like_id: null }
+                        : post;
+                }),
+            }));
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    const handleBookmark = async () => {
+        try {
+            const { data } = await axiosRes.post("/bookmark/", { post: id });
+            console.log("DATA", data)
+            setPosts((prevPosts) => ({
+                ...prevPosts,
+                results: prevPosts.results.map((post) => {
+                    return post.id === id
+                        ? { ...post, bookmarks_count: post.bookmarks_count + 1, bookmark_id: data.id }
+                        : post;
+                }),
+            }));
+        } catch (err) {
+            console.log(err);
         }
     };
 
@@ -100,7 +125,7 @@ const Post = (props) => {
                         <i className={`fa-solid fa-book-bookmark ${styles.ThumbUp}`} />
                     </span>
                 ) : currentUser ? (
-                    <span onClick={() => { }}>
+                    <span onClick={handleBookmark}>
                         <i className={`fa-solid fa-book-bookmark ${styles.ThumbUpOutline}`} />
                     </span>
                 ) : (
@@ -108,7 +133,7 @@ const Post = (props) => {
                         <i className={`fa-solid fa-book-bookmark ${styles.ThumbUpOutline}`} />
                     </span>
                 )}
-                {bookmark_count}
+                {bookmarks_count}
 
 
             </div>
