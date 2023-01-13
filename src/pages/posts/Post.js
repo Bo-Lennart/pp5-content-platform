@@ -85,6 +85,22 @@ const Post = (props) => {
         }
     };
 
+    const handleRemoveBookmark = async () => {
+        try {
+            await axiosRes.delete(`/bookmark/${bookmark_id}/`);
+            setPosts((prevPosts) => ({
+                ...prevPosts,
+                results: prevPosts.results.map((post) => {
+                    return post.id === id
+                        ? { ...post, bookmarks_count: post.bookmarks_count - 1, like_id: null }
+                        : post;
+                }),
+            }));
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
     return <Card>
         <Card.Body>
             <div className='align-items-center justify-content-between'>
@@ -121,7 +137,7 @@ const Post = (props) => {
                 {likes_count}
 
                 {bookmark_id ? (
-                    <span onClick={() => { }}>
+                    <span onClick={handleRemoveBookmark}>
                         <i className={`fa-solid fa-book-bookmark ${styles.ThumbUp}`} />
                     </span>
                 ) : currentUser ? (
