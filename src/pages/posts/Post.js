@@ -32,25 +32,33 @@ const Post = (props) => {
     const navigate = useNavigate();
 
     const handleNoUserLikeBookmark = () => {
-            navigate(`/signin`)
+        navigate(`/signin`)
     }
 
     const handleLike = async () => {
         try {
-          const { data } = await axiosRes.post("/likes/", { post: id });
-          console.log("DATA", data)
-          setPosts((prevPosts) => ({
-            ...prevPosts,
-            results: prevPosts.results.map((post) => {
-              return post.id === id
-                ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
-                : post;
-            }),
-          }));
+            const { data } = await axiosRes.post("/likes/", { post: id });
+            console.log("DATA", data)
+            setPosts((prevPosts) => ({
+                ...prevPosts,
+                results: prevPosts.results.map((post) => {
+                    return post.id === id
+                        ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
+                        : post;
+                }),
+            }));
         } catch (err) {
-          console.log(err);
+            console.log(err);
         }
-      };
+    };
+
+    const handleUnlike = async () => {
+        try {
+            
+        } catch (error) {
+            
+        }
+    };
 
     return <Card>
         <Card.Body>
@@ -73,7 +81,7 @@ const Post = (props) => {
             {content && <Card.Text>{content}</Card.Text>}
             <div className={styles.PostBar}>
                 {like_id ? (
-                    <span onClick={() => { }}>
+                    <span onClick={handleUnlike}>
                         <i className={`fa-solid fa-thumbs-up ${styles.ThumbUp}`} />
                     </span>
                 ) : currentUser ? (
@@ -81,7 +89,7 @@ const Post = (props) => {
                         <i className={`fa-solid fa-thumbs-up ${styles.ThumbUpOutline}`} />
                     </span>
                 ) : (
-                    <span onClick={ handleNoUserLikeBookmark }>
+                    <span onClick={handleNoUserLikeBookmark}>
                         <i className={`fa-solid fa-thumbs-up ${styles.ThumbUpOutline}`} />
                     </span>
                 )}
@@ -96,7 +104,7 @@ const Post = (props) => {
                         <i className={`fa-solid fa-book-bookmark ${styles.ThumbUpOutline}`} />
                     </span>
                 ) : (
-                    <span onClick={ handleNoUserLikeBookmark }>
+                    <span onClick={handleNoUserLikeBookmark}>
                         <i className={`fa-solid fa-book-bookmark ${styles.ThumbUpOutline}`} />
                     </span>
                 )}
