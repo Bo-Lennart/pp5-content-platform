@@ -84,7 +84,7 @@ const Post = (props) => {
                     <i class="fa-solid fa-book-bookmark"></i>
                 </OverlayTrigger>
                 )}
-                {bookmark_id}
+                {bookmark_count}
                 
                 
             </div>
