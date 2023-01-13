@@ -13,8 +13,11 @@ import SignUpForm from './pages/auth/SignUpForm';
 import SignInForm from './pages/auth/SignInForm';
 import PostCreateForm from './pages/posts/PostCreateForm';
 import PostsPage from './pages/posts/PostsPage';
+import { useSetCurrentUser } from './contexts/CurrentUserContext';
 
 function App() {
+  const currentUser = useSetCurrentUser();
+  const profile_id = currentUser?.profile_id || "";
 
   return (
 
@@ -22,7 +25,9 @@ function App() {
           <NavBar />
           <Container className='Main'>
             <Routes>
-              <Route path="/" element={PostsPage} message="No result's found"/>
+              <Route path="/posts" element={PostsPage} message="No result's found"/>
+              <Route path="/bookmarks" filter={`bookmark__owner__profile=${profile_id}&ordering=-bookmark__created_at&`} element={PostsPage} message="No result's found"/>
+
               <Route path="/" element={<h1>Home page</h1>} />
               <Route path="/posts" element={<h1>P O S T S</h1>} />
               <Route path="/world" element={<h1>W O R L D</h1>} />
