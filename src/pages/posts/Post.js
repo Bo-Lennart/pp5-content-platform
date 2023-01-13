@@ -49,18 +49,18 @@ const Post = (props) => {
             <div className={styles.PostBar}>
                 {like_id ? (
                 <span onClick={() => { }}>
-                    <i className={`fas fa-heart ${styles.Heart}`} />
+                    <i className={`fa-solid fa-thumbs-up ${styles.ThumbUp}`} />
                 </span>
                 ) : currentUser ? (
                 <span onClick={() => { }}>
-                    <i className={`far fa-heart ${styles.HeartOutline}`} />
+                    <i className={`fa-solid fa-thumbs-up ${styles.ThumbUpOutline}`} />
                 </span>
                 ) : (
                 <OverlayTrigger
                     placement="top"
                     overlay={<Tooltip>Log in to like posts!</Tooltip>}
                 >
-                    <i className="far fa-heart" />
+                    <i className="fa-solid fa-thumbs-up" />
                 </OverlayTrigger>
                 )}
                 {likes_count}
