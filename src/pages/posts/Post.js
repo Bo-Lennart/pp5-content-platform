@@ -35,58 +35,57 @@ const Post = (props) => {
                 <Link to={`/profiles/${profile_id}`}>
                     <ProfileIcon src={profile_image} height={50} />
                     {owner}
-                    <div className="d-flex align-items-center">
-                        <span>{updated_at}</span>
-                        <span>{category}</span>
-                        {is_owner && postPage && "..."}
-                    </div>
+                    {is_owner && postPage && "..."}
                 </Link>
+                {title && <Card.Title className="text-center">{title}</Card.Title>}
+                <p className="text-center">{updated_at}</p>
+                <p className="text-center">{category}</p>
             </div>
         </Card.Body>
         <Link to={`/posts/${id}`}>
             <Card.Img src={image} alt={title} />
         </Link>
         <Card.Body>
-            {title && <Card.Title className="text-center">{title}</Card.Title>}
+
             {content && <Card.Text>{content}</Card.Text>}
             <div className={styles.PostBar}>
                 {like_id ? (
-                <span onClick={() => { }}>
-                    <i className={`fa-solid fa-thumbs-up ${styles.ThumbUp}`} />
-                </span>
+                    <span onClick={() => { }}>
+                        <i className={`fa-solid fa-thumbs-up ${styles.ThumbUp}`} />
+                    </span>
                 ) : currentUser ? (
-                <span onClick={() => { }}>
-                    <i className={`fa-solid fa-thumbs-up ${styles.ThumbUpOutline}`} />
-                </span>
+                    <span onClick={() => { }}>
+                        <i className={`fa-solid fa-thumbs-up ${styles.ThumbUpOutline}`} />
+                    </span>
                 ) : (
-                <OverlayTrigger
-                    placement="top"
-                    overlay={<Tooltip>Log in to like posts!</Tooltip>}
-                >
-                    <i className="fa-solid fa-thumbs-up" />
-                </OverlayTrigger>
+                    <OverlayTrigger
+                        placement="top"
+                        overlay={<Tooltip>Log in to like posts!</Tooltip>}
+                    >
+                        <i className="fa-solid fa-thumbs-up" />
+                    </OverlayTrigger>
                 )}
                 {likes_count}
 
                 {bookmark_id ? (
-                <span onClick={() => { }}>
-                    <i className={`fa-solid fa-book-bookmark ${styles.ThumbUp}`} />
-                </span>
+                    <span onClick={() => { }}>
+                        <i className={`fa-solid fa-book-bookmark ${styles.ThumbUp}`} />
+                    </span>
                 ) : currentUser ? (
-                <span onClick={() => { }}>
-                    <i className={`fa-solid fa-book-bookmark ${styles.ThumbUpOutline}`} />
-                </span>
+                    <span onClick={() => { }}>
+                        <i className={`fa-solid fa-book-bookmark ${styles.ThumbUpOutline}`} />
+                    </span>
                 ) : (
-                <OverlayTrigger
-                    placement="top"
-                    overlay={<Tooltip>Log in to bookmark posts!</Tooltip>}
-                >
-                    <i class="fa-solid fa-book-bookmark"></i>
-                </OverlayTrigger>
+                    <OverlayTrigger
+                        placement="top"
+                        overlay={<Tooltip>Log in to bookmark posts!</Tooltip>}
+                    >
+                        <i class="fa-solid fa-book-bookmark"></i>
+                    </OverlayTrigger>
                 )}
                 {bookmark_count}
-                
-                
+
+
             </div>
         </Card.Body>
     </Card>
