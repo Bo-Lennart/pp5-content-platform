@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useInsertionEffect, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
@@ -16,15 +16,13 @@ function PostsPage({ message, filter = "" }) {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    try {
-      const {data} = await axiosReq.get(`/posts/?${filter}`)
-      setPosts(data)
-      setHasLoaded(true)
-    } catch (error) {
-      console.log(error)
+    const fetchPosts = async () => {
+      try {
+        
+      } catch (error) {
+        
+      }
     }
-
-    
   })
 
   return (
