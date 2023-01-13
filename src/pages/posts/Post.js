@@ -1,4 +1,8 @@
 import React from 'react';
+import { Card, Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import ProfileIcon from '../../components/ProfileIcon';
+
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import styles from "../../styles/Post.module.css";
 
@@ -18,12 +22,19 @@ const Post = (props) => {
 
     } = props;
 
-    const currentUser = useCurrentUser;
+    const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner
 
-  return (
-    
-  )
+  return <Card>
+    <Card.Body>
+        <div className='align-items-center justify-content-between'>
+            <Link to={`/profiles/${profile_id}`}>
+                <ProfileIcon src={profile_image} height={50} />
+                {owner}
+            </Link>
+        </div>
+    </Card.Body>
+  </Card>
 }
 
 export default Post
