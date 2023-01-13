@@ -16,6 +16,8 @@ const Post = (props) => {
         profile_image,
         likes_count,
         like_id,
+        bookmark_id,
+        bookmark_count,
         title,
         content,
         image,
@@ -35,6 +37,7 @@ const Post = (props) => {
                     {owner}
                     <div className="d-flex align-items-center">
                         <span>{updated_at}</span>
+                        <span>{category}</span>
                         {is_owner && postPage && "..."}
                     </div>
                 </Link>
@@ -64,6 +67,25 @@ const Post = (props) => {
                 </OverlayTrigger>
                 )}
                 {likes_count}
+
+                {bookmark_id ? (
+                <span onClick={() => { }}>
+                    <i className={`fa-solid fa-book-bookmark ${styles.ThumbUp}`} />
+                </span>
+                ) : currentUser ? (
+                <span onClick={() => { }}>
+                    <i className={`fa-solid fa-book-bookmark ${styles.ThumbUpOutline}`} />
+                </span>
+                ) : (
+                <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip>Log in to bookmark posts!</Tooltip>}
+                >
+                    <i class="fa-solid fa-book-bookmark"></i>
+                </OverlayTrigger>
+                )}
+                {bookmark_id}
+                
                 
             </div>
         </Card.Body>
