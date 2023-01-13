@@ -26,20 +26,27 @@ const Post = (props) => {
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner
 
-  return <Card>
-    <Card.Body>
-        <div className='align-items-center justify-content-between'>
-            <Link to={`/profiles/${profile_id}`}>
-                <ProfileIcon src={profile_image} height={50} />
-                {owner}
-                <div className="d-flex align-items-center">
-                    <span>{updated_at}</span>
-                    {is_owner && postPage && "..."}
-                </div>
-            </Link>
-        </div>
-    </Card.Body>
-  </Card>
+    return <Card>
+        <Card.Body>
+            <div className='align-items-center justify-content-between'>
+                <Link to={`/profiles/${profile_id}`}>
+                    <ProfileIcon src={profile_image} height={50} />
+                    {owner}
+                    <div className="d-flex align-items-center">
+                        <span>{updated_at}</span>
+                        {is_owner && postPage && "..."}
+                    </div>
+                </Link>
+            </div>
+        </Card.Body>
+        <Link to={`/posts/${id}`}>
+            <Card.Img src={image} alt={title} />
+        </Link>
+        <Card.Body>
+            {title && <Card.Title className="text-center">{title}</Card.Title>}
+            {content && <Card.Text>{content}</Card.Text>}
+        </Card.Body>
+    </Card>
 }
 
 export default Post
