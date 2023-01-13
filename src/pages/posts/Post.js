@@ -78,7 +78,7 @@ const Post = (props) => {
                 ) : (
                     <OverlayTrigger
                         placement="top"
-                        overlay={<Tooltip>Log in to bookmark posts!</Tooltip>}
+                        overlay={<Tooltip>Log in to save posts!</Tooltip>}
                     >
                         <i class="fa-solid fa-book-bookmark"></i>
                     </OverlayTrigger>
