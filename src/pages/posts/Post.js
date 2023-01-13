@@ -31,6 +31,9 @@ const Post = (props) => {
             <Link to={`/profiles/${profile_id}`}>
                 <ProfileIcon src={profile_image} height={50} />
                 {owner}
+                <div className="d-flex align-items-center">
+                    <span>{updated_at}</span>
+                </div>
             </Link>
         </div>
     </Card.Body>
