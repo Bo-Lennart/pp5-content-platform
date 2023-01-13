@@ -29,7 +29,7 @@ function App() {
               <Route path="/posts" element={<PostsPage />} message="No result's found"/>
               <Route path="/bookmarks" filter={`bookmark__owner__profile=${profile_id}&ordering=-bookmark__created_at&`} element={<PostsPage />} message="No result's found"/>
 
-              <Route path="/" element={<h1>Home page</h1>} />
+              <Route path="/" element={<PostsPage />} message="No result's found" />
               <Route path="/posts" element={<h1>P O S T S</h1>} />
               <Route path="/world" element={<h1>W O R L D</h1>} />
               <Route path="/business" element={<h1>B U S I N E S S</h1>} />
