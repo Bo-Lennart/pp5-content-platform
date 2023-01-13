@@ -18,12 +18,16 @@ function PostsPage({ message, filter = "" }) {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        
+        const {data} = await axiosReq.get(`/blogposts/?${filter}`);
+        setPosts(data);
+        setHasLoaded(true);
       } catch (error) {
-        
+        console.log(error);
       }
     }
-  })
+    setHasLoaded(false);
+    fetchPosts();
+  }, [filter, pathname])
 
   return (
     <Row className="h-100">
