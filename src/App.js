@@ -14,6 +14,7 @@ import SignInForm from './pages/auth/SignInForm';
 import PostCreateForm from './pages/posts/PostCreateForm';
 import PostsPage from './pages/posts/PostsPage';
 import { useSetCurrentUser } from './contexts/CurrentUserContext';
+import PostPage from './pages/posts/PostPage';
 
 function App() {
   const currentUser = useSetCurrentUser();
@@ -37,6 +38,7 @@ function App() {
               <Route path="/music" element={<h1>M U S I C</h1>} />
               <Route path="/tech" element={<h1>T E C H</h1>} />
 
+              <Route path="/posts/:id" element={<PostPage} />
 
               <Route path="/signin" element={<SignInForm />} />
               <Route path="/signup" element={<SignUpForm />} />
