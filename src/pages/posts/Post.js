@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import styles from "../../styles/Post.module.css";
 
-const Post = () => {
+const Post = (props) => {
   return (
-    <div>Post</div>
+    <div>Post connected</div>
   )
 }
 
