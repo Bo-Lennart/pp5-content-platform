@@ -12,6 +12,7 @@ import './api/axiosDefault';
 import SignUpForm from './pages/auth/SignUpForm';
 import SignInForm from './pages/auth/SignInForm';
 import PostCreateForm from './pages/posts/PostCreateForm';
+import PostsPage from './pages/posts/PostsPage';
 
 function App() {
 
@@ -21,10 +22,9 @@ function App() {
           <NavBar />
           <Container className='Main'>
             <Routes>
-              <Route path="/" element={<h1>Home page</h1>} />
+              <Route path="/" element={PostsPage} message="No result's found"/>
               <Route path="/" element={<h1>Home page</h1>} />
               <Route path="/posts" element={<h1>P O S T S</h1>} />
-
               <Route path="/world" element={<h1>W O R L D</h1>} />
               <Route path="/business" element={<h1>B U S I N E S S</h1>} />
               <Route path="/food" element={<h1>F O O D</h1>} />
