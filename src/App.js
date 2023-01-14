@@ -32,11 +32,11 @@ function App() {
 
               <Route path="/" element={<PostsFeed />} message="No result's found" />
               <Route path="/world" element={<PostsCategory />} filter={world}/>
-              <Route path="/business" element={<PostsCategory />} filter={} />
-              <Route path="/food" element={<PostsCategory />} filter={}/>
-              <Route path="/culture" element={<PostsCategory />} filter={} />
-              <Route path="/music" element={<PostsCategory />} filter={} />
-              <Route path="/tech" element={<PostsCategory />} filter={} />
+              <Route path="/business" element={<PostsCategory />} filter={business} />
+              <Route path="/food" element={<PostsCategory />} filter={food}/>
+              <Route path="/culture" element={<PostsCategory />} filter={culture} />
+              <Route path="/music" element={<PostsCategory />} filter={music} />
+              <Route path="/tech" element={<PostsCategory />} filter={tech} />
 
               <Route path="/posts/:id" element={<PostPage />} />
 
