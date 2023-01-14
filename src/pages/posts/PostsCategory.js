@@ -7,7 +7,7 @@ import { Container } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefault";
 
-const PostsCategory = ({ message, filter = "" }) => {
+const PostsCategory = ({ filter = "" }) => {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
@@ -32,7 +32,6 @@ const PostsCategory = ({ message, filter = "" }) => {
     
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <p>Popular profiles mobile</p>
         {hasLoaded ? (
           <>
             {posts.results.length ? (
@@ -49,12 +48,9 @@ const PostsCategory = ({ message, filter = "" }) => {
           </>
         ) : (
           <Container >
-            <h1>Not loaded</h1>
+            <h1>Loading...</h1>
           </Container>
         )}
-      </Col>
-      <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-        <p>Popular profiles for desktop</p>
       </Col>
     </Row>
   );

@@ -31,12 +31,8 @@ function PostPage() {
     return (
         <Row className="h-100">
             <Col className="py-2 p-0 p-lg-2" lg={8}>
-                <p>Popular profiles for mobile</p>
                 <Post {...post.results[0]} setPosts={setPost} postPage isInPostPage={true}/>
 
-            </Col>
-            <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-                Popular posts for desktop
             </Col>
         </Row>
     );
