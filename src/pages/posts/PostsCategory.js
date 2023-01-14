@@ -15,7 +15,8 @@ const PostsCategory = ({ message, filter = "" }) => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const { data } = await axiosReq.get(`/blogposts/?${filter}`);
+        const url = `/blogposts/`
+        const { data } = await axiosReq.get(url);
         setPosts({results: data});
         setHasLoaded(true);
       } catch (err) {
