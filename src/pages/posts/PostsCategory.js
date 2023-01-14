@@ -27,8 +27,7 @@ const PostsCategory = ({ message, filter = "" }) => {
     setHasLoaded(false);
     fetchPosts();
   }, [filter, pathname]);
-  console.log("FILTER:", filter);
-  console.log("POSTS:", posts)
+
   return (
     
     <Row className="h-100">
@@ -38,7 +37,7 @@ const PostsCategory = ({ message, filter = "" }) => {
           <>
             {posts.results.length ? (
               posts.results
-              .filter(post => filter.length === 0 || post.category === filter)
+              .filter(post => filter.length === 0 || post.category.toLocaleLowerCase() === filter.toLocaleLowerCase())
               .map((post) => (
                 <Post key={post.id} {...post} setPosts={setPosts} isInPostPage={false}/>
               ))
