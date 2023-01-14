@@ -31,12 +31,12 @@ function App() {
               <Route path="/bookmarks" filter={`bookmark__owner__profile=${profile_id}&ordering=-bookmark__created_at&`} element={<h1>Still todo</h1>} message="No result's found"/>
 
               <Route path="/" element={<PostsFeed />} message="No result's found" />
-              <Route path="/world" element={<PostsCategory />} />
-              <Route path="/business" element={<h1>B U S I N E S S</h1>} />
-              <Route path="/food" element={<h1>F O O D</h1>} />
-              <Route path="/culture" element={<h1>C U L T U R E</h1>} />
-              <Route path="/music" element={<h1>M U S I C</h1>} />
-              <Route path="/tech" element={<h1>T E C H</h1>} />
+              <Route path="/world" element={<PostsCategory />} filter={world}/>
+              <Route path="/business" element={<PostsCategory />} filter={} />
+              <Route path="/food" element={<PostsCategory />} filter={}/>
+              <Route path="/culture" element={<PostsCategory />} filter={} />
+              <Route path="/music" element={<PostsCategory />} filter={} />
+              <Route path="/tech" element={<PostsCategory />} filter={} />
 
               <Route path="/posts/:id" element={<PostPage />} />
 
