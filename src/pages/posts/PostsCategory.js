@@ -27,7 +27,8 @@ const PostsCategory = ({ message, filter = "" }) => {
     setHasLoaded(false);
     fetchPosts();
   }, [filter, pathname]);
-  
+  console.log("FILTER:", filter);
+  console.log("POSTS:", posts)
   return (
     
     <Row className="h-100">
@@ -43,7 +44,7 @@ const PostsCategory = ({ message, filter = "" }) => {
               ))
             ) : (
               <Container >
-                <h1>Not loaded</h1>
+                <h1>Not posts found</h1>
               </Container>
             )}
           </>

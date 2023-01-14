@@ -33,8 +33,8 @@ const NavBar = () => {
     <Link to="/blogposts/create" className={styles.NavLink}><i className='far fa-plus-square'></i>C R E A T E</Link>
   )
   const loggedInIcons = <>
-    <Link to="/bookmarks" className={styles.NavLink}><i class="fa-solid fa-book-bookmark"></i>B O O K M A R K S</Link>
-    <Link to="/" className={styles.NavLink} onClick={handleSignOut}><i class='fas fa-sign-out-alt'></i>Sign out</Link>
+    <Link to="/bookmarks" className={styles.NavLink}><i className="fa-solid fa-book-bookmark"></i>B O O K M A R K S</Link>
+    <Link to="/" className={styles.NavLink} onClick={handleSignOut}><i className='fas fa-sign-out-alt'></i>Sign out</Link>
 
     <Link to={`/profile/${currentUser?.profile_id}`} className={styles.NavLink} onClick={() => {}}>
       <ProfileIcon src={currentUser?.profile_image} text="Profile" height={30} /></Link>
