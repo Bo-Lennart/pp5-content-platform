@@ -15,6 +15,7 @@ import PostCreateForm from './pages/posts/PostCreateForm';
 import PostsFeed from './pages/posts/PostsFeed';
 import { useSetCurrentUser } from './contexts/CurrentUserContext';
 import PostPage from './pages/posts/PostPage';
+import PostsCategory from './pages/posts/PostsCategory';
 
 function App() {
   const currentUser = useSetCurrentUser();
@@ -30,7 +31,7 @@ function App() {
               <Route path="/bookmarks" filter={`bookmark__owner__profile=${profile_id}&ordering=-bookmark__created_at&`} element={<h1>Still todo</h1>} message="No result's found"/>
 
               <Route path="/" element={<PostsFeed />} message="No result's found" />
-              <Route path="/world" element={<h1>W O R L D</h1>} />
+              <Route path="/world" element={<PostsCategory />} />
               <Route path="/business" element={<h1>B U S I N E S S</h1>} />
               <Route path="/food" element={<h1>F O O D</h1>} />
               <Route path="/culture" element={<h1>C U L T U R E</h1>} />
