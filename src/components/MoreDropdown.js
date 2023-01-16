@@ -15,11 +15,11 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
 
 export const MoreDropdown = () => {
     return (
-        <Dropdown>
+        <Dropdown className='text-end'>
             <Dropdown.Toggle as={ThreeDots} />
 
 
-            <Dropdown.Menu>
+            <Dropdown.Menu className='text-center'>
                 <Dropdown.Item eventKey="1">Red</Dropdown.Item>
                 <Dropdown.Item eventKey="2">Blue</Dropdown.Item>
                 <Dropdown.Item eventKey="3" active>
