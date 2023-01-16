@@ -7,21 +7,20 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext"
 
 
 function Profile() {
+    const { id } = useParams();
     const [profileData, setProfileData] = useState({
-        id: '',
-        owner: '',
-        image: '',
+        result: []
     });
 
-    const { id, owner, image } = profileData;
+    const { owner, image } = profileData;
 
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const [{ profileData: profileData }] = await Promise.all([
-                    axiosReq.get(`/profiles/${id}`)
+                const [{ data: profileData }] = await Promise.all([
+                    axiosReq.get(`/profiles/`)
                 ])
-                setProfileData({ profileData: [profileData] })
+                setProfileData({ results: [profileData] })
                 console.log(profileData)
             } catch (err) {
                 console.log(err)
