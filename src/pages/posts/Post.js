@@ -37,6 +37,15 @@ const Post = (props) => {
         navigate(`/posts/${id}/edit`)
     }
 
+    const handleDelete = async () => {
+        try {
+            await axiosRes.delete(`/posts/$id)/edit`)
+            navigate(-1);
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
     const handleNoUserLikeBookmark = () => {
         navigate(`/signin`)
     }
@@ -113,7 +122,7 @@ const Post = (props) => {
                 <Link to={`/profiles/${profile_id}`}>
                     <ProfileIcon src={profile_image} height={50} />
                     {owner}
-                    {is_owner && postPage && <MoreDropdown handleEdit={handleEdit}/>}
+                    {is_owner && postPage && <MoreDropdown handleEdit={handleEdit} handleDelete={handleDelete}/>}
                 </Link>
                 {title && <Card.Title className="text-center">{title}</Card.Title>}
                 <p className="text-center">{updated_at}</p>
