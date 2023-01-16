@@ -1,19 +1,14 @@
-import React, { useEffect } from 'react'
-
-import { createContext, useContext, useEffect, useState } from "react";
-import { axiosReq } from "../api/axiosDefaults";
-import { useCurrentUser } from "../contexts/CurrentUserContext";
-
-const ProfileDataContext = createContext();
-const SetProfileDataContext = createContext();
-
-export const useProfileData = () => useContext(ProfileDataContext);
-export const useSetProfileData = () => useContext(SetProfileDataContext);
+import React, { useEffect, useState } from "react";
+import { Col, Container, Row } from 'react-bootstrap'
 
 function ProfilePage() {
+    const [hasLoaded, setHasLoaded] = useState(false);
+    const setProfileData = useSetProfileData();
+    const { id } = useParams();
+    const is_owner = currentUser?.username === profile?.owner;
 
-    useEffect(() => {
-        const fetchData = async () {
+    useEffect (() => {
+        const fetchData = async () => {
             try {
                 
             } catch (error) {
@@ -23,7 +18,19 @@ function ProfilePage() {
     })
 
   return (
-    <div>ProfilePage</div>
+    <Row>
+        <Col>
+        <Container>
+            {hasLoaded ? (
+                <>
+                
+                </>
+            ) : (
+                <h1>Cannot find content</h1>
+            )}
+        </Container>
+        </Col>
+    </Row>
   )
 }
 
