@@ -35,16 +35,16 @@ function PostEditForm() {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const { data } = await axiosReq.get(`/posts/${id}/`);
+                const { data } = await axiosReq.get(`/blogposts/${id}/`);
                 const { title, content, image, is_owner} = data;
 
-                is_owner ? setPostData ({title, content, image}) : ( navigate("/"))
+                is_owner ? setPostData ({title, content, image}) :  navigate("/");
             } catch (err) {
                 console.log(err);
             }
         }
         handleMount();
-    });
+    }, [navigate, id]);
 
     const handleChange = (e) => {
         setPostData({
