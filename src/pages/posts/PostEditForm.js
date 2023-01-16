@@ -36,9 +36,9 @@ function PostEditForm() {
         const handleMount = async () => {
             try {
                 const { data } = await axiosReq.get(`/blogposts/${id}/`);
-                const { title, content, image, is_owner} = data;
+                const { title, content, image, is_owner } = data;
 
-                is_owner ? setPostData ({title, content, image}) :  navigate("/");
+                is_owner ? setPostData({ title, content, image }) : navigate("/");
             } catch (err) {
                 console.log(err);
             }
@@ -71,11 +71,15 @@ function PostEditForm() {
 
         formData.append('title', title)
         formData.append('content', content)
-        formData.append('image', imageInput.current.files[0])
+
+        if (imageInput?.cuttent?.files[0]) {
+            formData.append('image', imageInput.current.files[0])
+        }
+
         formData.append('category', category)
 
         try {
-            const { data } = await axiosReq.post('/blogposts/', formData);
+            await axiosReq.put(`/blogposts/${id}`, formData);
             navigate(`/posts/${data.id}`)
         } catch (err) {
             console.log(err)
