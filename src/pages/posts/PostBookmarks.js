@@ -27,7 +27,9 @@ const PostBookmark = ({ filter = "" }) => {
     setHasLoaded(false);
     fetchPosts();
   }, [filter, pathname]);
-  console.log('FILTER:', filter)
+
+  console.log("FILTER:", filter)
+
   return (
     
     <Row className="h-100">
@@ -36,7 +38,7 @@ const PostBookmark = ({ filter = "" }) => {
           <>
             {posts.results.length ? (
               posts.results
-              .filter(post => filter.length === 0 || post.bookmark_id.toLocaleLowerCase() === filter.toLocaleLowerCase())
+              .filter(post => filter.length === 0 || post.profile_id.toLocaleLowerCase() === filter.toLocaleLowerCase())
               .map((post) => (
                 <Post key={post.id} {...post} setPosts={setPosts} isInPostPage={false}/>
               ))
