@@ -14,7 +14,7 @@ import { useSetCurrentUser } from './contexts/CurrentUserContext';
 import PostPage from './pages/posts/PostPage';
 import PostsCategory from './pages/posts/PostsCategory';
 import PostEditForm from './pages/posts/PostEditForm';
-import ProfilePage from './pages/profiles/ProfilePage';
+import Profile from './pages/profiles/Profile';
 
 function App() {
   const currentUser = useSetCurrentUser();
@@ -41,7 +41,7 @@ function App() {
 
               <Route path="/posts/:id" element={<PostPage />} />
               <Route path="/posts/:id/edit" element={<PostEditForm />} />
-              <Route path="/profiles/:id" element={<ProfilePage />} />
+              <Route path="/profiles/:id" element={<Profile />} />
 
               <Route path="/signin" element={<SignInForm />} />
               <Route path="/signup" element={<SignUpForm />} />
