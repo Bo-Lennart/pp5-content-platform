@@ -21,15 +21,14 @@ function Profile(filter="") {
                     axiosReq.get(`/profiles/`)
                 ])
                 setProfileData({ results: [profileData] })
-                console.log(profileData)
+                
             } catch (err) {
                 console.log(err)
             }
         }
         handleMount();
     }, [id]);
-    console.log("PROFILE DATA:", profileData);
-    console.log("filter", filter)
+    console.log(profileData)
     return (
         <div>
             <h1>HELLO</h1>

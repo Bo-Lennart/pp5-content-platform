@@ -9,6 +9,9 @@ import { axiosReq } from "../../api/axiosDefault";
 
 const PostBookmark = ({ filter = "" }) => {
   const [bookmark, setBookmark] = useState({ results: [] });
+  const [profilesData, setProfilesData] = useState({ profileResults: [] });
+  const [posts, setPosts] = useState({ postsResults: [] });
+
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
 
@@ -16,9 +19,18 @@ const PostBookmark = ({ filter = "" }) => {
     const fetchPosts = async () => {
       try {
         const url = `/bookmark/`
-        const { data } = await axiosReq.get(url);
-        console.log(data)
+        const { data } = await axiosReq.get(url); 
         setBookmark({results: data});
+
+        const url2 = `/profiles/`
+        const {profilesData} = await axiosReq.get(url2); 
+        setProfilesData({profileResults: data});
+
+        const url3 = `/blogposts/`
+        const {posts} = await axiosReq.get(url3); 
+        setPosts({results: data});
+
+        
         setHasLoaded(true);
       } catch (err) {
         console.log(err);
@@ -27,7 +39,11 @@ const PostBookmark = ({ filter = "" }) => {
 
     setHasLoaded(false);
     fetchPosts();
-    console.log("DATA:", bookmark)
+    console.log("BOOKMARK:", bookmark)
+    console.log("PROFILE:", profilesData)
+    console.log("POSTS:", posts)
+
+
   }, [filter, pathname]);
 
 
