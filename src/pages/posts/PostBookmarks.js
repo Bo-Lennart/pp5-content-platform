@@ -23,19 +23,19 @@ const PostBookmark = ({ filter = "" }) => {
         //hämta bookmarks
         const bookmarkUrl = `/bookmark/`
         const bookmarks = await axiosReq.get(bookmarkUrl);
-        console.log(bookmarks.data)
+        // console.log(bookmarks.data)
         setBookmark( bookmarks.data.results);
 
         //hämta profiles
         const profilesUrl = `/profiles/`
         const profiles = await axiosReq.get(profilesUrl);
-        console.log(profiles.data)
+        // console.log(profiles.data)
         setProfiles({ results: profiles.data });
 
         //hämta posts
         const blogpostsUrl = `/blogposts/`
         const posts = await axiosReq.get(blogpostsUrl);
-        console.log(posts.data)
+        // console.log(posts.data)
         setPosts({ results: posts.data });
 
         setHasLoaded(true);
@@ -48,12 +48,12 @@ const PostBookmark = ({ filter = "" }) => {
     fetchPosts();
   }, [filter, pathname]);
 
-  const owner = currentUser.owner;
-  const bookmarkIds = bookmarks
-  .filter(bookmark => bookmarks.owner === owner).map(bookmark => bookmark.id);
+  const owner = currentUser.username;
+  const bookmarkIds = bookmarks.filter(bookmark => bookmark.owner === owner).map(bookmark => bookmark.id);
+  const filteredPosts = posts.filter(post => post.bookmark_id === bookmarkIds).map((posts));
 
+console.log("ID Bookmarks", filteredPosts);
 
-console.log(bookmarkIds)
   return (
     <Row className="h-100">
     <Col className="py-2 p-0 p-lg-2" lg={8}>
