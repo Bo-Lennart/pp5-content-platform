@@ -16,6 +16,7 @@ import PostsFeed from './pages/posts/PostsFeed';
 import { useSetCurrentUser } from './contexts/CurrentUserContext';
 import PostPage from './pages/posts/PostPage';
 import PostsCategory from './pages/posts/PostsCategory';
+import PostEditForm from './pages/posts/PostEditForm';
 
 function App() {
   const currentUser = useSetCurrentUser();
@@ -39,6 +40,7 @@ function App() {
               <Route path="/tech" element={<PostsCategory filter={"tech"}/>}  />
 
               <Route path="/posts/:id" element={<PostPage />} />
+              <Route path="/posts/:id/edit" element={PostEditForm} />
 
               <Route path="/signin" element={<SignInForm />} />
               <Route path="/signup" element={<SignUpForm />} />
