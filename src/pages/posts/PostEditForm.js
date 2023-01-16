@@ -36,9 +36,9 @@ function PostEditForm() {
         const handleMount = async () => {
             try {
                 const { data } = await axiosReq.get(`/blogposts/${id}/`);
-                const { title, content, image, is_owner } = data;
+                const { title, content, image, category, is_owner } = data;
 
-                is_owner ? setPostData({ title, content, image }) : navigate("/");
+                is_owner ? setPostData({ title, content, category, image }) : navigate("/");
             } catch (err) {
                 console.log(err);
             }
@@ -79,7 +79,7 @@ function PostEditForm() {
         formData.append('category', category)
 
         try {
-            await axiosReq.put(`/blogposts/${id}`, formData);
+            const { data } = await axiosReq.put(`/blogposts/${id}`, formData);
             navigate(`/posts/${data.id}`)
         } catch (err) {
             console.log(err)
@@ -119,6 +119,7 @@ function PostEditForm() {
                     defaultValue="Choose category..."
                     name="category"
                     onChange={handleChange}
+                    value={category}
                     aria-label="category choice"
                 >
                     <option value="WORLD">WORLD</option>
