@@ -72,8 +72,8 @@ function PostEditForm() {
         formData.append('title', title)
         formData.append('content', content)
 
-        if (imageInput?.cuttent?.files[0]) {
-            formData.append('image', imageInput.current.files[0])
+        if (imageInput?.current?.files[0]) {
+            formData.append('image', imageInput.current.files[0]);
         }
 
         formData.append('category', category)
