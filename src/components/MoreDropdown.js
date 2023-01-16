@@ -26,5 +26,5 @@ export const MoreDropdown = () => {
             </Dropdown.Item>
             <Dropdown.Item eventKey="1">Red-Orange</Dropdown.Item>
         </Dropdown.Menu>
-    </Dropdown>,
+    </Dropdown>
 }

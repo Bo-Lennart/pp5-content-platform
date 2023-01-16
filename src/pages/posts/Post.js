@@ -3,6 +3,7 @@ import React from 'react';
 import { Card, Image, OverlayTrigger } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { axiosRes } from '../../api/axiosDefault';
+import { MoreDropdown } from '../../components/MoreDropdown';
 import ProfileIcon from '../../components/ProfileIcon';
 
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
@@ -108,7 +109,7 @@ const Post = (props) => {
                 <Link to={`/profiles/${profile_id}`}>
                     <ProfileIcon src={profile_image} height={50} />
                     {owner}
-                    {is_owner && postPage && "..."}
+                    {is_owner && postPage && <MoreDropdown />}
                 </Link>
                 {title && <Card.Title className="text-center">{title}</Card.Title>}
                 <p className="text-center">{updated_at}</p>
