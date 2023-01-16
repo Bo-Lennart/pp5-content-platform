@@ -79,8 +79,8 @@ function PostEditForm() {
         formData.append('category', category)
 
         try {
-            const { data } = await axiosReq.put(`/blogposts/${id}`, formData);
-            navigate(`/posts/${data.id}`)
+            await axiosReq.put(`/blogposts/${id}/`, formData);
+            navigate("/");
         } catch (err) {
             console.log(err)
             if (err.response?.status !== 401) {
