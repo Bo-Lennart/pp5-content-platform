@@ -8,16 +8,17 @@ import { useLocation } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefault";
 
 const PostBookmark = ({ filter = "" }) => {
-  const [posts, setPosts] = useState({ results: [] });
+  const [bookmark, setBookmark] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const url = `/blogposts/`
+        const url = `/bookmark/`
         const { data } = await axiosReq.get(url);
-        setPosts({results: data});
+        console.log(data)
+        setBookmark({results: data});
         setHasLoaded(true);
       } catch (err) {
         console.log(err);
@@ -26,35 +27,13 @@ const PostBookmark = ({ filter = "" }) => {
 
     setHasLoaded(false);
     fetchPosts();
+    console.log("DATA:", bookmark)
   }, [filter, pathname]);
 
-  console.log("FILTER:", filter)
+
 
   return (
-    
-    <Row className="h-100">
-      <Col className="py-2 p-0 p-lg-2" lg={8}>
-        {hasLoaded ? (
-          <>
-            {posts.results.length ? (
-              posts.results
-              .filter(post => filter.length === 0 || post.profile_id.toLocaleLowerCase() === filter.toLocaleLowerCase())
-              .map((post) => (
-                <Post key={post.id} {...post} setPosts={setPosts} isInPostPage={false}/>
-              ))
-            ) : (
-              <Container >
-                <h1>Not posts found</h1>
-              </Container>
-            )}
-          </>
-        ) : (
-          <Container >
-            <h1>Loading...</h1>
-          </Container>
-        )}
-      </Col>
-    </Row>
+    <h1>Bookmarks</h1>
   );
 }
 export default PostBookmark

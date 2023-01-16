@@ -19,7 +19,7 @@ import PostBookmark from './pages/posts/PostBookmarks';
 
 function App() {
   const currentUser = useSetCurrentUser();
-  const profile_id = currentUser?.profile_id || "";
+  const profile = currentUser?.profile_id || "";
 
   return (
 
@@ -31,7 +31,7 @@ function App() {
               <Route path="/bookmarks" 
               element={<PostBookmark 
               message="No result's found"
-              filter={`bookmark__owner__profile=${profile_id}&ordering=-bookmark__created_at&`}
+              filter={profile}
               />} />
 
               <Route path="/" element={<PostsFeed message="No result's found"/>}  />

@@ -6,7 +6,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext"
 
 
 
-function Profile() {
+function Profile(filter="") {
     const { id } = useParams();
     const [profileData, setProfileData] = useState({
         result: []
@@ -29,6 +29,7 @@ function Profile() {
         handleMount();
     }, [id]);
     console.log("PROFILE DATA:", profileData);
+    console.log("filter", filter)
     return (
         <div>
             <h1>HELLO</h1>
