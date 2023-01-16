@@ -16,9 +16,8 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
 export const MoreDropdown = () => {
     return (
         <Dropdown>
-            <Dropdown.Toggle as={ThreeDots} id="dropdown-custom-components">
-                Custom toggle
-            </Dropdown.Toggle>
+            <Dropdown.Toggle as={ThreeDots} />
+
 
             <Dropdown.Menu>
                 <Dropdown.Item eventKey="1">Red</Dropdown.Item>
