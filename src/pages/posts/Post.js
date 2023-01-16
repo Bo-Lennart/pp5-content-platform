@@ -33,6 +33,10 @@ const Post = (props) => {
     const is_owner = currentUser?.username === owner
     const navigate = useNavigate();
 
+    const handleEdit = () => {
+        navigate(`/posts/${id}/edit`)
+    }
+
     const handleNoUserLikeBookmark = () => {
         navigate(`/signin`)
     }
@@ -109,7 +113,7 @@ const Post = (props) => {
                 <Link to={`/profiles/${profile_id}`}>
                     <ProfileIcon src={profile_image} height={50} />
                     {owner}
-                    {is_owner && postPage && <MoreDropdown />}
+                    {is_owner && postPage && <MoreDropdown handleEdit={handleEdit}/>}
                 </Link>
                 {title && <Card.Title className="text-center">{title}</Card.Title>}
                 <p className="text-center">{updated_at}</p>
