@@ -1,27 +1,25 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router-dom';
+import { axiosReq } from '../../api/axiosDefault';
 import ProfileIcon from '../../components/ProfileIcon';
 import { useCurrentUser } from "../../contexts/CurrentUserContext"
 
-const Profile = (props) => {
-    const { profile, mobile, imageSize = 55 } = props;
-    const { id, image, owner } = profile;
 
-    const currentUser = useCurrentUser();
-    const is_owner = currentUser?.username === owner;
+
+function Profile() {
+    const [errors, setErrors] = useState({});
+    const [profileData, setProfileData] = useState({
+        owner: '',
+        image: '',
+      });
+    
+    const { owner, image } = profileData;
+
+
 
     return (
-        <div
-            className={`my-3d d-flex align-item-center ${mobile && "flex-column"}`}
-        >
-            <div>
-                <Link className="align-self-center" to={`/profiles/${id}`}>
-                    <ProfileIcon src={image} height={imageSize} />
-                </Link>
-                <div>
-                    <strong>{owner}</strong>
-                </div>
-            </div>
+        <div>
+            <h1>HELLO</h1>
         </div>
     )
 }

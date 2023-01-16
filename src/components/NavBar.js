@@ -15,7 +15,6 @@ import {
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import ProfileIcon from './ProfileIcon';
 import axios from 'axios';
-import Profile from '../pages/profiles/Profile';
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
@@ -37,7 +36,7 @@ const NavBar = () => {
     <Link to="/bookmarks" className={styles.NavLink}><i className="fa-solid fa-book-bookmark"></i>B O O K M A R K S</Link>
     <Link to="/" className={styles.NavLink} onClick={handleSignOut}><i className='fas fa-sign-out-alt'></i>Sign out</Link>
 
-    <Link to={`/profiles/${currentUser?.profile_id}`} className={styles.NavLink} onClick={<Profile />}>
+    <Link to={`/profiles/${currentUser?.profile_id}`} className={styles.NavLink} onClick={() => {}}>
       <ProfileIcon src={currentUser?.profile_image} text="Profile" height={30} /></Link>
   </>;
   const loggedOutIcons = (
