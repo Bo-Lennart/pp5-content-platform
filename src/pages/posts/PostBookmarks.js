@@ -9,8 +9,8 @@ import { axiosReq } from "../../api/axiosDefault";
 
 const PostBookmark = ({ filter = "" }) => {
   const [bookmark, setBookmark] = useState({ results: [] });
-  const [profilesData, setProfilesData] = useState({ profileResults: [] });
-  const [posts, setPosts] = useState({ postsResults: [] });
+  const [profiles, setProfiles] = useState({ results: [] });
+  const [posts, setPosts] = useState({ results: [] });
 
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
@@ -18,19 +18,24 @@ const PostBookmark = ({ filter = "" }) => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const url = `/bookmark/`
-        const { data } = await axiosReq.get(url); 
-        setBookmark({results: data});
+        //hämta bookmarks
+        const bookmarkUrl = `/bookmark/`
+        const bookmarks = await axiosReq.get(bookmarkUrl);
+        console.log(bookmarks.data)
+        setBookmark({ results: bookmarks.data });
 
-        const url2 = `/profiles/`
-        const {profilesData} = await axiosReq.get(url2); 
-        setProfilesData({profileResults: data});
+        //hämta profiles
+        const profilesUrl = `/profiles/`
+        const profiles = await axiosReq.get(profilesUrl);
+        console.log(profiles.data)
+        setProfiles({ results: profiles.data });
 
-        const url3 = `/blogposts/`
-        const {posts} = await axiosReq.get(url3); 
-        setPosts({results: data});
+        //hämta posts
+        const blogpostsUrl = `/blogposts/`
+        const posts = await axiosReq.get(blogpostsUrl);
+        console.log(posts.data)
+        setPosts({ results: posts.data });
 
-        
         setHasLoaded(true);
       } catch (err) {
         console.log(err);
@@ -39,11 +44,6 @@ const PostBookmark = ({ filter = "" }) => {
 
     setHasLoaded(false);
     fetchPosts();
-    console.log("BOOKMARK:", bookmark)
-    console.log("PROFILE:", profilesData)
-    console.log("POSTS:", posts)
-
-
   }, [filter, pathname]);
 
 
