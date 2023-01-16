@@ -13,11 +13,23 @@ export const ProfileDataProvider = ({ children }) => {
     const [profileData, setProfileData] = useState({
       
       pageProfile: { results: [] },
-      popularProfiles: { results: [] },
     });
 
     const currentUser = useCurrentUser();
 
+    useEffect(() => {
+        const handleMount = async () => {
+          try {
+            const { data } = await axiosReq.get(
+              "/profiles/"
+            );
+          } catch (err) {
+            console.log(err);
+          }
+        };
+    
+        handleMount();
+      }, [currentUser]);
 
 return (
     <ProfileDataContext.Provider value={profileData}>
