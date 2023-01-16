@@ -40,7 +40,7 @@ function App() {
               <Route path="/tech" element={<PostsCategory filter={"tech"}/>}  />
 
               <Route path="/posts/:id" element={<PostPage />} />
-              <Route path="/posts/:id/edit" element={PostEditForm} />
+              <Route path="/posts/:id/edit" element={<PostEditForm />} />
 
               <Route path="/signin" element={<SignInForm />} />
               <Route path="/signup" element={<SignUpForm />} />
