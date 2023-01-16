@@ -15,10 +15,11 @@ import PostPage from './pages/posts/PostPage';
 import PostsCategory from './pages/posts/PostsCategory';
 import PostEditForm from './pages/posts/PostEditForm';
 import Profile from './pages/profiles/Profile';
+import PostBookmark from './pages/posts/PostBookmarks';
 
 function App() {
   const currentUser = useSetCurrentUser();
-  const profile_id = currentUser?.profile_id || "";
+  const owner = currentUser?.owner || "";
 
   return (
 
@@ -27,8 +28,8 @@ function App() {
           <Container className='Main'>
             <Routes>
               <Route path="/posts" element={<PostsFeed message="No result's found"/>} />
-              <Route path="/bookmarks" filter={`bookmark__owner__profile=${profile_id}&ordering=-bookmark__created_at&`} 
-              element={<h1>Still todo</h1>} 
+              <Route path="/bookmarks" 
+              element={<PostBookmark filter={"test_user_for"}/>} 
               message="No result's found"/>
 
               <Route path="/" element={<PostsFeed message="No result's found"/>}  />
