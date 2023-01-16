@@ -137,7 +137,7 @@ function PostEditForm() {
 
 
             <Button className={``} onClick={() => { }}>cancel</Button>
-            <Button className={``} type="submit">create</Button>
+            <Button className={``} type="submit">Save</Button>
         </div>
     );
 
