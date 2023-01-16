@@ -1,14 +1,20 @@
 import React, { useEffect } from 'react'
-import { axiosReq } from '../../api/axiosDefault'
+
+import { createContext, useContext, useEffect, useState } from "react";
+import { axiosReq } from "../api/axiosDefaults";
+import { useCurrentUser } from "../contexts/CurrentUserContext";
+
+const ProfileDataContext = createContext();
+const SetProfileDataContext = createContext();
+
+export const useProfileData = () => useContext(ProfileDataContext);
+export const useSetProfileData = () => useContext(SetProfileDataContext);
 
 function ProfilePage() {
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchData = async () {
             try {
-                const [{ data: pageProfiles}] = await Promise.all([
-                    axiosReq.get(`/profiles/${id}/`),
-                ]);
                 
             } catch (error) {
                 
