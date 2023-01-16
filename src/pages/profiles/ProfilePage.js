@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from 'react-bootstrap'
+import {
+    useProfileData,
+    useSetProfileData,
+  } from "../../contexts/ProfileDataContext";
 
 function ProfilePage() {
     const [hasLoaded, setHasLoaded] = useState(false);
