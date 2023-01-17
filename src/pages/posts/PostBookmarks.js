@@ -11,7 +11,7 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 const PostBookmark = () => {
   const currentUser = useCurrentUser();
   const [bookmarks, setBookmark] = useState([]);
-  const [posts, setPosts] = useState({ results: [] });
+  const [posts, setPosts] = useState([]);
 
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
@@ -26,10 +26,10 @@ const PostBookmark = () => {
         setBookmark(bookmarks.data.results);
 
         //get posts
-        const blogpostsUrl = `/blogposts/`
-        const posts = await axiosReq.get(blogpostsUrl);
-        // console.log(posts.data)
-        setPosts({ results: posts.data });
+        const url = `/blogposts/`
+        const posts = await axiosReq.get(url);
+        setPosts(posts.data);
+        setHasLoaded(true);
 
         setHasLoaded(true);
       } catch (err) {
@@ -49,19 +49,18 @@ const PostBookmark = () => {
 
 
 
-  console.log("ID Bookmarks", bookmarkedPostIds);
+  console.log("ID Bookmarks", bookmarks);
+  console.log("filtered posts, bookmarked by this user", bookmarkedPostIds);
 
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         {hasLoaded ? (
           <>
-            {posts.results.length ? (
-              posts.results
-                .filter(post => post.id === bookmarkedPostIds.length).
-                map((post) => (
-                  <Post key={post.id} {...post} setPosts={setPosts} isInPostPage={false} />
-                ))
+            {posts.length ? (posts.filter(post => post.id === bookmarkedPostIds)
+              .map((post) => (
+                <Post key={post.id} {...post} setPosts={setPosts} isInPostPage={false} />
+              ))
             ) : (
               <Container >
                 <h1>Not posts found</h1>
