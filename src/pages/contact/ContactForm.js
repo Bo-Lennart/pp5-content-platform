@@ -37,30 +37,20 @@ function ContactForm() {
     });
   };
 
-  const handleChangeImage = (event) => {
-    if (event.target.files.length) {
-      URL.revokeObjectURL(image);
-      setPostData({
-        ...postData,
-        image: URL.createObjectURL(event.target.files[0]),
-      });
-    }
-  };
-
-  console.log(postData)
+  console.log(contactData)
 
   const handleSubmit = async (event) => {
     event.preventDefault()
     const formData = new FormData();
 
-    formData.append('title', title)
+    formData.append('first_name', first_name)
+    formData.append('last_name', last_name)
+    formData.append('email_adress', email_adress)
     formData.append('content', content)
-    formData.append('image', imageInput.current.files[0])
-    formData.append('category', category)
 
     try {
-      const { data } = await axiosReq.post('/blogposts/', formData);
-      navigate(`/posts/${data.id}`)
+      const { data } = await axiosReq.post('/contact/', contactData);
+      navigate(`/`)
     } catch (err) {
       console.log(err)
       if (err.response?.status !== 401) {
