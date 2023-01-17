@@ -96,8 +96,8 @@ const NavBar = () => {
                 </Link>
               </NavDropdown.Item>
             </NavDropdown>
+            <Link to="/contact/create" className={styles.NavLink}><i class="fa-regular fa-envelope"></i>C O N T A C T</Link>
             {currentUser && addBlogPostIcon}
-            <Link to="/contact/create" className={styles.NavLink}><i className='far fa-plus-square'></i>C O N T A C T</Link>
           </Nav>
           <Nav>
             {currentUser ? loggedInIcons : loggedOutIcons}
