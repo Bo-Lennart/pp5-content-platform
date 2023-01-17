@@ -26,14 +26,13 @@ function ContactForm() {
     email_adress: '',
     content: '',
   });
-  const { first_name, last_name, email_adress, content } = contactData;
 
-  const imageInput = useRef();
+  const { first_name, last_name, email_adress, content } = contactData;
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setPostData({
-      ...postData,
+    setContactData({
+      ...contactData,
       [e.target.name]: e.target.value,
     });
   };
