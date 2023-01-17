@@ -52,7 +52,7 @@ function ContactForm() {
     return (
         <Form onSubmit={handleSubmit}>
             <Row className={styles.Row}>
-                <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
+                <Col className="py-2 p-0 p-md-2" md={5} lg={4}>
                     <Container>
                         <h1 className={styles.Header}>Contact Us</h1>
 

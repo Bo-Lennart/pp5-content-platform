@@ -30,10 +30,10 @@ const NavBar = () => {
   }
 
   const addBlogPostIcon = (
-    <Link to="/blogposts/create" className={styles.NavLink}><i className='far fa-plus-square'></i>C R E A T E</Link>
+    <Link to="/blogposts/create" className={styles.NavLink}><i className='far fa-plus-square'></i>CREATE</Link>
   )
   const loggedInIcons = <>
-    <Link to="/bookmarks" className={styles.NavLink}><i className="fa-solid fa-book-bookmark"></i>B O O K M A R K S</Link>
+    <Link to="/bookmarks" className={styles.NavLink}><i className="fa-solid fa-book-bookmark"></i>BOOKMARKS</Link>
     <Link to="/" className={styles.NavLink} onClick={handleSignOut}><i className='fas fa-sign-out-alt'></i>Sign out</Link>
 
     <Link to={`/profiles/${currentUser?.profile_id}`} className={styles.NavLink} onClick={() => {}}>
@@ -96,7 +96,7 @@ const NavBar = () => {
                 </Link>
               </NavDropdown.Item>
             </NavDropdown>
-            <Link to="/contact/create" className={styles.NavLink}><i class="fa-regular fa-envelope"></i>C O N T A C T</Link>
+            <Link to="/contact/create" className={styles.NavLink}><i class="fa-regular fa-envelope"></i>CONTACT</Link>
             {currentUser && addBlogPostIcon}
           </Nav>
           <Nav>
