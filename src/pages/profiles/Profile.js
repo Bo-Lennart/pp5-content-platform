@@ -2,33 +2,38 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import { axiosReq } from '../../api/axiosDefault';
 import ProfileIcon from '../../components/ProfileIcon';
-import { useCurrentUser } from "../../contexts/CurrentUserContext"
+import { useCurrentUser } from '../../contexts/CurrentUserContext';
+
+
+function Profile(filter = "") {
+    const currentUser = useCurrentUser();
+    //get logged in user
+    const currentOwner = currentUser.username;
 
 
 
-function Profile(filter="") {
     const { id } = useParams();
-    const [profileData, setProfileData] = useState({
+    const [profiles, setProfiles] = useState({
         result: []
     });
 
-    const { owner, image } = profileData;
+    const { owner, image } = profiles;
 
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const [{ data: profileData }] = await Promise.all([
-                    axiosReq.get(`/profiles/`)
-                ])
-                setProfileData({ results: [profileData] })
-                
+                const profilesUrl = `/profiles/${currentOwner}`
+                const profiles = await axiosReq.get(profilesUrl);
+                // console.log(profiles.data)
+                setProfiles({ results: profiles.data });
+
             } catch (err) {
                 console.log(err)
             }
         }
         handleMount();
     }, [id]);
-    console.log(profileData)
+    console.log("USER INLOGGED NOW", currentOwner)
     return (
         <div>
             <h1>HELLO</h1>

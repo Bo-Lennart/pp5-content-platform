@@ -11,7 +11,6 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 const PostBookmark = () => {
   const currentUser = useCurrentUser();
   const [bookmarks, setBookmark] = useState([]);
-  const [profiles, setProfiles] = useState({ results: [] });
   const [posts, setPosts] = useState({ results: [] });
 
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -24,13 +23,7 @@ const PostBookmark = () => {
         const bookmarkUrl = `/bookmark/`
         const bookmarks = await axiosReq.get(bookmarkUrl);
         // console.log(bookmarks.data)
-        setBookmark( bookmarks.data.results);
-
-        //get profiles
-        const profilesUrl = `/profiles/`
-        const profiles = await axiosReq.get(profilesUrl);
-        // console.log(profiles.data)
-        setProfiles({ results: profiles.data });
+        setBookmark(bookmarks.data.results);
 
         //get posts
         const blogpostsUrl = `/blogposts/`
@@ -46,7 +39,7 @@ const PostBookmark = () => {
 
     setHasLoaded(false);
     fetchPosts();
-  }, [ pathname]);
+  }, [pathname]);
 
   //get logged in user
   const owner = currentUser.username;
@@ -56,32 +49,32 @@ const PostBookmark = () => {
 
 
 
-console.log("ID Bookmarks", bookmarkedPostIds); 
+  console.log("ID Bookmarks", bookmarkedPostIds);
 
   return (
     <Row className="h-100">
-    <Col className="py-2 p-0 p-lg-2" lg={8}>
-      {hasLoaded ? (
-        <>
+      <Col className="py-2 p-0 p-lg-2" lg={8}>
+        {hasLoaded ? (
+          <>
             {posts.results.length ? (
               posts.results
-              .filter(post => post.id === bookmarkedPostIds.length).
-              map((post) => (
-                <Post key={post.id} {...post} setPosts={setPosts} isInPostPage={false}/>
-              ))
-          ) : (
-            <Container >
-              <h1>Not posts found</h1>
-            </Container>
-          )}
-        </>
-      ) : (
-        <Container >
-          <h1>Loading...</h1>
-        </Container>
-      )}
-    </Col>
-  </Row>
+                .filter(post => post.id === bookmarkedPostIds.length).
+                map((post) => (
+                  <Post key={post.id} {...post} setPosts={setPosts} isInPostPage={false} />
+                ))
+            ) : (
+              <Container >
+                <h1>Not posts found</h1>
+              </Container>
+            )}
+          </>
+        ) : (
+          <Container >
+            <h1>Loading...</h1>
+          </Container>
+        )}
+      </Col>
+    </Row>
   );
 }
 export default PostBookmark
