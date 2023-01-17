@@ -51,7 +51,7 @@ function Profile({ filter = "" }) {
                     <>
                         {posts.length ? (
                             posts.map((post) => (
-                                <Post key={post.id} {...post} setPosts={setPosts} isInPostPage={true} />
+                                <Post key={post.id} {...post} setPosts={setPosts} isInPostPage={false} />
                             ))
                         ) : (
                             <Container >
