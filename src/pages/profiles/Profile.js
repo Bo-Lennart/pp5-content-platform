@@ -24,7 +24,7 @@ function Profile({ filter = "" }) {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const profilesUrl = `/profiles/${currentOwner?.profile_id}`
+                const profilesUrl = `/profiles/${id}`
                 const userData = await axiosReq.get(profilesUrl);
                 // console.log(profiles.data)
                 setProfiles({ results: userData.data });
@@ -44,7 +44,6 @@ function Profile({ filter = "" }) {
 
     console.log("USER INLOGGED NOW", currentOwner)
     console.log("POSTS DATA", posts)
-
     return (
         <Row className="h-100">
             <Col className="py-2 p-0 p-lg-2" lg={8}>
