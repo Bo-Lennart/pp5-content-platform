@@ -5,12 +5,9 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Upload from "../../assets/upload.png"
 
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
-import Asset from "../../components/Asset";
-import { Image } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefault";
 import { useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
@@ -24,10 +21,10 @@ function ContactForm() {
         first_name: '',
         last_name: '',
         email_adress: '',
-        content: '',
+        message: '',
     });
 
-    const { first_name, last_name, email_adress, content } = contactData;
+    const { first_name, last_name, email_adress, message } = contactData;
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -41,16 +38,9 @@ function ContactForm() {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        const formData = new FormData();
-
-        formData.append('first_name', first_name)
-        formData.append('last_name', last_name)
-        formData.append('email_adress', email_adress)
-        formData.append('content', content)
-
         try {
-            const { data } = await axiosReq.post('/contact/', contactData);
-            navigate(`/`)
+            await axiosReq.post('/contact/', contactData);
+            navigate("/");
         } catch (err) {
             console.log(err)
             if (err.response?.status !== 401) {
@@ -105,7 +95,7 @@ function ContactForm() {
                         <Form.Group>
                             <Form.Label>Message</Form.Label>
                             <Form.Control
-                                as="textarea" rows={6} name="content" value={content} onChange={handleChange}
+                                as="textarea" rows={6} name="message" value={message} onChange={handleChange}
                             />
                         </Form.Group>
                         {err.content?.map((message, idx) => (
