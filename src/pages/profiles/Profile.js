@@ -15,6 +15,7 @@ function Profile({ filter = "" }) {
     const currentUser = useCurrentUser();
     //get logged in user
     const currentOwner = currentUser.username;
+    const profileId = currentUser.profile_id;
 
     const { id } = useParams();
     const [userData, setProfiles] = useState({
@@ -24,7 +25,7 @@ function Profile({ filter = "" }) {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const profilesUrl = `/profiles/${currentUser?.profile_id}`
+                const profilesUrl = `/profiles/${profileId}`
                 const userData = await axiosReq.get(profilesUrl);
                 // console.log(profiles.data)
                 setProfiles({ results: userData.data });
