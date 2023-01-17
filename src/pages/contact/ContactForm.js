@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -7,7 +7,6 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
 import styles from "../../styles/PostCreateEditForm.module.css";
-import appStyles from "../../App.module.css";
 import { axiosReq } from "../../api/axiosDefault";
 import { useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";

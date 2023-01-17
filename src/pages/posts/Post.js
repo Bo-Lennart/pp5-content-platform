@@ -1,6 +1,5 @@
-import { Tooltip } from 'bootstrap';
 import React from 'react';
-import { Card, Image, OverlayTrigger } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { axiosRes } from '../../api/axiosDefault';
 import { MoreDropdown } from '../../components/MoreDropdown';
@@ -122,7 +121,7 @@ const Post = (props) => {
                 <Link to={`/profiles/${profile_id}`}>
                     <ProfileIcon src={profile_image} height={50} />
                     {owner}
-                    {is_owner && postPage && <MoreDropdown handleEdit={handleEdit} handleDelete={handleDelete}/>}
+                    {is_owner && postPage && <MoreDropdown handleEdit={handleEdit} handleDelete={handleDelete} />}
                 </Link>
                 {title && <Card.Title className="text-center">{title}</Card.Title>}
                 <p className="text-center">{updated_at}</p>
@@ -135,38 +134,38 @@ const Post = (props) => {
         <Card.Body>
 
             {content && <Card.Text>{content}</Card.Text>}
-            {isInPostPage && 
-            <div className={styles.PostBar}>
-                {like_id ? (
-                    <span onClick={handleUnlike}>
-                        <i className={`fa-solid fa-thumbs-up ${styles.ThumbUp}`} />
-                    </span>
-                ) : currentUser ? (
-                    <span onClick={handleLike}>
-                        <i className={`fa-solid fa-thumbs-up ${styles.ThumbUpOutline}`} />
-                    </span>
-                ) : (
-                    <span onClick={handleNoUserLikeBookmark}>
-                        <i className={`fa-solid fa-thumbs-up ${styles.ThumbUpOutline}`} />
-                    </span>
-                )}
-                {likes_count}
+            {isInPostPage &&
+                <div className={styles.PostBar}>
+                    {like_id ? (
+                        <span onClick={handleUnlike}>
+                            <i className={`fa-solid fa-thumbs-up ${styles.ThumbUp}`} />
+                        </span>
+                    ) : currentUser ? (
+                        <span onClick={handleLike}>
+                            <i className={`fa-solid fa-thumbs-up ${styles.ThumbUpOutline}`} />
+                        </span>
+                    ) : (
+                        <span onClick={handleNoUserLikeBookmark}>
+                            <i className={`fa-solid fa-thumbs-up ${styles.ThumbUpOutline}`} />
+                        </span>
+                    )}
+                    {likes_count}
 
-                {bookmark_id ? (
-                    <span onClick={handleRemoveBookmark}>
-                        <i className={`fa-solid fa-book-bookmark ${styles.ThumbUp}`} />
-                    </span>
-                ) : currentUser ? (
-                    <span onClick={handleBookmark}>
-                        <i className={`fa-solid fa-book-bookmark ${styles.ThumbUpOutline}`} />
-                    </span>
-                ) : (
-                    <span onClick={handleNoUserLikeBookmark}>
-                        <i className={`fa-solid fa-book-bookmark ${styles.ThumbUpOutline}`} />
-                    </span>
-                )}
-                {bookmarks_count}
-            </div>
+                    {bookmark_id ? (
+                        <span onClick={handleRemoveBookmark}>
+                            <i className={`fa-solid fa-book-bookmark ${styles.ThumbUp}`} />
+                        </span>
+                    ) : currentUser ? (
+                        <span onClick={handleBookmark}>
+                            <i className={`fa-solid fa-book-bookmark ${styles.ThumbUpOutline}`} />
+                        </span>
+                    ) : (
+                        <span onClick={handleNoUserLikeBookmark}>
+                            <i className={`fa-solid fa-book-bookmark ${styles.ThumbUpOutline}`} />
+                        </span>
+                    )}
+                    {bookmarks_count}
+                </div>
             }
         </Card.Body>
     </Card>

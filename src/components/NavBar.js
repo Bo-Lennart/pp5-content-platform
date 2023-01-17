@@ -6,11 +6,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo_dagoy from '../assets/logo_dagoy.png';
 import styles from '../styles/NavBar.module.css';
 import {
-  BrowserRouter,
-  Routes,
-  Route,
   Link,
-  Outlet,
 } from "react-router-dom";
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import ProfileIcon from './ProfileIcon';

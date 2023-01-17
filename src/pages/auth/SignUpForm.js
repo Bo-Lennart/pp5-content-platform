@@ -5,7 +5,7 @@ import styles from "../../styles/SignInUpForm.module.css";
 import appStyles from "../../App.module.css";
 import axios from 'axios';
 
-import { Form, Button, Image, Col, Row, Container, Alert, } from "react-bootstrap";
+import { Form, Button, Col, Row, Container, Alert, } from "react-bootstrap";
 
 const SignUpForm = () => {
 

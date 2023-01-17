@@ -1,4 +1,4 @@
-import React, { useEffect, useInsertionEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Post from "./Post";
 
 import Col from "react-bootstrap/Col";
