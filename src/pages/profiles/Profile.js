@@ -13,19 +13,17 @@ function Profile(filter = "") {
 
 
     const { id } = useParams();
-    const [profiles, setProfiles] = useState({
+    const [userData, setProfiles] = useState({
         result: []
     });
-
-    const { owner, image } = profiles;
 
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const profilesUrl = `/profiles/${currentOwner}`
-                const profiles = await axiosReq.get(profilesUrl);
+                const profilesUrl = `/profiles/${currentUser?.profile_id}`
+                const userData = await axiosReq.get(profilesUrl);
                 // console.log(profiles.data)
-                setProfiles({ results: profiles.data });
+                setProfiles({ results: userData.data });
 
             } catch (err) {
                 console.log(err)
@@ -34,6 +32,7 @@ function Profile(filter = "") {
         handleMount();
     }, [id]);
     console.log("USER INLOGGED NOW", currentOwner)
+    console.log("USER DATA NOW", userData)
     return (
         <div>
             <h1>HELLO</h1>
