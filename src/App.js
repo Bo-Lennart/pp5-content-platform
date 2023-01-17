@@ -16,6 +16,7 @@ import PostsCategory from './pages/posts/PostsCategory';
 import PostEditForm from './pages/posts/PostEditForm';
 import Profile from './pages/profiles/Profile';
 import PostBookmark from './pages/posts/PostBookmarks';
+import ContactForm from './pages/contact/ContactForm';
 
 function App() {
   const currentUser = useSetCurrentUser();
@@ -49,7 +50,7 @@ function App() {
               <Route path="/signin" element={<SignInForm />} />
               <Route path="/signup" element={<SignUpForm />} />
               <Route path="/blogposts/create" element={<PostCreateForm />} />
-              <Route path="/contact/create" element={<h1>Hello contact</h1>} />
+              <Route path="/contact/create" element={<ContactForm />} />
               <Route path='*' exact={true} element={<h1>Page not found..</h1>} />
             </Routes>
           </Container>
