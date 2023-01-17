@@ -23,3 +23,7 @@
     max-width: 100%;
     object-fit: contain;
 }
+
+.inlineForm {
+    max-width: 300px;
+}

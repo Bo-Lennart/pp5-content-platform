@@ -50,12 +50,12 @@ function ContactForm() {
     }
 
     return (
-        <Row className={styles.Row}>
+        <Form onSubmit={handleSubmit}>
+            <Row className={styles.Row}>
+                <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
+                    <Container>
+                        <h1 className={styles.Header}>Contact Us</h1>
 
-            <Col>
-                <Container className={`${appStyles.Content} p-4 `}>
-                    <h1 className={styles.Header}>Contact Us</h1>
-                    <Form onSubmit={handleSubmit}>
                         <Form.Group>
                             <Form.Label>First name</Form.Label>
                             <Form.Control
@@ -114,10 +114,11 @@ function ContactForm() {
                                 {message}
                             </Alert>
                         ))}
-                    </Form>
-                </Container>
-            </Col>
-        </Row>
+
+                    </Container>
+                </Col>
+            </Row >
+        </Form >
     );
 };
 
