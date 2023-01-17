@@ -49,8 +49,8 @@ function Profile({ filter = "" }) {
             <Col className="py-2 p-0 p-lg-2" lg={8}>
                 {hasLoaded ? (
                     <>
-                        {posts.length ? (
-                            posts.map((post) => (
+                        {posts.length ? (posts.filter(post => post.owner === currentOwner)
+                            .map((post) => (
                                 <Post key={post.id} {...post} setPosts={setPosts} isInPostPage={false} />
                             ))
                         ) : (
