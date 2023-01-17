@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefault";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
-const PostBookmark = ({ filter = "" }) => {
+const PostBookmark = () => {
   const currentUser = useCurrentUser();
   const [bookmarks, setBookmark] = useState([]);
   const [profiles, setProfiles] = useState({ results: [] });
@@ -46,29 +46,29 @@ const PostBookmark = ({ filter = "" }) => {
 
     setHasLoaded(false);
     fetchPosts();
-  }, [filter, pathname]);
+  }, [ pathname]);
 
   //get logged in user
   const owner = currentUser.username;
 
-  //get all bookmark IDs that belong to this user: Map the filtered bookmarks and get their posts.
-  const bookmarkIds = bookmarks.filter(bookmark => bookmark.owner === owner).map(bookmark => bookmark.post);
+  //get all bookmark IDs that belong to current logged in user: Map the filtered bookmarks and get their posts ID.
+  const bookmarkedPostIds = bookmarks.filter(bookmark => bookmark.owner === owner).map(bookmark => bookmark.post);
 
 
 
-console.log("ID Bookmarks", bookmarkIds);
+console.log("ID Bookmarks", bookmarkedPostIds); 
 
   return (
     <Row className="h-100">
     <Col className="py-2 p-0 p-lg-2" lg={8}>
       {hasLoaded ? (
         <>
-          {posts.results.length ? (
-            posts.results
-            .filter(post => filter.length === 0 || post.owner.toLocaleLowerCase() === filter.toLocaleLowerCase())
-            .map((post) => (
-              <Post key={post.id} {...post} setPosts={setPosts} isInPostPage={false}/>
-            ))
+            {posts.results.length ? (
+              posts.results
+              .filter(post => post.id === bookmarkedPostIds.length).
+              map((post) => (
+                <Post key={post.id} {...post} setPosts={setPosts} isInPostPage={false}/>
+              ))
           ) : (
             <Container >
               <h1>Not posts found</h1>
