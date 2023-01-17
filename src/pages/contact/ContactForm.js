@@ -18,7 +18,7 @@ import { Alert } from "react-bootstrap";
 
 
 function ContactForm() {
-    const [errors, setErrors] = useState({});
+    const [err, setErrors] = useState({});
 
     const [contactData, setContactData] = useState({
         first_name: '',
@@ -59,53 +59,6 @@ function ContactForm() {
         }
     }
 
-    const textFields = (
-        <div className="text-center">
-            <Form.Group controlId="formFile">
-                <Form.Label>First Name</Form.Label>
-                <Form.Control type="text" name="first_name" value={first_name} onChange={handleChange} />
-            </Form.Group>
-            {errors?.title?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                    {message}
-                </Alert>
-            ))}
-
-            <Form.Group controlId="formFile">
-                <Form.Label>Last Name</Form.Label>
-                <Form.Control as="textarea" rows={6} name="last_name" value={last_name} onChange={handleChange} />
-            </Form.Group>
-            {errors?.content?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                    {message}
-                </Alert>
-            ))}
-
-            <Form.Group controlId="formFile">
-                <Form.Label>Email</Form.Label>
-                <Form.Control as="textarea" rows={6} name="email_adress" value={email_adress} onChange={handleChange} />
-            </Form.Group>
-            {errors?.content?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                    {message}
-                </Alert>
-            ))}
-
-            <Form.Group controlId="formFile">
-                <Form.Label>Message</Form.Label>
-                <Form.Control as="textarea" rows={6} name="content" value={content} onChange={handleChange} />
-            </Form.Group>
-            {errors?.content?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                    {message}
-                </Alert>
-            ))}
-
-            <Button className={``} onClick={() => { }}>cancel</Button>
-            <Button className={``} type="submit">create</Button>
-        </div>
-    );
-
     return (
         <Row className={styles.Row}>
 
@@ -119,7 +72,7 @@ function ContactForm() {
                                 type="text" name="first_name" value={first_name} onChange={handleChange}
                             />
                         </Form.Group>
-                        {errors.fname?.map((message, idx) => (
+                        {err.first_name?.map((message, idx) => (
                             <Alert variant="warning" key={idx}>
                                 {message}
                             </Alert>
@@ -131,7 +84,7 @@ function ContactForm() {
                                 type="text" name="last_name" value={last_name} onChange={handleChange}
                             />
                         </Form.Group>
-                        {errors.lname?.map((message, idx) => (
+                        {err.last_name?.map((message, idx) => (
                             <Alert variant="warning" key={idx}>
                                 {message}
                             </Alert>
@@ -143,7 +96,7 @@ function ContactForm() {
                                 type="text" name="email_adress" value={email_adress} onChange={handleChange}
                             />
                         </Form.Group>
-                        {errors.email?.map((message, idx) => (
+                        {err.email_adress?.map((message, idx) => (
                             <Alert variant="warning" key={idx}>
                                 {message}
                             </Alert>
@@ -155,7 +108,7 @@ function ContactForm() {
                                 as="textarea" rows={6} name="content" value={content} onChange={handleChange}
                             />
                         </Form.Group>
-                        {errors.content?.map((message, idx) => (
+                        {err.content?.map((message, idx) => (
                             <Alert variant="warning" key={idx}>
                                 {message}
                             </Alert>
@@ -166,7 +119,7 @@ function ContactForm() {
                         >
                             Submit
                         </Button>
-                        {errors.non_field_errors?.map((message, idx) => (
+                        {err.non_field_errors?.map((message, idx) => (
                             <Alert key={idx} variant="warning" className="mt-3">
                                 {message}
                             </Alert>
