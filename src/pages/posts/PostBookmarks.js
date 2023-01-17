@@ -55,7 +55,8 @@ const PostBookmark = () => {
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         {hasLoaded ? (
-          <> //write a for loop
+          <> 
+          {/* //write a for loop */}
             {posts.length ? (posts.filter(post => post.id === bookmarkedPostIds)
               .map((post) => (
                 <Post key={post.id} {...post} setPosts={setPosts} isInPostPage={false} />
