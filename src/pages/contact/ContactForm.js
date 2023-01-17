@@ -21,12 +21,12 @@ function ContactForm() {
   const [errors, setErrors] = useState({});
 
   const [postData, setPostData] = useState({
-    title: '',
+    first_name: '',
+    last_name: '',
+    email_adress: '',
     content: '',
-    image: '',
-    category: '',
   });
-  const { title, content, image, category } = postData;
+  const { first_name, last_name, email_adress, content } = postData;
 
   const imageInput = useRef();
   const navigate = useNavigate();
