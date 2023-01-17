@@ -49,6 +49,7 @@ function App() {
               <Route path="/signin" element={<SignInForm />} />
               <Route path="/signup" element={<SignUpForm />} />
               <Route path="/blogposts/create" element={<PostCreateForm />} />
+              <Route path="/contact/create" element={<h1>Hello contact</h1>} />
               <Route path='*' exact={true} element={<h1>Page not found..</h1>} />
             </Routes>
           </Container>
