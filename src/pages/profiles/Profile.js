@@ -9,14 +9,12 @@ import { Container } from "react-bootstrap";
 import Post from '../posts/Post';
 
 
-function Profile({filter = ""}) {
-    const [posts, setPosts] = useState({ results: [] });
+function Profile({ filter = "" }) {
+    const [posts, setPosts] = useState([]);
     const [hasLoaded, setHasLoaded] = useState(false);
     const currentUser = useCurrentUser();
     //get logged in user
     const currentOwner = currentUser.username;
-
-
 
     const { id } = useParams();
     const [userData, setProfiles] = useState({
@@ -32,8 +30,8 @@ function Profile({filter = ""}) {
                 setProfiles({ results: userData.data });
 
                 const url = `/blogposts/`
-                const { data } = await axiosReq.get(url);
-                setPosts({ results: data });
+                const posts = await axiosReq.get(url);
+                setPosts(posts.data);
                 setHasLoaded(true);
 
             } catch (err) {
@@ -42,28 +40,28 @@ function Profile({filter = ""}) {
         }
         handleMount();
     }, [id]);
+
+
     console.log("USER INLOGGED NOW", currentOwner)
-    console.log("USER DATA NOW", userData)
+    console.log("POSTS DATA", posts)
     return (
         <Row className="h-100">
             <Col className="py-2 p-0 p-lg-2" lg={8}>
                 {hasLoaded ? (
                     <>
-                        {posts.results.length ? (
-                            posts.results
-                                .filter(post => filter.length === 0 || post.owner.toLocaleLowerCase() === currentOwner.toLocaleLowerCase())
-                                .map((post) => (
-                                    <Post key={post.id} {...post} setPosts={setPosts} isInPostPage={false} />
-                                ))
+                        {posts.length ? (
+                            posts.map((post) => (
+                                <Post key={post.id} {...post} setPosts={setPosts} isInPostPage={true} />
+                            ))
                         ) : (
                             <Container >
-                                <h1>Not posts found</h1>
+                                <h1>No posts found</h1>
                             </Container>
                         )}
                     </>
                 ) : (
                     <Container >
-                        <h1>Loading...</h1>
+                        <h1>Loading....</h1>
                     </Container>
                 )}
             </Col>
