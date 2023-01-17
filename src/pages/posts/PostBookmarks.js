@@ -20,19 +20,19 @@ const PostBookmark = ({ filter = "" }) => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        //hämta bookmarks
+        //get bookmarks
         const bookmarkUrl = `/bookmark/`
         const bookmarks = await axiosReq.get(bookmarkUrl);
         // console.log(bookmarks.data)
         setBookmark( bookmarks.data.results);
 
-        //hämta profiles
+        //get profiles
         const profilesUrl = `/profiles/`
         const profiles = await axiosReq.get(profilesUrl);
         // console.log(profiles.data)
         setProfiles({ results: profiles.data });
 
-        //hämta posts
+        //get posts
         const blogpostsUrl = `/blogposts/`
         const posts = await axiosReq.get(blogpostsUrl);
         // console.log(posts.data)
@@ -48,11 +48,15 @@ const PostBookmark = ({ filter = "" }) => {
     fetchPosts();
   }, [filter, pathname]);
 
+  //get logged in user
   const owner = currentUser.username;
-  const bookmarkIds = bookmarks.filter(bookmark => bookmark.owner === owner).map(bookmark => bookmark.id);
-  const filteredPosts = posts.filter(post => post.bookmark_id === bookmarkIds).map((posts));
 
-console.log("ID Bookmarks", filteredPosts);
+  //get all bookmark IDs that belong to this user: Map the filtered bookmarks and get their posts.
+  const bookmarkIds = bookmarks.filter(bookmark => bookmark.owner === owner).map(bookmark => bookmark.post);
+
+
+
+console.log("ID Bookmarks", bookmarkIds);
 
   return (
     <Row className="h-100">
