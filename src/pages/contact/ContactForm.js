@@ -20,13 +20,13 @@ import { Alert } from "react-bootstrap";
 function ContactForm() {
   const [errors, setErrors] = useState({});
 
-  const [postData, setPostData] = useState({
+  const [contactData, setContactData] = useState({
     first_name: '',
     last_name: '',
     email_adress: '',
     content: '',
   });
-  const { first_name, last_name, email_adress, content } = postData;
+  const { first_name, last_name, email_adress, content } = contactData;
 
   const imageInput = useRef();
   const navigate = useNavigate();
