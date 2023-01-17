@@ -18,155 +18,164 @@ import { Alert } from "react-bootstrap";
 
 
 function ContactForm() {
-  const [errors, setErrors] = useState({});
+    const [errors, setErrors] = useState({});
 
-  const [contactData, setContactData] = useState({
-    first_name: '',
-    last_name: '',
-    email_adress: '',
-    content: '',
-  });
-
-  const { first_name, last_name, email_adress, content } = contactData;
-  const navigate = useNavigate();
-
-  const handleChange = (e) => {
-    setContactData({
-      ...contactData,
-      [e.target.name]: e.target.value,
+    const [contactData, setContactData] = useState({
+        first_name: '',
+        last_name: '',
+        email_adress: '',
+        content: '',
     });
-  };
 
-  console.log(contactData)
+    const { first_name, last_name, email_adress, content } = contactData;
+    const navigate = useNavigate();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-    const formData = new FormData();
+    const handleChange = (e) => {
+        setContactData({
+            ...contactData,
+            [e.target.name]: e.target.value,
+        });
+    };
 
-    formData.append('first_name', first_name)
-    formData.append('last_name', last_name)
-    formData.append('email_adress', email_adress)
-    formData.append('content', content)
+    console.log(contactData)
 
-    try {
-      const { data } = await axiosReq.post('/contact/', contactData);
-      navigate(`/`)
-    } catch (err) {
-      console.log(err)
-      if (err.response?.status !== 401) {
-        setErrors(err.response?.data);
-      }
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+        const formData = new FormData();
+
+        formData.append('first_name', first_name)
+        formData.append('last_name', last_name)
+        formData.append('email_adress', email_adress)
+        formData.append('content', content)
+
+        try {
+            const { data } = await axiosReq.post('/contact/', contactData);
+            navigate(`/`)
+        } catch (err) {
+            console.log(err)
+            if (err.response?.status !== 401) {
+                setErrors(err.response?.data);
+            }
+        }
     }
-  }
 
-  const textFields = (
-    <div className="text-center">
-      <Form.Group controlId="formFile">
-        <Form.Label>Title</Form.Label>
-        <Form.Control type="text" name="title" value={title} onChange={handleChange} />
-      </Form.Group>
-      {errors?.title?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
-
-      <Form.Group controlId="formFile">
-        <Form.Label>Content</Form.Label>
-        <Form.Control as="textarea" rows={6} name="content" value={content} onChange={handleChange} />
-      </Form.Group>
-      {errors?.content?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
-
-
-      <Form.Group>
-        <Form.Label>Category</Form.Label>
-        <Form.Control
-          as="select"
-          defaultValue="Choose category..."
-          name="category"
-          onChange={handleChange}
-          aria-label="category choice"
-        >
-          <option value="WORLD">WORLD</option>
-          <option value="BUSINESS">BUSINESS</option>
-          <option value="FOOD">FOOD</option>
-          <option value="CULTURE">CULTURE</option>
-          <option value="MUSIC">MUSIC</option>
-          <option value="TECH">TECH</option>
-        </Form.Control>
-      </Form.Group>
-      {errors?.category?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
-          {message}
-        </Alert>
-      ))}
-
-
-      <Button className={``} onClick={() => { }}>cancel</Button>
-      <Button className={``} type="submit">create</Button>
-    </div>
-  );
-
-  return (
-    <Form onSubmit={handleSubmit}>
-      <Row>
-        <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
-          <Container
-            className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}>
-            <Form.Group className="text-center">
-
-              {image ? (
-                <>
-                  <figure>
-                    <Image className={appStyles.Image} src={image} rounded></Image>
-                  </figure>
-
-                  <div>
-                    <Form.Label type="file" htmlFor="image-upload" onClick={handleChangeImage}>
-                      <p>Change image:</p>
-                    </Form.Label>
-                  </div>
-                </>
-              ) : (
-                <Form.Label
-                  className="d-flex justify-content-center"
-                  htmlFor="image-upload"
-                >
-                  <Asset
-                    src={Upload}
-                    message="Click or tap to upload an image"
-                  />
-                </Form.Label>
-              )}
-
-              <Form.Control
-                type="file"
-                id="image-upload"
-                accept="image/*"
-                onChange={handleChangeImage}
-                ref={imageInput}
-              />
-
+    const textFields = (
+        <div className="text-center">
+            <Form.Group controlId="formFile">
+                <Form.Label>First Name</Form.Label>
+                <Form.Control type="text" name="first_name" value={first_name} onChange={handleChange} />
             </Form.Group>
-            {errors?.image?.map((message, idx) => (
-              <Alert variant="warning" key={idx}>
-                {message}
-              </Alert>
+            {errors?.title?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                    {message}
+                </Alert>
             ))}
 
-            <div className="d-md-none">{textFields}</div>
-          </Container>
-        </Col>
-        <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
-          <Container className={appStyles.Content}>{textFields}</Container>
-        </Col>
-      </Row>
-    </Form >
-  );
-}
+            <Form.Group controlId="formFile">
+                <Form.Label>Last Name</Form.Label>
+                <Form.Control as="textarea" rows={6} name="last_name" value={last_name} onChange={handleChange} />
+            </Form.Group>
+            {errors?.content?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                    {message}
+                </Alert>
+            ))}
+
+            <Form.Group controlId="formFile">
+                <Form.Label>Email</Form.Label>
+                <Form.Control as="textarea" rows={6} name="email_adress" value={email_adress} onChange={handleChange} />
+            </Form.Group>
+            {errors?.content?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                    {message}
+                </Alert>
+            ))}
+
+            <Form.Group controlId="formFile">
+                <Form.Label>Message</Form.Label>
+                <Form.Control as="textarea" rows={6} name="content" value={content} onChange={handleChange} />
+            </Form.Group>
+            {errors?.content?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
+                    {message}
+                </Alert>
+            ))}
+
+            <Button className={``} onClick={() => { }}>cancel</Button>
+            <Button className={``} type="submit">create</Button>
+        </div>
+    );
+
+    return (
+        <Row className={styles.Row}>
+
+            <Col>
+                <Container className={`${appStyles.Content} p-4 `}>
+                    <h1 className={styles.Header}>Contact Us</h1>
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Group>
+                            <Form.Label>First name</Form.Label>
+                            <Form.Control
+                                type="text" name="first_name" value={first_name} onChange={handleChange}
+                            />
+                        </Form.Group>
+                        {errors.fname?.map((message, idx) => (
+                            <Alert variant="warning" key={idx}>
+                                {message}
+                            </Alert>
+                        ))}
+
+                        <Form.Group>
+                            <Form.Label>Last name</Form.Label>
+                            <Form.Control
+                                type="text" name="last_name" value={last_name} onChange={handleChange}
+                            />
+                        </Form.Group>
+                        {errors.lname?.map((message, idx) => (
+                            <Alert variant="warning" key={idx}>
+                                {message}
+                            </Alert>
+                        ))}
+
+                        <Form.Group>
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control
+                                type="text" name="email_adress" value={email_adress} onChange={handleChange}
+                            />
+                        </Form.Group>
+                        {errors.email?.map((message, idx) => (
+                            <Alert variant="warning" key={idx}>
+                                {message}
+                            </Alert>
+                        ))}
+
+                        <Form.Group>
+                            <Form.Label>Message</Form.Label>
+                            <Form.Control
+                                as="textarea" rows={6} name="content" value={content} onChange={handleChange}
+                            />
+                        </Form.Group>
+                        {errors.content?.map((message, idx) => (
+                            <Alert variant="warning" key={idx}>
+                                {message}
+                            </Alert>
+                        ))}
+
+                        <Button
+                            type="submit"
+                        >
+                            Submit
+                        </Button>
+                        {errors.non_field_errors?.map((message, idx) => (
+                            <Alert key={idx} variant="warning" className="mt-3">
+                                {message}
+                            </Alert>
+                        ))}
+                    </Form>
+                </Container>
+            </Col>
+        </Row>
+    );
+};
 
 export default ContactForm;
