@@ -92,7 +92,7 @@ const NavBar = () => {
                 </Link>
               </NavDropdown.Item>
             </NavDropdown>
-            <Link to="/contact/create" className={styles.NavLink}><i class="fa-regular fa-envelope"></i>CONTACT</Link>
+            <Link to="/contact/create" className={styles.NavLink}><i className="fa-regular fa-envelope"></i>CONTACT</Link>
             {currentUser && addBlogPostIcon}
           </Nav>
           <Nav>

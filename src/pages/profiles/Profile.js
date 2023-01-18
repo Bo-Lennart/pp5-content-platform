@@ -7,6 +7,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { Container } from "react-bootstrap";
 import Post from '../posts/Post';
+import ProfileIcon from '../../components/ProfileIcon';
 
 
 function Profile({ filter = "" }) {
@@ -42,11 +43,14 @@ function Profile({ filter = "" }) {
     }, [id]);
 
 
-    console.log("USER INLOGGED NOW", currentOwner)
-    console.log("POSTS DATA", posts)
+    console.log("USER DATA", currentUser);
+
     return (
         <Row className="h-100">
             <Col className="py-2 p-0 p-lg-2" lg={8}>
+                <h1>Profile info </h1>
+                <h2>{currentUser.username}</h2>
+                <ProfileIcon src={currentUser.profile_image} height={100} />
                 {hasLoaded ? (
                     <>
                         {posts.length ? (posts.filter(post => post.owner === currentOwner)
