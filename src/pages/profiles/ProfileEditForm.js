@@ -30,6 +30,10 @@ function ProfileEditForm() {
     const navigate = useNavigate();
     const { id } = useParams();
 
+    const handleCancel = () => {
+        navigate(-1);
+    }
+
     useEffect(() => {
         const handleMount = async () => {
             try {
@@ -132,7 +136,7 @@ function ProfileEditForm() {
                             </Alert>
                         ))}
                         <div className="text-center">
-                            <Button className={``} onClick={() => { }}>cancel</Button>
+                            <Button className={``} onClick={handleCancel}>cancel</Button>
                             <Button className={``} type="submit">Save</Button>
                         </div>
 

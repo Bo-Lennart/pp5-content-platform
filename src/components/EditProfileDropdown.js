@@ -18,7 +18,6 @@ export const EditProfileDropdown = ({ handleEdit, changePassword }) => {
         <Dropdown className='text-end'>
             <Dropdown.Toggle as={EditProfile} />
 
-
             <Dropdown.Menu className='text-center'>
                 <Dropdown.Item className={styles.DropdownItem}
                     onClick={handleEdit}

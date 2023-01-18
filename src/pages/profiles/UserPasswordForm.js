@@ -28,6 +28,10 @@ function UserPasswordForm() {
         });
     }
 
+    const handleCancel = () => {
+        navigate(-1);
+    }
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
@@ -72,7 +76,7 @@ function UserPasswordForm() {
                             </Alert>
                         ))}
                         <div className="text-center">
-                            <Button className={``} onClick={() => { }}>cancel</Button>
+                            <Button className={``} onClick={handleCancel}>cancel</Button>
                             <Button className={``} type="submit">Save</Button>
                         </div>
                     </Form>
