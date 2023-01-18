@@ -52,15 +52,6 @@ function UserPasswordForm() {
         }
     };
 
-    console.log("PROFILE DATA CURRENT:", data)
-
-    const textFields = (
-        <div className="text-center">
-            <Button className={``} onClick={() => { }}>cancel</Button>
-            <Button className={``} type="submit">Save</Button>
-        </div>
-    );
-
     return (
         <Form onSubmit={handleSubmit}>
             <Row>
