@@ -11,7 +11,7 @@ import ProfileIcon from '../../components/ProfileIcon';
 import { EditProfileDropdown } from '../../components/EditProfileDropdown';
 
 
-function Profile({ filter = "" }) {
+function Profile() {
     const [posts, setPosts] = useState([]);
     const [hasLoaded, setHasLoaded] = useState(false);
     const currentUserInfo = useCurrentUser();
