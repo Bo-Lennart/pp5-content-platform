@@ -19,6 +19,7 @@ import PostBookmark from './pages/posts/PostBookmarks';
 import ContactForm from './pages/contact/ContactForm';
 import Confirm from './pages/contact/Confirm';
 import ProfileEditForm from './pages/profiles/ProfileEditForm';
+import UserPasswordForm from './pages/profiles/UserPasswordForm';
 
 function App() {
   const currentUser = useSetCurrentUser();
@@ -49,6 +50,7 @@ function App() {
               <Route path="/posts/:id/edit" element={<PostEditForm />} />
               <Route path="/profiles/:id" element={<Profile />} />
               <Route path="/profiles/:id/edit" element={<ProfileEditForm />} />
+              <Route path="/profiles/:id/edit/password" element={<UserPasswordForm />} />
 
               <Route path="/signin" element={<SignInForm />} />
               <Route path="/signup" element={<SignUpForm />} />
