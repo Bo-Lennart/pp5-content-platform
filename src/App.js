@@ -50,7 +50,7 @@ function App() {
               <Route path="/posts/:id/edit" element={<PostEditForm />} />
               <Route path="/profiles/:id" element={<Profile />} />
               <Route path="/profiles/:id/edit" element={<ProfileEditForm />} />
-              <Route path="/profiles/:id/edit/password" element={<UserPasswordForm />} />
+              <Route path="/profiles/:id/edit/logindetails" element={<UserPasswordForm />} />
 
               <Route path="/signin" element={<SignInForm />} />
               <Route path="/signup" element={<SignUpForm />} />

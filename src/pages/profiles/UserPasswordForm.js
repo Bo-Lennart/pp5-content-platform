@@ -18,18 +18,17 @@ import { useCurrentUser, useSetCurrentUser } from "../../contexts/CurrentUserCon
 
 
 function UserPasswordForm() {
+    const { id } = useParams();
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
     const currentUser = useCurrentUser();
-    const { id } = useParams();
-
-
+    const currentUserId = currentUser?.profile_id
+    
     const [userData, setUserData] = useState({
         new_password1: '',
         new_password2: '',
     });
     const { new_password1, new_password2 } = userData;
-
 
     const handleChange = (e) => {
         setUserData({
@@ -41,12 +40,13 @@ function UserPasswordForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await axiosRes.post("/dj-rest-auth/password/change/", userData);
-            navigate("/");
+          await axiosRes.post("/dj-rest-auth/password/change/", userData);
+          navigate(-1);
         } catch (err) {
-            setErrors(err.response?.data);
+          // console.log(err);
+          setErrors(err.response?.data);
         }
-    };
+      };
     
     return (
         <Row>
