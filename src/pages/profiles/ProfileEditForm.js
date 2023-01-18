@@ -14,14 +14,14 @@ import { Image } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefault";
 import { useNavigate, useParams } from "react-router-dom";
 import { Alert } from "react-bootstrap";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
-
+import { useCurrentUser, useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 
 function ProfileEditForm() {
     const [errors, setErrors] = useState({});
     const currentUser = useCurrentUser();
-    
+    const setCurrentUser = useSetCurrentUser();
+
     const [data, setData] = useState({
         image: '',
     });
@@ -41,20 +41,13 @@ function ProfileEditForm() {
                 const { data } = await axiosReq.get(`/profiles/${id}`);
                 const { image, is_owner } = data;
 
-                is_owner ? setData({ image,  }) : navigate("/");
+                is_owner ? setData({ image, }) : navigate("/");
             } catch (err) {
                 console.log(err);
             }
         }
         handleMount();
     }, [navigate, id]);
-
-    const handleChange = (e) => {
-        setData({
-            ...data,
-            [e.target.name]: e.target.value,
-        });
-    };
 
     const handleChangeImage = (event) => {
         if (event.target.files.length) {
@@ -71,13 +64,18 @@ function ProfileEditForm() {
     const handleSubmit = async (event) => {
         event.preventDefault()
         const formData = new FormData();
+        formData.append("image", image);
 
         if (imageInput?.current?.files[0]) {
             formData.append('image', imageInput.current.files[0]);
         }
 
         try {
-            await axiosReq.put(`/profiles/${id}`, formData);
+            const { data } = await axiosReq.put(`/profiles/${id}`, formData);
+            setCurrentUser((currentUser) => ({
+                ...currentUser,
+                profile_image: data.image,
+            }));
             navigate("/");
         } catch (err) {
             console.log(err)
@@ -87,7 +85,7 @@ function ProfileEditForm() {
         }
     }
 
-    console.log("PROFILE DATA CURRENT:" , data)
+    console.log("PROFILE DATA CURRENT:", data)
 
     const textFields = (
         <div className="text-center">
