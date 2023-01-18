@@ -14,19 +14,20 @@ import { Image } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefault";
 import { useNavigate, useParams } from "react-router-dom";
 import { Alert } from "react-bootstrap";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 
 
 function ProfileEditForm() {
     const [errors, setErrors] = useState({});
-
-    const [postData, setPostData] = useState({
-        title: '',
-        content: '',
-        image: '',
-        category: '',
+    const currentUser = useCurrentUser();
+    const user_id = currentUser.profile_id
+    
+    const [profileData, setProfileData] = useState({
+        profile_image: '',
+        username: '',
     });
-    const { title, content, image, category } = postData;
+    const { profile_image, username } = profileData;
 
     const imageInput = useRef();
     const navigate = useNavigate();
@@ -35,10 +36,10 @@ function ProfileEditForm() {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const { data } = await axiosReq.get(`/blogposts/${id}/`);
-                const { title, content, image, category, is_owner } = data;
+                const { data } = await axiosReq.get(`/profiles/${user_id}/`);
+                const { profile_image, username } = data;
 
-                is_owner ? setPostData({ title, content, category, image }) : navigate("/");
+                is_owner ? setProfileData({ profile_image, username,  }) : navigate("/");
             } catch (err) {
                 console.log(err);
             }
@@ -47,8 +48,8 @@ function ProfileEditForm() {
     }, [navigate, id]);
 
     const handleChange = (e) => {
-        setPostData({
-            ...postData,
+        setProfileData({
+            ...profileData,
             [e.target.name]: e.target.value,
         });
     };
@@ -56,30 +57,27 @@ function ProfileEditForm() {
     const handleChangeImage = (event) => {
         if (event.target.files.length) {
             URL.revokeObjectURL(image);
-            setPostData({
-                ...postData,
+            setProfileData({
+                ...profileData,
                 image: URL.createObjectURL(event.target.files[0]),
             });
         }
     };
 
-    console.log(postData)
+    console.log(profileData)
 
     const handleSubmit = async (event) => {
         event.preventDefault()
         const formData = new FormData();
 
-        formData.append('title', title)
-        formData.append('content', content)
+        formData.append('username', username)
 
         if (imageInput?.current?.files[0]) {
-            formData.append('image', imageInput.current.files[0]);
+            formData.append('profile_image', imageInput.current.files[0]);
         }
 
-        formData.append('category', category)
-
         try {
-            await axiosReq.put(`/blogposts/${id}/`, formData);
+            await axiosReq.put(`/profiles/${user_id}/`, formData);
             navigate("/");
         } catch (err) {
             console.log(err)
@@ -92,50 +90,14 @@ function ProfileEditForm() {
     const textFields = (
         <div className="text-center">
             <Form.Group controlId="formFile">
-                <Form.Label>Title</Form.Label>
-                <Form.Control type="text" name="title" value={title} onChange={handleChange} />
+                <Form.Label>Username</Form.Label>
+                <Form.Control type="text" name="username" value={username} onChange={handleChange} />
             </Form.Group>
             {errors?.title?.map((message, idx) => (
                 <Alert variant="warning" key={idx}>
                     {message}
                 </Alert>
             ))}
-
-            <Form.Group controlId="formFile">
-                <Form.Label>Content</Form.Label>
-                <Form.Control as="textarea" rows={6} name="content" value={content} onChange={handleChange} />
-            </Form.Group>
-            {errors?.content?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                    {message}
-                </Alert>
-            ))}
-
-
-            <Form.Group>
-                <Form.Label>Category</Form.Label>
-                <Form.Control
-                    as="select"
-                    defaultValue="Choose category..."
-                    name="category"
-                    onChange={handleChange}
-                    value={category}
-                    aria-label="category choice"
-                >
-                    <option value="WORLD">WORLD</option>
-                    <option value="BUSINESS">BUSINESS</option>
-                    <option value="FOOD">FOOD</option>
-                    <option value="CULTURE">CULTURE</option>
-                    <option value="MUSIC">MUSIC</option>
-                    <option value="TECH">TECH</option>
-                </Form.Control>
-            </Form.Group>
-            {errors?.category?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                    {message}
-                </Alert>
-            ))}
-
 
             <Button className={``} onClick={() => { }}>cancel</Button>
             <Button className={``} type="submit">Save</Button>
