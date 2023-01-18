@@ -11,7 +11,7 @@ import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import Asset from "../../components/Asset";
 import { Image } from "react-bootstrap";
-import { axiosRes } from "../../api/axiosDefault";
+import { axiosRes, axiosReq } from "../../api/axiosDefault";
 import { useNavigate, useParams } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 import { useCurrentUser, useSetCurrentUser } from "../../contexts/CurrentUserContext";
@@ -20,15 +20,16 @@ import { useCurrentUser, useSetCurrentUser } from "../../contexts/CurrentUserCon
 function UserPasswordForm() {
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
-    const { id } = useParams();
     const currentUser = useCurrentUser();
-    const userId = currentUser?.profile_id
+    const { id } = useParams();
+
 
     const [userData, setUserData] = useState({
         new_password1: '',
         new_password2: '',
     });
     const { new_password1, new_password2 } = userData;
+
 
     const handleChange = (e) => {
         setUserData({
@@ -37,23 +38,16 @@ function UserPasswordForm() {
         });
     }
 
-    // useEffect(() => {
-    //     if (currentUser?.profile_id.toString() !== id) {
-    //         navigate("/");
-    //     }
-    // }, [currentUser, id, navigate]);
-
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
             await axiosRes.post("/dj-rest-auth/password/change/", userData);
-            navigate(-1);
+            navigate("/");
         } catch (err) {
             setErrors(err.response?.data);
         }
     };
-
-    console.log(id);
+    
     return (
         <Row>
             <Col className="py-2 mx-auto text-center" md={6}>
