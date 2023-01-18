@@ -21,7 +21,6 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 function ProfileEditForm() {
     const [errors, setErrors] = useState({});
     const currentUser = useCurrentUser();
-    const user_id = currentUser.profile_id
     
     const [profileData, setProfileData] = useState({
         profile_image: '',
@@ -36,10 +35,10 @@ function ProfileEditForm() {
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const { data } = await axiosReq.get(`/profiles/${user_id}/`);
+                const { data } = await axiosReq.get(`/profiles/${currentUser?.id}/`);
                 const { profile_image, username } = data;
 
-                is_owner ? setProfileData({ profile_image, username,  }) : navigate("/");
+                currentUser?.id ? setProfileData({ profile_image, username  }) : navigate("/");
             } catch (err) {
                 console.log(err);
             }
@@ -56,7 +55,7 @@ function ProfileEditForm() {
 
     const handleChangeImage = (event) => {
         if (event.target.files.length) {
-            URL.revokeObjectURL(image);
+            URL.revokeObjectURL(profile_image);
             setProfileData({
                 ...profileData,
                 image: URL.createObjectURL(event.target.files[0]),
@@ -77,7 +76,7 @@ function ProfileEditForm() {
         }
 
         try {
-            await axiosReq.put(`/profiles/${user_id}/`, formData);
+            await axiosReq.put(`/profiles/${currentUser?.id}/`, formData);
             navigate("/");
         } catch (err) {
             console.log(err)
@@ -112,15 +111,15 @@ function ProfileEditForm() {
                         className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}>
                         <Form.Group className="text-center">
 
-                            {image ? (
+                            {profile_image ? (
                                 <>
                                     <figure>
-                                        <Image className={appStyles.Image} src={image} rounded></Image>
+                                        <Image className={appStyles.Image} src={profile_image} rounded></Image>
                                     </figure>
 
                                     <div>
                                         <Form.Label type="file" htmlFor="image-upload" onClick={handleChangeImage}>
-                                            <p>Change image:</p>
+                                            <p>Change Profile Image:</p>
                                         </Form.Label>
                                     </div>
                                 </>
@@ -162,4 +161,4 @@ function ProfileEditForm() {
     );
 }
 
-export default PostEditForm;
+export default ProfileEditForm;
