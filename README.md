@@ -5,3 +5,11 @@ Dagoy is a content platform for users to share their content. The concept is tha
 Each user has access to their own profile once they are signed in where they can create posts, see all their bookmarks, edit their profile image and password.
 
 If anyone needs to get in touch with the admin, they can fill out the contact form and the Admin will haveget in touch as soon as possible.
+
+* Deployed FrontEnd - [Dagoy](https://dagoy-pp5.herokuapp.com/)
+
+* Deployed BackEnd API - [Dagoy DRF API](https://pp5-api-bo.herokuapp.com/)
+
+* BackEnd Repo - [LINK](https://github.com/Bo-Lennart/DRF-PP5-API)
+
+* FrontEnd Repo - [LINK](https://github.com/Bo-Lennart/pp5-content-platform)
