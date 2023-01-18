@@ -18,18 +18,10 @@ function Profile({ filter = "" }) {
     const currentOwner = currentUser.username;
 
     const { id } = useParams();
-    const [userData, setProfiles] = useState({
-        result: []
-    });
 
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const profilesUrl = `/profiles/${id}`
-                const userData = await axiosReq.get(profilesUrl);
-                // console.log(profiles.data)
-                setProfiles({ results: userData.data });
-
                 const url = `/blogposts/`
                 const posts = await axiosReq.get(url);
                 setPosts(posts.data);
