@@ -11,7 +11,7 @@ import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import Asset from "../../components/Asset";
 import { Image } from "react-bootstrap";
-import { axiosReq } from "../../api/axiosDefault";
+import { axiosRes } from "../../api/axiosDefault";
 import { useNavigate, useParams } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 import { useCurrentUser, useSetCurrentUser } from "../../contexts/CurrentUserContext";
@@ -38,33 +38,19 @@ function UserPasswordForm() {
 
     useEffect(() => {
         if (currentUser?.profile_id?.toString() !== id) {
-          navigate("/");
+            navigate("/");
         }
-      }, [currentUser, navigate, id]);
+    }, [currentUser, navigate, id]);
 
     const handleSubmit = async (event) => {
-        event.preventDefault()
-        const formData = new FormData();
-        formData.append("image", image);
-
-        if (imageInput?.current?.files[0]) {
-            formData.append('image', imageInput.current.files[0]);
-        }
-
+        event.preventDefault();
         try {
-            const { data } = await axiosReq.put(`/profiles/${id}`, formData);
-            setCurrentUser((currentUser) => ({
-                ...currentUser,
-                profile_image: data.image,
-            }));
-            navigate("/");
+            await axiosRes.post("/dj-rest-auth/password/change/", userData);
+            navigate(-1);
         } catch (err) {
-            console.log(err)
-            if (err.response?.status !== 401) {
-                setErrors(err.response?.data);
-            }
+            setErrors(err.response?.data);
         }
-    }
+    };
 
     console.log("PROFILE DATA CURRENT:", data)
 
