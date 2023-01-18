@@ -22,23 +22,27 @@ function ProfileEditForm() {
     const [errors, setErrors] = useState({});
     const currentUser = useCurrentUser();
     
-    const [profileData, setProfileData] = useState({
-        profile_image: '',
+    const [data, setData] = useState({
+        image: '',
         username: '',
     });
-    const { profile_image, username } = profileData;
+    const { image, username } = data;
 
     const imageInput = useRef();
     const navigate = useNavigate();
     const { id } = useParams();
 
+    const handleEdit = () => {
+        navigate(`/profiles/${id}/edit`)
+    }
+
     useEffect(() => {
         const handleMount = async () => {
             try {
-                const { data } = await axiosReq.get(`/profiles/${currentUser?.id}/`);
-                const { profile_image, username } = data;
+                const { data } = await axiosReq.get(`/profiles/${id}`);
+                const { image, username, is_owner } = data;
 
-                currentUser?.id ? setProfileData({ profile_image, username  }) : navigate("/");
+                is_owner ? setData({ image, username  }) : navigate("/");
             } catch (err) {
                 console.log(err);
             }
@@ -47,23 +51,23 @@ function ProfileEditForm() {
     }, [navigate, id]);
 
     const handleChange = (e) => {
-        setProfileData({
-            ...profileData,
+        setData({
+            ...data,
             [e.target.name]: e.target.value,
         });
     };
 
     const handleChangeImage = (event) => {
         if (event.target.files.length) {
-            URL.revokeObjectURL(profile_image);
-            setProfileData({
-                ...profileData,
+            URL.revokeObjectURL(image);
+            setData({
+                ...data,
                 image: URL.createObjectURL(event.target.files[0]),
             });
         }
     };
 
-    console.log(profileData)
+    console.log(data)
 
     const handleSubmit = async (event) => {
         event.preventDefault()
@@ -72,7 +76,7 @@ function ProfileEditForm() {
         formData.append('username', username)
 
         if (imageInput?.current?.files[0]) {
-            formData.append('profile_image', imageInput.current.files[0]);
+            formData.append('image', imageInput.current.files[0]);
         }
 
         try {
@@ -85,6 +89,8 @@ function ProfileEditForm() {
             }
         }
     }
+
+    console.log("PROFILE DATA CURRENT:" , data)
 
     const textFields = (
         <div className="text-center">
@@ -111,10 +117,10 @@ function ProfileEditForm() {
                         className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}>
                         <Form.Group className="text-center">
 
-                            {profile_image ? (
+                            {image ? (
                                 <>
                                     <figure>
-                                        <Image className={appStyles.Image} src={profile_image} rounded></Image>
+                                        <Image className={appStyles.Image} src={image} rounded ></Image>
                                     </figure>
 
                                     <div>

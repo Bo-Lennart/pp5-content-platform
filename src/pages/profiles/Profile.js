@@ -19,6 +19,7 @@ function Profile({ filter = "" }) {
 
     const { id } = useParams();
 
+    
     useEffect(() => {
         const handleMount = async () => {
             try {
