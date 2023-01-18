@@ -37,19 +37,12 @@ function UserPasswordForm() {
     }
 
     useEffect(() => {
-        const handleMount = async () => {
-            try {
-                const { data } = await axiosReq.get(`/profiles/${id}`);
-                const { image, is_owner } = data;
-
-                is_owner ? setData({ image, }) : navigate("/");
-            } catch (err) {
-                console.log(err);
-            }
+        if (currentUser?.profile_id?.toString() !== id) {
+          navigate("/");
         }
-        handleMount();
-    }, [navigate, id]);
+      }, [currentUser, navigate, id]);
 
+      
     const handleChangeImage = (event) => {
         if (event.target.files.length) {
             URL.revokeObjectURL(image);
