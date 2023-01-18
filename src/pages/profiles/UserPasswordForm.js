@@ -42,19 +42,6 @@ function UserPasswordForm() {
         }
       }, [currentUser, navigate, id]);
 
-      
-    const handleChangeImage = (event) => {
-        if (event.target.files.length) {
-            URL.revokeObjectURL(image);
-            setData({
-                ...data,
-                image: URL.createObjectURL(event.target.files[0]),
-            });
-        }
-    };
-
-    console.log(data)
-
     const handleSubmit = async (event) => {
         event.preventDefault()
         const formData = new FormData();
