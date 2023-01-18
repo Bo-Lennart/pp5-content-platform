@@ -24,9 +24,8 @@ function ProfileEditForm() {
     
     const [data, setData] = useState({
         image: '',
-        username: '',
     });
-    const { image, username } = data;
+    const { image } = data;
 
     const imageInput = useRef();
     const navigate = useNavigate();
@@ -40,9 +39,9 @@ function ProfileEditForm() {
         const handleMount = async () => {
             try {
                 const { data } = await axiosReq.get(`/profiles/${id}`);
-                const { image, username, is_owner } = data;
+                const { image, is_owner } = data;
 
-                is_owner ? setData({ image, username  }) : navigate("/");
+                is_owner ? setData({ image,  }) : navigate("/");
             } catch (err) {
                 console.log(err);
             }
@@ -73,14 +72,12 @@ function ProfileEditForm() {
         event.preventDefault()
         const formData = new FormData();
 
-        formData.append('username', username)
-
         if (imageInput?.current?.files[0]) {
             formData.append('image', imageInput.current.files[0]);
         }
 
         try {
-            await axiosReq.put(`/profiles/${currentUser?.id}/`, formData);
+            await axiosReq.put(`/profiles/${id}`, formData);
             navigate("/");
         } catch (err) {
             console.log(err)
@@ -94,16 +91,6 @@ function ProfileEditForm() {
 
     const textFields = (
         <div className="text-center">
-            <Form.Group controlId="formFile">
-                <Form.Label>Username</Form.Label>
-                <Form.Control type="text" name="username" value={username} onChange={handleChange} />
-            </Form.Group>
-            {errors?.title?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                    {message}
-                </Alert>
-            ))}
-
             <Button className={``} onClick={() => { }}>cancel</Button>
             <Button className={``} type="submit">Save</Button>
         </div>
