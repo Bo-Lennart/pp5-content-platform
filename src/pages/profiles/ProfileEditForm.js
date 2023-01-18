@@ -14,12 +14,11 @@ import { Image } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefault";
 import { useNavigate, useParams } from "react-router-dom";
 import { Alert } from "react-bootstrap";
-import { useCurrentUser, useSetCurrentUser } from "../../contexts/CurrentUserContext";
+import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 
 
 function ProfileEditForm() {
     const [errors, setErrors] = useState({});
-    const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
 
     const [data, setData] = useState({
@@ -30,10 +29,6 @@ function ProfileEditForm() {
     const imageInput = useRef();
     const navigate = useNavigate();
     const { id } = useParams();
-
-    const handleEdit = () => {
-        navigate(`/profiles/${id}/edit`)
-    }
 
     useEffect(() => {
         const handleMount = async () => {

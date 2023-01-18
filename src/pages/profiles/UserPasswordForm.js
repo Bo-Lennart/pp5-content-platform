@@ -1,29 +1,20 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Upload from "../../assets/upload.png"
 
-import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
-import Asset from "../../components/Asset";
-import { Image } from "react-bootstrap";
-import { axiosRes, axiosReq } from "../../api/axiosDefault";
-import { useNavigate, useParams } from "react-router-dom";
+import { axiosRes } from "../../api/axiosDefault";
+import { useNavigate } from "react-router-dom";
 import { Alert } from "react-bootstrap";
-import { useCurrentUser, useSetCurrentUser } from "../../contexts/CurrentUserContext";
-
 
 function UserPasswordForm() {
-    const { id } = useParams();
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
-    const currentUser = useCurrentUser();
-    const currentUserId = currentUser?.profile_id
-    
+
     const [userData, setUserData] = useState({
         new_password1: '',
         new_password2: '',
