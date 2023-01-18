@@ -118,11 +118,10 @@ const Post = (props) => {
     return <Card>
         <Card.Body>
             <div className='align-items-center justify-content-between'>
-                <Link to={`/profiles/${profile_id}`}>
+                <p>
                     <ProfileIcon src={profile_image} height={50} />
                     {owner}
-                    {is_owner && postPage && <MoreDropdown handleEdit={handleEdit} handleDelete={handleDelete} />}
-                </Link>
+                </p>
                 {title && <Card.Title className="text-center">{title}</Card.Title>}
                 <p className="text-center">{updated_at}</p>
                 <p className="text-center">{category}</p>
