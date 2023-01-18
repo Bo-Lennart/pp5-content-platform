@@ -41,7 +41,7 @@ function Profile({ filter = "" }) {
     }
 
     const changePassword = () => {
-        navigate(`/profiles/${id}/edit`)
+        navigate(`/profiles/:id/edit/password`)
     }
 
 
