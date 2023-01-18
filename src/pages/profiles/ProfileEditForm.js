@@ -87,12 +87,7 @@ function ProfileEditForm() {
 
     console.log("PROFILE DATA CURRENT:", data)
 
-    const textFields = (
-        <div className="text-center">
-            <Button className={``} onClick={() => { }}>cancel</Button>
-            <Button className={``} type="submit">Save</Button>
-        </div>
-    );
+
 
     return (
         <Form onSubmit={handleSubmit}>
@@ -112,6 +107,7 @@ function ProfileEditForm() {
                                         <Form.Label type="file" htmlFor="image-upload" onClick={handleChangeImage}>
                                             <p>Change Profile Image:</p>
                                         </Form.Label>
+
                                     </div>
                                 </>
                             ) : (
@@ -140,12 +136,12 @@ function ProfileEditForm() {
                                 {message}
                             </Alert>
                         ))}
+                        <div className="text-center">
+                            <Button className={``} onClick={() => { }}>cancel</Button>
+                            <Button className={``} type="submit">Save</Button>
+                        </div>
 
-                        <div className="d-md-none">{textFields}</div>
                     </Container>
-                </Col>
-                <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
-                    <Container className={appStyles.Content}>{textFields}</Container>
                 </Col>
             </Row>
         </Form >
