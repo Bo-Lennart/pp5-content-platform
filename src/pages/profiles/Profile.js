@@ -5,7 +5,7 @@ import { axiosReq } from '../../api/axiosDefault';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import { Container } from "react-bootstrap";
+import { Card, Container } from "react-bootstrap";
 import Post from '../posts/Post';
 import ProfileIcon from '../../components/ProfileIcon';
 
@@ -48,9 +48,13 @@ function Profile({ filter = "" }) {
     return (
         <Row className="h-100">
             <Col className="py-2 p-0 p-lg-2" lg={8}>
-                <h1>Profile info </h1>
-                <h2>{currentUser.username}</h2>
-                <ProfileIcon src={currentUser.profile_image} height={100} />
+                <Card.Body>
+                    <div className="text-center">
+                        <ProfileIcon src={currentUser.profile_image} height={100} />
+                        <h2>{currentUser.username}</h2>
+                    </div>
+                </Card.Body>
+
                 {hasLoaded ? (
                     <>
                         {posts.length ? (posts.filter(post => post.owner === currentOwner)
