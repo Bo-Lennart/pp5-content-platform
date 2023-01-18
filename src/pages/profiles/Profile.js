@@ -52,9 +52,9 @@ function Profile({ filter = "" }) {
             <Col className="py-2 p-0 p-lg-2" lg={8}>
                 <Card.Body>
                     <div className="text-center">
+                    {currentUser  && <EditProfileDropdown handleEdit={handleEdit} handleDelete={changePassword} />}
                         <ProfileIcon src={currentUserInfo.profile_image} height={100} />
                         <h2>{currentUserInfo.username}</h2>
-                        {currentUser  && <EditProfileDropdown handleEdit={handleEdit} handleDelete={changePassword} />}
                     </div>
                 </Card.Body>
 
