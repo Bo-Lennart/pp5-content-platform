@@ -6,15 +6,39 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo_dagoy from '../assets/logo_dagoy.png';
 import styles from '../styles/NavBar.module.css';
 import {
-  Link,
+  Link, useNavigate,
 } from "react-router-dom";
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
 import ProfileIcon from './ProfileIcon';
 import axios from 'axios';
 
+
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
+  const navigate = useNavigate();
+
+  const handleCategoryWorld = () => {
+    navigate(`/world`);
+  }
+  const handleCategoryBusiness = () => {
+    navigate(`/business`);
+  }
+  const handleCategoryFood = () => {
+    navigate(`/food`);
+  }
+
+  const handleCategoryCulture = () => {
+    navigate(`/culture`);
+  }
+
+  const handleCategoryMusic = () => {
+    navigate(`/music`);
+  }
+
+  const handleCategoryTech = () => {
+    navigate(`/tech`);
+  }
 
   const handleSignOut = async () => {
     try {
@@ -32,7 +56,7 @@ const NavBar = () => {
     <Link to="/bookmarks" className={styles.NavLink}><i className="fa-solid fa-book-bookmark"></i>BOOKMARKS</Link>
     <Link to="/" className={styles.NavLink} onClick={handleSignOut}><i className='fas fa-sign-out-alt'></i>Sign out</Link>
 
-    <Link to={`/profiles/${currentUser?.profile_id}`} className={styles.NavLink} onClick={() => {}}>
+    <Link to={`/profiles/${currentUser?.profile_id}`} className={styles.NavLink} onClick={() => { }}>
       <ProfileIcon src={currentUser?.profile_image} text={currentUser?.username} height={30} /></Link>
   </>;
   const loggedOutIcons = (
@@ -56,29 +80,30 @@ const NavBar = () => {
           <Nav className="me-auto">
             <Link to="/" className={styles.NavLink}><i className='fas fa-home'></i> H O M E</Link>
             <NavDropdown title="C A T E G O R I E S" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="/world">
-                  W O R L D
+              <NavDropdown.Item onClick={handleCategoryWorld}>
+                W O R L D
               </NavDropdown.Item>
 
-              <NavDropdown.Item href="/business">
-                  B U S I N E S S
+              <NavDropdown.Item onClick={handleCategoryBusiness}>
+                B U S I N E S S
               </NavDropdown.Item>
 
-              <NavDropdown.Item href="/food">
-                  F O O D
+              <NavDropdown.Item onClick={handleCategoryFood}>
+                F O O D
               </NavDropdown.Item>
 
-              <NavDropdown.Item href="/culture">
-                  C U L T U R E
+              <NavDropdown.Item onClick={handleCategoryCulture}>
+                C U L T U R E
               </NavDropdown.Item>
 
-              <NavDropdown.Item href="/music">
-                  M U S I C
+              <NavDropdown.Item onClick={handleCategoryMusic}>
+                M U S I C
               </NavDropdown.Item>
 
-              <NavDropdown.Item href="/tech">
-                  T E C H
+              <NavDropdown.Item onClick={handleCategoryTech}>
+                T E C H
               </NavDropdown.Item>
+
             </NavDropdown>
             <Link to="/contact/create" className={styles.NavLink}><i class="fa-regular fa-envelope"></i>CONTACT</Link>
             {currentUser && addBlogPostIcon}
