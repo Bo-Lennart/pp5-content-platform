@@ -56,43 +56,31 @@ const NavBar = () => {
           <Nav className="me-auto">
             <Link to="/" className={styles.NavLink}><i className='fas fa-home'></i> H O M E</Link>
             <NavDropdown title="C A T E G O R I E S" id="collasible-nav-dropdown">
-              <NavDropdown.Item>
-                <Link to="/world" className={styles.NavLinkCategory}>
+              <NavDropdown.Item href="/world">
                   W O R L D
-                </Link>
               </NavDropdown.Item>
 
-              <NavDropdown.Item>
-                <Link to="/business" className={styles.NavLinkCategory}>
+              <NavDropdown.Item href="/business">
                   B U S I N E S S
-                </Link>
               </NavDropdown.Item>
 
-              <NavDropdown.Item>
-                <Link to="/food" className={styles.NavLinkCategory}>
+              <NavDropdown.Item href="/food">
                   F O O D
-                </Link>
               </NavDropdown.Item>
 
-              <NavDropdown.Item>
-                <Link to="/culture" className={styles.NavLinkCategory}>
+              <NavDropdown.Item href="/culture">
                   C U L T U R E
-                </Link>
               </NavDropdown.Item>
 
-              <NavDropdown.Item>
-                <Link to="/music" className={styles.NavLinkCategory}>
+              <NavDropdown.Item href="/music">
                   M U S I C
-                </Link>
               </NavDropdown.Item>
 
-              <NavDropdown.Item>
-                <Link to="/tech" className={styles.NavLinkCategory}>
+              <NavDropdown.Item href="/tech">
                   T E C H
-                </Link>
               </NavDropdown.Item>
             </NavDropdown>
-            <Link to="/contact/create" className={styles.NavLink}><i className="fa-regular fa-envelope"></i>CONTACT</Link>
+            <Link to="/contact/create" className={styles.NavLink}><i class="fa-regular fa-envelope"></i>CONTACT</Link>
             {currentUser && addBlogPostIcon}
           </Nav>
           <Nav>
