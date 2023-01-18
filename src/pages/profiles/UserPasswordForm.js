@@ -22,6 +22,7 @@ function UserPasswordForm() {
     const navigate = useNavigate();
     const { id } = useParams();
     const currentUser = useCurrentUser();
+    const userId = currentUser?.profile_id
 
     const [userData, setUserData] = useState({
         new_password1: '',
@@ -36,11 +37,11 @@ function UserPasswordForm() {
         });
     }
 
-    useEffect(() => {
-        if (currentUser?.profile_id?.toString() !== id) {
-            navigate("/");
-        }
-    }, [currentUser, navigate, id]);
+    // useEffect(() => {
+    //     if (currentUser?.profile_id.toString() !== id) {
+    //         navigate("/");
+    //     }
+    // }, [currentUser, id, navigate]);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -52,62 +53,48 @@ function UserPasswordForm() {
         }
     };
 
+    console.log(id);
     return (
-        <Form onSubmit={handleSubmit}>
-            <Row>
-                <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
-                    <Container
-                        className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}>
-                        <Form.Group className="text-center">
-
-                            {image ? (
-                                <>
-                                    <figure>
-                                        <Image className={appStyles.Image} src={image} rounded ></Image>
-                                    </figure>
-
-                                    <div>
-                                        <Form.Label type="file" htmlFor="image-upload" onClick={handleChangeImage}>
-                                            <p>Change Profile Image:</p>
-                                        </Form.Label>
-                                    </div>
-                                </>
-                            ) : (
-                                <Form.Label
-                                    className="d-flex justify-content-center"
-                                    htmlFor="image-upload"
-                                >
-                                    <Asset
-                                        src={Upload}
-                                        message="Click or tap to upload an image"
-                                    />
-                                </Form.Label>
-                            )}
-
-                            <Form.Control
-                                type="file"
-                                id="image-upload"
-                                accept="image/*"
-                                onChange={handleChangeImage}
-                                ref={imageInput}
+        <Row>
+            <Col className="py-2 mx-auto text-center" md={6}>
+                <Container className={appStyles.Content}>
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Group>
+                            <Form.Label>New password</Form.Label>
+                            <Form.Control placeholder="new password" type="password" value={new_password1}
+                                onChange={handleChange}
+                                name="new_password1"
                             />
-
                         </Form.Group>
-                        {errors?.image?.map((message, idx) => (
-                            <Alert variant="warning" key={idx}>
+                        {errors?.new_password1?.map((message, idx) => (
+                            <Alert key={idx} variant="warning">
                                 {message}
                             </Alert>
                         ))}
-
-                        <div className="d-md-none">{textFields}</div>
-                    </Container>
-                </Col>
-                <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
-                    <Container className={appStyles.Content}>{textFields}</Container>
-                </Col>
-            </Row>
-        </Form >
+                        <Form.Group>
+                            <Form.Label>Confirm password</Form.Label>
+                            <Form.Control
+                                placeholder="confirm new password"
+                                type="password"
+                                value={new_password2}
+                                onChange={handleChange}
+                                name="new_password2"
+                            />
+                        </Form.Group>
+                        {errors?.new_password2?.map((message, idx) => (
+                            <Alert key={idx} variant="warning">
+                                {message}
+                            </Alert>
+                        ))}
+                        <div className="text-center">
+                            <Button className={``} onClick={() => { }}>cancel</Button>
+                            <Button className={``} type="submit">Save</Button>
+                        </div>
+                    </Form>
+                </Container>
+            </Col>
+        </Row >
     );
-}
+};
 
 export default UserPasswordForm;
