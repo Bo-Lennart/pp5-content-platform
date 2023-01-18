@@ -114,7 +114,7 @@ const Post = (props) => {
             console.log(err);
         }
     };
-
+    console.log(is_owner)
     return <Card>
         <Card.Body>
             <div className='align-items-center justify-content-between'>
