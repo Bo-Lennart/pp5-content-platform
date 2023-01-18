@@ -29,10 +29,11 @@ function UserPasswordForm() {
     });
     const { new_password1, new_password2 } = userData;
 
-    
-
-    const handleEdit = () => {
-        navigate(`/profiles/${id}/edit`)
+    const handleChange = (e) => {
+        setUserData({
+            ...userData,
+            [e.target.name]: e.target.value,
+        });
     }
 
     useEffect(() => {
