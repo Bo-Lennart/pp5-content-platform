@@ -13,3 +13,36 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
 * BackEnd Repo - [LINK](https://github.com/Bo-Lennart/DRF-PP5-API)
 
 * FrontEnd Repo - [LINK](https://github.com/Bo-Lennart/pp5-content-platform)
+
+## Table of Contents
+- [User Experience](#user-experience)
+    - [Site Goal](#site-goal)
+    - [Audience](#Audience)
+    - [Dagoy Users](#dagoy-users)
+    - [New Dagoy Users](#new-dagoy-users)
+- [User Stories](#user-stories)
+    - [Admin](#admin)
+    - [Dagoy User Stories](#dagoy-user-stories)
+    - [Visitors](#visitors)
+- [Design](#design)
+    - [Color Palette](#color-palette)
+    - [Typography](#typography)
+- [Features](#features)
+    - [Foundational Features](#foundational-features)
+    - [C.R.U.D](#crud)
+- [Testing](#testing)
+    - [Validators](#validators)
+    - [Unfixex Bugs](#unfixed-bugs)
+
+- [Technologies Used](#technologies-used)
+
+    - [Frameworks](#frameworks)
+    - [libraries](#libraries)
+    - [Programs](#programs)
+
+- [Components](#components)
+    - [Deployment](#deployment)
+
+- [Credits](#credits)
+    - [Content](#content)
+    - [Media](#media)
