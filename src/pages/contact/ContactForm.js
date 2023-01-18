@@ -39,7 +39,7 @@ function ContactForm() {
         event.preventDefault()
         try {
             await axiosReq.post('/contact/', contactData);
-            navigate("/");
+            navigate("/confirm");
         } catch (err) {
             console.log(err)
             if (err.response?.status !== 401) {

@@ -52,7 +52,7 @@ function App() {
               <Route path="/signup" element={<SignUpForm />} />
               <Route path="/blogposts/create" element={<PostCreateForm />} />
               <Route path="/contact/create" element={<ContactForm />} />
-              <Route path="/confirmation" element={<Confirm />} />
+              <Route path="/confirm" element={<Confirm />} />
               <Route path='*' exact={true} element={<h1>Page not found..</h1>} />
             </Routes>
           </Container>
