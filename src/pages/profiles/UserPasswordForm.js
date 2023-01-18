@@ -19,17 +19,17 @@ import { useCurrentUser, useSetCurrentUser } from "../../contexts/CurrentUserCon
 
 function UserPasswordForm() {
     const [errors, setErrors] = useState({});
-    const currentUser = useCurrentUser();
-    const setCurrentUser = useSetCurrentUser();
-
-    const [data, setData] = useState({
-        image: '',
-    });
-    const { image } = data;
-
-    const imageInput = useRef();
     const navigate = useNavigate();
     const { id } = useParams();
+    const currentUser = useCurrentUser();
+
+    const [userData, setUserData] = useState({
+        new_password1: '',
+        new_password2: '',
+    });
+    const { new_password1, new_password2 } = userData;
+
+    
 
     const handleEdit = () => {
         navigate(`/profiles/${id}/edit`)
