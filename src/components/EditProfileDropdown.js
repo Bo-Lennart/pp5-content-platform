@@ -2,9 +2,9 @@ import { Dropdown } from 'react-bootstrap';
 import styles from '../styles/MoreDropdown.module.css'
 import React from 'react';
 
-const ThreeDots = React.forwardRef(({ onClick }, ref) => (
+const EditProfile = React.forwardRef(({ onClick }, ref) => (
     <i
-        className="fas fa-ellipsis-v"
+        className="fa-solid fa-user-pen"
         ref={ref}
         onClick={(e) => {
             e.preventDefault();
@@ -16,7 +16,7 @@ const ThreeDots = React.forwardRef(({ onClick }, ref) => (
 export const EditProfileDropdown = ({ handleEdit, changePassword }) => {
     return (
         <Dropdown className='text-end'>
-            <Dropdown.Toggle as={ThreeDots} />
+            <Dropdown.Toggle as={EditProfile} />
 
 
             <Dropdown.Menu className='text-center'>
