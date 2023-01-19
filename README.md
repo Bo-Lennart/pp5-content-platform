@@ -120,3 +120,9 @@ For the design of the page i made a basic layout with wireframes and chose four 
 - Category feature
     - On the navbar the user has the ability to filter posts on six different categories. These will filter out all posts with the category of choice.
     - ![category feature](src/assets/readme_screenshots/categories.png)
+
+- Edit Profile image & Change password
+    - When a user navigates to their own profile, they will see an icon in the upper right corner where they can get to the edit page to change their image or change their password. Please see the screen shots below for this feature.
+
+    - ![edit profile feature](src/assets/readme_screenshots/edit_profile.png)
+
