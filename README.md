@@ -34,6 +34,7 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
     - [C.R.U.D](#crud)
 - [Testing](#testing)
     - [Validators](#validators)
+    - [Manual Testing](#manual-testing)
     - [Unfixex Bugs](#unfixed-bugs)
 
 - [Technologies Used](#technologies-used)
@@ -42,8 +43,7 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
     - [libraries](#libraries)
     - [Programs](#programs)
 
-- [Components](#components)
-    - [Deployment](#deployment)
+- [Deployment](#deployment)
 
 - [Credits](#credits)
     - [Content](#content)
@@ -187,3 +187,21 @@ For the design of the page i made a basic layout with wireframes and chose four 
 - In terms of C.R.U.D, the app serves a full CRUD feature for posts for the users. They can create, read, update and delete their own posts.
 - When it comes to their own profile they can create their profile, edit profile image and change their password. They can see all their posts on their profile page and delete or edit these, from there!
 - Furthemore the user has access to the bookmark feature. This list is created for each user, they can read their bookmarks, the page is updated when new bookmarks are added/or deleted.
+
+# Testing
+
+## Validators
+
+## Manual Testing
+
+## Unfixed Bugs
+
+# Technologies Used
+
+## Frameworks
+
+## Libraries
+
+## Programs
+
+# Deploment
