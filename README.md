@@ -31,6 +31,7 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
 - [Features](#features)
     - [Foundational Features and components](#foundational-features-and-components)
     - [Components](#components)
+    - [Feed Forward - Future Features](#feed-forward---future-features)
     - [C.R.U.D](#crud)
 - [Testing](#testing)
     - [Validators](#validators)
@@ -184,6 +185,12 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
         - SignUpForm.js 
 
 ![Sign up and sign in](src/assets/readme_screenshots/sign_in_up.png)
+
+## Feed Forward - Future Features
+- Add more categories for the user to pick.
+- Add more info to edit for the profile, such as username, location and bio.
+- Add more models for the feedback that people send in.
+- Implement admin user authentication to render an in site tab where all feedback is stored.
 
 ## C.R.U.D
 
