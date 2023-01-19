@@ -33,6 +33,7 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
     - [Components](#components)
     - [Feed Forward - Future Features](#feed-forward---future-features)
     - [C.R.U.D](#crud)
+    - [Components](#components)
 - [Testing](#testing)
     - [Validators](#validators)
     - [Manual Testing](#manual-testing)
@@ -198,6 +199,27 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 - In terms of C.R.U.D, the app serves a full CRUD feature for posts for the users. They can create, read, update and delete their own posts.
 - When it comes to their own profile they can create their profile, edit profile image and change their password. They can see all their posts on their profile page and delete or edit these, from there!
 - Furthemore the user has access to the bookmark feature. This list is created for each user, they can read their bookmarks, the page is updated when new bookmarks are added/or deleted.
+
+## Components
+1. AxiosDefault.js
+2. EditProfileDropdown.js: Edit drop down used for profile page.
+3. MoreDropdown.js: Used in every post object but only shown to the owner of a post.
+4. NavBar.js: Used on main app to display at the top
+5. ProfileIcon.js: Used to display the profile image of users on posts and in navbar
+
+### Pages
+1. PostsCategory.js - Depending on what filter is put here, this components will render the desired posts of that specific category.
+2. Post.js - The post components, which consists all data of a post. This is re-used in several other pages.
+3. PostEditForm.js - This is the edit form. It fetches the data of the current post and lets the user edit it.
+4. PostBookmarks.js - This page re-uses the post.js component, filters through all bookmarks and displays only the current users bookmarks to the page.
+5. PostCreateForm.js - This will create new posts and post these to the Data base for other components to get that data from the API when requested. 
+6. PostPage.js - This page contains all details of a post, including likes and bookmarks. This is where a user can mark a post as a bookmark to be added to their bokmark page.
+7. PostsFeed.js - This page contains all posts that are on the application API.
+
+### Profiles
+1. Profile.js
+2. ProfileEditForm.js
+3. UserPasswordForm.js
 
 # Testing
 
