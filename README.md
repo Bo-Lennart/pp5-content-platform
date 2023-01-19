@@ -4,7 +4,7 @@ Dagoy is a content platform for users to share their content. The concept is tha
 
 Each user has access to their own profile once they are signed in where they can create posts, see all their bookmarks, edit their profile image and password.
 
-If anyone needs to get in touch with the admin, they can fill out the contact form and the Admin will haveget in touch as soon as possible.
+If anyone needs to get in touch with the admin, they can fill out the contact form and the Admin will get in touch as soon as possible.
 
 ![Dagoy](src/assets/readme_screenshots/responsive.png)
 
@@ -205,7 +205,7 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 - Furthemore the user has access to the bookmark feature. This list is created for each user, they can read their bookmarks, the page is updated when new bookmarks are added/or deleted.
 
 ## Components
-1. AxiosDefault.js
+1. AxiosDefault.js: 
 2. EditProfileDropdown.js: Edit drop down used for profile page.
 3. MoreDropdown.js: Used in every post object but only shown to the owner of a post.
 4. NavBar.js: Used on main app to display at the top
@@ -260,7 +260,7 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 - Adobe Photoshop 2022 - To design the logo for the page.
 
 
-# Deploment
+# Deployment
 
 # Credits
 
