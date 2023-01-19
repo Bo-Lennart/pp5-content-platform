@@ -207,7 +207,7 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 - Furthemore the user has access to the bookmark feature. This list is created for each user, they can read their bookmarks, the page is updated when new bookmarks are added/or deleted.
 
 ## Components
-1. AxiosDefault.js: 
+1. AxiosDefault.js: To have a more efficient component to use when communicating with the back end API.
 2. EditProfileDropdown.js: Edit drop down used for profile page.
 3. MoreDropdown.js: Used in every post object but only shown to the owner of a post.
 4. NavBar.js: Used on main app to display at the top
