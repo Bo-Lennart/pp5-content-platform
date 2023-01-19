@@ -82,3 +82,6 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
 
 ![Agile KanBan Board](src/assets/readme_screenshots/agile.png)
 
+# Design
+
+For the design of the page i made a basic layout with wireframes and chose four colors as my base. I choose for the buttons to have the standard bootstrap - blue and the rest of the website is based on Bootstraps default design to match my foundational idea. 
