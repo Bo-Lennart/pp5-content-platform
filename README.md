@@ -21,9 +21,6 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
     - [Site Goal](#site-goal)
     - [User Stories](#user-stories)
         - [Agile Methodology](#agile-methodology)
-        - [Admin](#admin)
-        - [Dagoy User Stories](#dagoy-user-stories)
-        - [Visitors](#visitors)
 
 - [Design](#design)
     - [Color Palette](#color-palette)
