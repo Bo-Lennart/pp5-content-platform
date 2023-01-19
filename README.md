@@ -96,6 +96,9 @@ For the design of the page i made a basic layout with wireframes and chose four 
 ![Agile KanBan Board](src/assets/readme_screenshots/wireframes_desktop.png)
 
 ## Mobile Screen
-
+![Agile KanBan Board](src/assets/readme_screenshots/wireframes_mobile.png)
 
 # Color Palette
+- I wanted a dark themed navbar, white background for posts and where all content and forms are displayed. Blue buttons to make sure they are not missed and break the dynamic color pattern with some kind of color.
+
+![Agile KanBan Board](src/assets/readme_screenshots/color_scheme.png)
