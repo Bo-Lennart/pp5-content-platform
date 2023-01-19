@@ -23,8 +23,11 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
         - [Agile Methodology](#agile-methodology)
 
 - [Design](#design)
+    - [Wireframes](#wireframes)
+        - [Desktop](#desktop)
+        - [Mobile Screen](#mobile-screen)
     - [Color Palette](#color-palette)
-    - [Typography](#typography)
+    
 - [Features](#features)
     - [Foundational Features](#foundational-features)
     - [C.R.U.D](#crud)
@@ -85,3 +88,14 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
 # Design
 
 For the design of the page i made a basic layout with wireframes and chose four colors as my base. I choose for the buttons to have the standard bootstrap - blue and the rest of the website is based on Bootstraps default design to match my foundational idea. 
+
+# Wireframes
+
+## Desktop
+![Agile KanBan Board](src/assets/readme_screenshots/wireframes_homepage.png)
+![Agile KanBan Board](src/assets/readme_screenshots/wireframes_desktop.png)
+
+## Mobile Screen
+
+
+# Color Palette
