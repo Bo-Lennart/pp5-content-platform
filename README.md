@@ -27,6 +27,7 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
         - [Desktop](#desktop)
         - [Mobile Screen](#mobile-screen)
     - [Color Palette](#color-palette)
+    - [Logo](#Logo)
     
 - [Features](#features)
     - [Foundational Features and components](#foundational-features-and-components)
