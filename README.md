@@ -41,10 +41,8 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
 
 - [Technologies Used](#technologies-used)
     - [Languages](#languages)
-    - [Modules](#modules)
-    - [Frameworks](#frameworks)
-    - [libraries](#libraries)
-    - [Programs](#programs)
+    - [Libraries, Frameworks & Programs used](#libraries-frameworks--programs-used)
+
 
 - [Deployment](#deployment)
 
