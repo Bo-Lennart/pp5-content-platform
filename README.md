@@ -106,7 +106,7 @@ For the design of the page i made a basic layout with wireframes and chose four 
 
 # Features
 
-# Foundational Features and Components
+## Foundational Features and Components
 - Navigation Bar 
     - The navbar serves a clear navigation through the application where users can access the diffrent parts of the page. Catogories, bookmarks, contact, their profile, sign in and sign out. The navbar changes, depending on if a user is logged in or not (see screen shot below)
     - Component: 
@@ -182,3 +182,8 @@ For the design of the page i made a basic layout with wireframes and chose four 
 
 ![Sign up and sign in](src/assets/readme_screenshots/sign_in_up.png)
 
+## C.R.U.D
+
+- In terms of C.R.U.D, the app serves a full CRUD feature for posts for the users. They can create, read, update and delete their own posts.
+- When it comes to their own profile they can create their profile, edit profile image and change their password. They can see all their posts on their profile page and delete or edit these, from there!
+- Furthemore the user has access to the bookmark feature. This list is created for each user, they can read their bookmarks, the page is updated when new bookmarks are added/or deleted.
