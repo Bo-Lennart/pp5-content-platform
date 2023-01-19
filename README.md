@@ -133,3 +133,11 @@ For the design of the page i made a basic layout with wireframes and chose four 
     - The contact feature is open for all and will be accessible for Admin users through the back-end /admin page.
 
     - ![Contact andcreate post form](src/assets/readme_screenshots/create_post_contact_form.png)
+
+- Sign in / Sign up
+
+    - For users who are already members of the Dagoy comunity, they can simply sign in to their profile by clicking on the navbar "sign in".
+
+    - For new users, who wish to take part of all features, such as bookmarking posts, liking posts and most of all, make content themselves.. They can create a new user on the "sign up" navlink.
+
+    - ![Contact andcreate post form](src/assets/readme_screenshots/sign_in_up.png)
