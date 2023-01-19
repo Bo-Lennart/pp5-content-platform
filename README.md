@@ -29,7 +29,7 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
     - [Color Palette](#color-palette)
     
 - [Features](#features)
-    - [Foundational Features](#foundational-features)
+    - [Foundational Features and components](#foundational-features-and-components)
     - [Components](#components)
     - [C.R.U.D](#crud)
 - [Testing](#testing)
@@ -106,42 +106,68 @@ For the design of the page i made a basic layout with wireframes and chose four 
 
 # Features
 
-# Foundational Features
-- Navigation Bar
+# Foundational Features and Components
+- Navigation Bar 
     - The navbar serves a clear navigation through the application where users can access the diffrent parts of the page. Catogories, bookmarks, contact, their profile, sign in and sign out. The navbar changes, depending on if a user is logged in or not (see screen shot below)
+    - Component: NavBar.js
+
 ![Color scheme](src/assets/readme_screenshots/navbar_feature.png)
 
-- Edit posts. 
+- Edit posts.
     - When a user scrolls through the feed they will see a pen above their own posts. When they click on this they can delete their posts, or edit them. If they click "edit", they will get redirected to a form, where the data of the post is fetched and the user has the ability to update it accordingly.
+    - Components: 
+        - MoreDropdown.js 
+        - Post.js 
+        - PostEditForm.js 
+        - PostFeed.js
+
 ![edit post](src/assets/readme_screenshots/edit_post.png)
 
 - Bookmark & Like functionality
     - When clicking in on a post, the user will get redirected to the post details. On this page a like button and bookmark button is displayed.
     Through the like button a user can show their appreciation of a users content. 
     Through the bookmark feature, the user has the ability to store posts to their personal bookmark page. Once it's clicked, this post will be added to the posts that are displayed on your bookmark tab. If the user wishes to remove a bookmark, they just click the icon again.
+    - Components: 
+        - Post.js
+        - PostBookmarks.js 
+
 ![bookmark post](src/assets/readme_screenshots/bookmark.png)
 
 - Category feature
     - On the navbar the user has the ability to filter posts on six different categories. These will filter out all posts with the category of choice.
-    - ![category feature](src/assets/readme_screenshots/categories.png)
+    - Components: 
+        - PostBookmarks.js 
+
+![category feature](src/assets/readme_screenshots/categories.png)
 
 - Edit Profile image & Change password
     - When a user navigates to their own profile, they will see an icon in the upper right corner where they can get to the edit page to change their image or change their password. Please see the screen shots below for this feature.
+    - Components: 
+        - Profile.js 
+        - ProfileEditForm.js
+        - UserPasswordForm.js
 
-    - ![edit profile feature](src/assets/readme_screenshots/edit_profile.png)
+![edit profile feature](src/assets/readme_screenshots/edit_profile.png)
 
 - Create post & Contact Form
 
     - If a user wishes to make a new post, they click on the "create" nav link in the navbar. Furthermore, if they need to contact someone from the admin, they can do so via filling out the contact form that they can find on the navlink "contact".
 
     - The contact feature is open for all and will be accessible for Admin users through the back-end /admin page.
+    - Components: 
+        - PostCreateForm.js 
+        - ContactForm.js
+        - Confirm.js
 
-    - ![Contact andcreate post form](src/assets/readme_screenshots/create_post_contact_form.png)
+![Contact andcreate post form](src/assets/readme_screenshots/create_post_contact_form.png)
 
 - Sign in / Sign up
 
     - For users who are already members of the Dagoy comunity, they can simply sign in to their profile by clicking on the navbar "sign in".
 
     - For new users, who wish to take part of all features, such as bookmarking posts, liking posts and most of all, make content themselves.. They can create a new user on the "sign up" navlink.
+    - Components: 
+        - SignInForm.js 
+        - SignUpForm.js 
 
-    - ![Contact andcreate post form](src/assets/readme_screenshots/sign_in_up.png)
+![Contact andcreate post form](src/assets/readme_screenshots/sign_in_up.png)
