@@ -39,7 +39,7 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
     - [Unfixex Bugs](#unfixed-bugs)
 
 - [Technologies Used](#technologies-used)
-
+    - [Modules](#modules)
     - [Frameworks](#frameworks)
     - [libraries](#libraries)
     - [Programs](#programs)
@@ -207,6 +207,9 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 ## Unfixed Bugs
 
 # Technologies Used
+
+## Modules
+- All modules used for this project are documented in the API back-end README. This can be found here: [LINK](https://github.com/Bo-Lennart/DRF-PP5-API)
 
 ## Frameworks
 
