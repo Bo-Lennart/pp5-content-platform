@@ -6,6 +6,7 @@ const EditProfile = React.forwardRef(({ onClick }, ref) => (
     <i
         className="fa-solid fa-user-pen"
         ref={ref}
+        type="button"
         onClick={(e) => {
             e.preventDefault();
             onClick(e);
