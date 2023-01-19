@@ -107,6 +107,10 @@ For the design of the page i made a basic layout with wireframes and chose four 
 # Features
 
 # Foundational Features
+- Navigation Bar
+    - The navbar serves a clear navigation through the application where users can access the diffrent parts of the page. Catogories, bookmarks, contact, their profile, sign in and sign out. The navbar changes, depending on if a user is logged in or not (see screen shot below)
+![Color scheme](src/assets/readme_screenshots/navbar_feature.png)
+
 - Edit posts. 
     - When a user scrolls through the feed they will see a pen above their own posts. When they click on this they can delete their posts, or edit them. If they click "edit", they will get redirected to a form, where the data of the post is fetched and the user has the ability to update it accordingly.
 ![edit post](src/assets/readme_screenshots/edit_post.png)
