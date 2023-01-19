@@ -126,3 +126,10 @@ For the design of the page i made a basic layout with wireframes and chose four 
 
     - ![edit profile feature](src/assets/readme_screenshots/edit_profile.png)
 
+- Create post & Contact Form
+
+    - If a user wishes to make a new post, they click on the "create" nav link in the navbar. Furthermore, if they need to contact someone from the admin, they can do so via filling out the contact form that they can find on the navlink "contact".
+
+    - The contact feature is open for all and will be accessible for Admin users through the back-end /admin page.
+
+    - ![Contact andcreate post form](src/assets/readme_screenshots/create_post_contact_form.png)
