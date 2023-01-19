@@ -59,8 +59,27 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
 ### User Stories
 - The base of this project has consisted of building user stories and plan the project from these.
 
+    1. USER STORY:  As a user I have a navbar to every page so I can navigate easely
+    2. USER STORY:  As a user I can sign up for the news page in order to access the features of a signed up user
+    3. USER STORY:  As a user I can sign in to the app and access functionality for users
+    4. USER STORY:  As a user I can tell if I'm logged in or not so I can log in if I need to
+    5. USER STORY:  (Refreshin access tokens) as a user I can maintain my logged in status until I choose to log out so that my experience is not compromised
+    6. USER STORY:  As a user I can see booth sign up/sign in options when I'm not signed in
+    7. USER STORY:  As a user I can create posts to share my content with images
+    8. USER STORY:  As a user I can view other users posts to get inspired in a posts feed list
+    9. USER STORY:  As a user I can like other users posts to show that I appreciate their content
+    10. USER STORY:  As a user I want to be able to save posts that I find inspiring in order to check them out at a later point
+    11. USER STORY:  As a user I can view all the most recent posts to get up to date with topics
+    12. USER STORY:  As a user I can switch between categories in order to find the topics that I'm most interested in
+    13. USER STORY:  As a user I can edit my own post title, description or category so I can make corrections or updates after they've been created
+    14. USER STORY: As a user I can fill out a form to contact Admin and make them aware of issues, feedback or any other matter of contact. 
+    15. USER STORY:  As a user I can change my profile picture and change password
+    16. USER STORY:  As a user I can update my account password so I can keep my profile secure
+    
+
 ### Agile Methodology
 
 - For this project I used GitHubs own KanBan alike agile project method, where I stored my User Stories and could move them from Todo -> In Progress -> Done. This has helped me to know what was next on my list but also keep track of the projects status in terms of where I am. 
 
 ![Agile KanBan Board](src/assets/readme_screenshots/agile.png)
+
