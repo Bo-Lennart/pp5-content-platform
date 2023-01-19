@@ -39,6 +39,7 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
     - [Unfixex Bugs](#unfixed-bugs)
 
 - [Technologies Used](#technologies-used)
+    - [Languages](#languages)
     - [Modules](#modules)
     - [Frameworks](#frameworks)
     - [libraries](#libraries)
@@ -213,7 +214,22 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 
 ## Frameworks
 
+## Languages
+- HTML5
+- CSS3
+- JavaScript
+- Python
+- JSX
+- SQL - Postgres
+
 ## Libraries
+- Django REST Framework - Back-End API
+- React.js - Used to build the architecture of the front-end web application with pages and components. 
+- React Bootstrap.js - Provides a library of styling and out of the box components that can contribute to build an optimised UX experience.
+- Pages - Used to create wireframes
+- GitPod - Workspace IDE.
+- GitHub - Repository Hosting.
+- Heroku - Platform for final deployment.
 
 ## Programs
 
