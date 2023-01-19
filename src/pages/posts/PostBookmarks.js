@@ -54,12 +54,12 @@ const PostBookmark = () => {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         {hasLoaded ? (
           <> 
-            {posts.length ? (bookmarkedPosts.map((post) => (
+            {bookmarkedPosts.length ? (bookmarkedPosts.map((post) => (
                 <Post key={post.id} {...post} setPosts={setPosts} isInPostPage={false} />
               ))
             ) : (
               <Container >
-                <h1>Not posts found</h1>
+                <h1>No posts found</h1>
               </Container>
             )}
           </>
