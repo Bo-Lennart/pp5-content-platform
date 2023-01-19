@@ -270,3 +270,15 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
     - Wedding Path: [LINK](https://github.com/cornishcoder1/pp5-react-frontend-the-winding-path)
 
 ## Media
+
+- Choco Cookie Post: [LINK](https://pixabay.com/sv/photos/kaka-choklad-chokladkaka-1850011/)
+- Asian Buffé Post: [LINK](https://pixabay.com/sv/photos/mat-matr%c3%a4tter-restaurang-m%c3%a5ltid-1050813/)
+- B&W Pic of Stockholm Post: [LINK](https://pixabay.com/sv/photos/t%c3%a5g-j%c3%a4rnv%c3%a4g-stad-sverige-stockholm-4184537/)
+- Finance Post: [LINK](https://pixabay.com/sv/photos/pengar-vinst-finansiera-f%c3%b6retag-2696228/)
+- Test_user_carro Profile Pic: [LINK](https://pixabay.com/sv/photos/kvinna-silhuett-solnedg%c3%a5ng-strand-570883/)
+- Music Post: [LINK](https://pixabay.com/sv/photos/kvinna-gitarr-bro-sammantr%c3%a4de-944261/)
+- Tech Post: [LINK](https://pixabay.com/sv/photos/software-developer-webbutvecklare-6521720/)
+- balinese tradition post: [LINK](https://pixabay.com/sv/photos/dansa-balinesisk-traditionell-4271941/)
+- Test_user_form Profile pic: [LINK](https://pixabay.com/sv/photos/flicka-indiska-dansa-r%c3%b6d-1505407/)
+- Test_user_form3 Profile pic: [LINK](https://pixabay.com/sv/photos/far-och-son-g%c3%a5ende-j%c3%a4rnv%c3%a4g-grus-2258681/)
+- Food Chef ramen Post: [LINK](https://pixabay.com/sv/photos/asiatisk-mat-kock-matlagning-1850233/)
