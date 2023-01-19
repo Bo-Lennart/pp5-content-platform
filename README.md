@@ -105,6 +105,10 @@ For the design of the page i made a basic layout with wireframes and chose four 
 
 ![Color scheme](src/assets/readme_screenshots/color_scheme.png)
 
+# Logo
+- The logo has been designed by myself in photoshop.
+![Color scheme](src/assets/readme_screenshots/logo.png)
+
 # Features
 
 ## Foundational Features and Components
@@ -232,8 +236,6 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 ## Modules
 - All modules used for this project are documented in the API back-end README. This can be found here: [LINK](https://github.com/Bo-Lennart/DRF-PP5-API)
 
-## Frameworks
-
 ## Languages
 - HTML5
 - CSS3
@@ -253,6 +255,7 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 - GitPod - Workspace IDE.
 - GitHub - Repository Hosting.
 - Heroku - Platform for final deployment.
+- Adobe Photoshop 2022 - To design the logo for the page.
 
 
 # Deploment
