@@ -19,13 +19,11 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
 ## Table of Contents
 - [User Experience](#user-experience)
     - [Site Goal](#site-goal)
-    - [Audience](#Audience)
-    - [Dagoy Users](#dagoy-users)
-    - [New Dagoy Users](#new-dagoy-users)
-- [User Stories](#user-stories)
-    - [Admin](#admin)
-    - [Dagoy User Stories](#dagoy-user-stories)
-    - [Visitors](#visitors)
+    - [User Stories](#user-stories)
+        - [Admin](#admin)
+        - [Dagoy User Stories](#dagoy-user-stories)
+        - [Visitors](#visitors)
+
 - [Design](#design)
     - [Color Palette](#color-palette)
     - [Typography](#typography)
@@ -48,3 +46,11 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
 - [Credits](#credits)
     - [Content](#content)
     - [Media](#media)
+
+# User Experience
+This content application was built for my Portfolio Project 5 as part of my Diploma in Full-Stack Software Development, Code Institute. 
+
+## Site goal
+The goal of this project is to demonstrate expereience and skills learned throughout the course as a final project within HTML, CSS, JavaScript, React.js and Django REST Framework.
+
+The application is a content sharing app where users can sign up, inspire eachother with content and upload by category for users to filter their field of interest. 
