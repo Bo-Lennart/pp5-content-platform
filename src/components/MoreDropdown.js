@@ -1,23 +1,23 @@
-import { Dropdown } from 'react-bootstrap';
+import { Button, Dropdown } from 'react-bootstrap';
 import styles from '../styles/MoreDropdown.module.css'
 import React from 'react';
 
 const ThreeDots = React.forwardRef(({ onClick }, ref) => (
-    <i
-        className="fas fa-ellipsis-v"
+    <div  className={styles.DotMenu}><i
+        className="fa-solid fa-pencil"
         ref={ref}
+        type="button"
         onClick={(e) => {
             e.preventDefault();
             onClick(e);
         }}
-    />
+    /></div>
 ));
 
 export const MoreDropdown = ({ handleEdit, handleDelete }) => {
     return (
         <Dropdown className='text-end'>
             <Dropdown.Toggle as={ThreeDots} />
-
 
             <Dropdown.Menu className='text-center'>
                 <Dropdown.Item className={styles.DropdownItem}
