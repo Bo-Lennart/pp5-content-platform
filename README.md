@@ -261,6 +261,12 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 
 ## Content
 
-## Media
+- Code Institute: By utilising the Moments walkthrough, step by step of the module of Code Institutes advances front end, I have used this to build a base foundation for my project. However, since I am using a different version of React, I couldn't reuse any code fully. Therefore I have not written any credit comments inside the project, as the re-writing of difference code blocks turned out custom made and gave me the opportunity to refactor into a newer version of react code - in other words: A learning experience. 
 
-# The
+- Martina Terlevic: A consistant mentor providing feedback, resources and tips along the way with the project. Structured in her communication and feedback which has allowed me to keep my project in a steady direction. 
+
+- For the README file structure I have been inspired in terms of layout by the following projects:
+    - Red Crayon: [LINK](https://github.com/CluelessBiker/project5-red-crayon)
+    - Wedding Path: [LINK](https://github.com/cornishcoder1/pp5-react-frontend-the-winding-path)
+
+## Media
