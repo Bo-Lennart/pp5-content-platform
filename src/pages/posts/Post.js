@@ -121,6 +121,7 @@ const Post = (props) => {
                 <p>
                     <ProfileIcon src={profile_image} height={50} />
                     {owner}
+                    {is_owner  && <MoreDropdown handleEdit={handleEdit} handleDelete={handleDelete} />}
                 </p>
                 {title && <Card.Title className="text-center">{title}</Card.Title>}
                 <p className="text-center">{updated_at}</p>
