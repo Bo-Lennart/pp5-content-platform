@@ -107,6 +107,9 @@ For the design of the page i made a basic layout with wireframes and chose four 
 # Features
 
 ## Foundational Features and Components
+Different components are re-used by other components and nested into each other. For example, the navbar components is reaused on all pages. The post component is re-used to render all posts on bookmark page, profile page, postsfeed etc.
+Furthemorethe ProfileIcon component is re-used inside the post component. The MoreDropdown component is used inside the post component and the Edit profile dropdown is re-used in the profile page. It's a complex architecture that works together to supply clear features and navigation for the user to benefit from and increase their experience of the page.
+
 - Navigation Bar 
     - The navbar serves a clear navigation through the application where users can access the diffrent parts of the page. Catogories, bookmarks, contact, their profile, sign in and sign out. The navbar changes, depending on if a user is logged in or not (see screen shot below)
     - Component: 
@@ -158,7 +161,7 @@ For the design of the page i made a basic layout with wireframes and chose four 
     Through the bookmark feature, the user has the ability to store posts to their personal bookmark page. Once it's clicked, this post will be added to the posts that are displayed on your bookmark tab. If the user wishes to remove a bookmark, they just click the icon again.
     - Components: 
         - Post.js
-        - PostBookmarks.js 
+        - PostBookmarks.js
 
 ![bookmark post](src/assets/readme_screenshots/bookmark.png)
 
