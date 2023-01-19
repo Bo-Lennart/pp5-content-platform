@@ -209,7 +209,7 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 
 ### Pages
 1. PostsCategory.js - Depending on what filter is put here, this components will render the desired posts of that specific category.
-2. Post.js - The post components, which consists all data of a post. This is re-used in several other pages.
+2. Post.js - The post components, which consists of, and requests all data of a specific post. This is re-used in several other pages.
 3. PostEditForm.js - This is the edit form. It fetches the data of the current post and lets the user edit it.
 4. PostBookmarks.js - This page re-uses the post.js component, filters through all bookmarks and displays only the current users bookmarks to the page.
 5. PostCreateForm.js - This will create new posts and post these to the Data base for other components to get that data from the API when requested. 
