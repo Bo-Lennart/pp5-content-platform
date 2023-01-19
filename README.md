@@ -75,11 +75,13 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
     14. USER STORY: As a user I can fill out a form to contact Admin and make them aware of issues, feedback or any other matter of contact. 
     15. USER STORY:  As a user I can change my profile picture and change password
     16. USER STORY:  As a user I can update my account password so I can keep my profile secure
-    
+
 
 ### Agile Methodology
 
 - For this project I used GitHubs own KanBan alike agile project method, where I stored my User Stories and could move them from Todo -> In Progress -> Done. This has helped me to know what was next on my list but also keep track of the projects status in terms of where I am. 
+
+* Link To GitHub KanBan Project - [LINK](https://github.com/users/Bo-Lennart/projects/10/views/1)
 
 ![Agile KanBan Board](src/assets/readme_screenshots/agile.png)
 
