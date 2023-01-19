@@ -240,12 +240,15 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 - HTML5
 - CSS3
 - JavaScript
-- Python
+- Python (to build the backend)
 - JSX
 - SQL - Postgres
 
-## Libraries
+## Libraries, Frameworks & Programs used
 - Django REST Framework - Back-End API
+- django - used to build the back-end application
+- Font Awesome - Add icons to different navlinks, dropdown menus, bookmark and like buttons.
+- Am I resposive? - To see how to front-end page looks on different screen sizes
 - React.js - Used to build the architecture of the front-end web application with pages and components. 
 - React Bootstrap.js - Provides a library of styling and out of the box components that can contribute to build an optimised UX experience.
 - Pages - Used to create wireframes
@@ -253,7 +256,6 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 - GitHub - Repository Hosting.
 - Heroku - Platform for final deployment.
 
-## Programs
 
 # Deploment
 
