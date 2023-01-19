@@ -115,4 +115,8 @@ For the design of the page i made a basic layout with wireframes and chose four 
     - When clicking in on a post, the user will get redirected to the post details. On this page a like button and bookmark button is displayed.
     Through the like button a user can show their appreciation of a users content. 
     Through the bookmark feature, the user has the ability to store posts to their personal bookmark page. Once it's clicked, this post will be added to the posts that are displayed on your bookmark tab. If the user wishes to remove a bookmark, they just click the icon again.
-![edit post](src/assets/readme_screenshots/bookmark.png)
+![bookmark post](src/assets/readme_screenshots/bookmark.png)
+
+- Category feature
+    - On the navbar the user has the ability to filter posts on six different categories. These will filter out all posts with the category of choice.
+    - ![category feature](src/assets/readme_screenshots/categories.png)
