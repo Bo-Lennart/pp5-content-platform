@@ -6,6 +6,8 @@ Each user has access to their own profile once they are signed in where they can
 
 If anyone needs to get in touch with the admin, they can fill out the contact form and the Admin will haveget in touch as soon as possible.
 
+![The Strategy Plane](src/assets/readme_screenshots/responsive.png)
+
 * Deployed FrontEnd - [Dagoy](https://dagoy-pp5.herokuapp.com/)
 
 * Deployed BackEnd API - [Dagoy DRF API](https://pp5-api-bo.herokuapp.com/)
