@@ -30,6 +30,7 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
     
 - [Features](#features)
     - [Foundational Features](#foundational-features)
+    - [Components](#components)
     - [C.R.U.D](#crud)
 - [Testing](#testing)
     - [Validators](#validators)
@@ -92,13 +93,26 @@ For the design of the page i made a basic layout with wireframes and chose four 
 # Wireframes
 
 ## Desktop
-![Agile KanBan Board](src/assets/readme_screenshots/wireframes_homepage.png)
-![Agile KanBan Board](src/assets/readme_screenshots/wireframes_desktop.png)
+![wireframes homepage](src/assets/readme_screenshots/wireframes_homepage.png)
+![wireframes desktop](src/assets/readme_screenshots/wireframes_desktop.png)
 
 ## Mobile Screen
-![Agile KanBan Board](src/assets/readme_screenshots/wireframes_mobile.png)
+![wireframes mobile](src/assets/readme_screenshots/wireframes_mobile.png)
 
 # Color Palette
 - I wanted a dark themed navbar, white background for posts and where all content and forms are displayed. Blue buttons to make sure they are not missed and break the dynamic color pattern with some kind of color.
 
-![Agile KanBan Board](src/assets/readme_screenshots/color_scheme.png)
+![Color scheme](src/assets/readme_screenshots/color_scheme.png)
+
+# Features
+
+# Foundational Features
+- Edit posts. 
+    - When a user scrolls through the feed they will see a pen above their own posts. When they click on this they can delete their posts, or edit them. If they click "edit", they will get redirected to a form, where the data of the post is fetched and the user has the ability to update it accordingly.
+![edit post](src/assets/readme_screenshots/edit_post.png)
+
+- Bookmark & Like functionality
+    - When clicking in on a post, the user will get redirected to the post details. On this page a like button and bookmark button is displayed.
+    Through the like button a user can show their appreciation of a users content. 
+    Through the bookmark feature, the user has the ability to store posts to their personal bookmark page. Once it's clicked, this post will be added to the posts that are displayed on your bookmark tab. If the user wishes to remove a bookmark, they just click the icon again.
+![edit post](src/assets/readme_screenshots/bookmark.png)
