@@ -262,6 +262,22 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 
 # Deployment
 
+## Github
+1. Create Repository on GitHub (No CI Template)
+2. Create new workspace
+3. When workspace has started, run "npm start" to check if the app is working. Then use command "--use-npm" to create the React app.
+4. After the app has been installed, run "npm start", which will start a local server where you can check if the React Logo has started.
+5. Replace the logo inside App.js and replace it with a header element with any given text to check that everything is set up correctly.
+6. Confirm changes and push to commit, push to github.
+
+## Heroku
+1. Create a new app
+2. Go to 'Settings" and ensure that the nodejs buildpack is added. If not, add it manually via the "add buildpack" button and select nodejs -> save changes.
+3. Go to the deploy page, link to github and pick your Github react project.
+4. Scroll down and click "Deploy branch". When clicking on the build logs, you'll see the build and can check if the build was successfull and the page has been deployed.
+5. Open the app by clicking on "open app" and check so the deployed heroku page works with your react repo.
+6. When installing libraries, such as Bootstrap, the command to run is "npm install react-bootstrap@1.6.3 bootstrap@4.6.0"
+
 # Credits
 
 ## Content
