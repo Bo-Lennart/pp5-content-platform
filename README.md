@@ -46,6 +46,8 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
 
 
 - [Deployment](#deployment)
+    - [Heroku](#heroku)
+    - [GitHub](#github)
 
 - [Credits](#credits)
     - [Content](#content)
