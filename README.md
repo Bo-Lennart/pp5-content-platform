@@ -294,7 +294,7 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 
 ## Media
 
-- Choco Cookie Post: [LINK](https://pixabay.com/sv/photos/kaka-choklad-chokladkaka-1850011/)
+- Choco Cake Post: [LINK](https://pixabay.com/sv/photos/kaka-choklad-chokladkaka-1850011/)
 - Asian Buffé Post: [LINK](https://pixabay.com/sv/photos/mat-matr%c3%a4tter-restaurang-m%c3%a5ltid-1050813/)
 - B&W Pic of Stockholm Post: [LINK](https://pixabay.com/sv/photos/t%c3%a5g-j%c3%a4rnv%c3%a4g-stad-sverige-stockholm-4184537/)
 - Finance Post: [LINK](https://pixabay.com/sv/photos/pengar-vinst-finansiera-f%c3%b6retag-2696228/)
