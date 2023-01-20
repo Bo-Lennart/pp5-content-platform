@@ -245,9 +245,14 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
     * The create tab loads, the post function works and the database stores the data of the post. Yes, this works.
 8. USER STORY:  As a user I can view other users posts to get inspired in a posts feed list [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/8)
     * Yes, on the postsfeed you can see all users posts. However, the users can not navigate to specific users to see only a certain users post. This is a future feature and has been added to the KanBan Board.
+        * [Future Feature User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/20)
         
 9. USER STORY:  As a user I can like other users posts to show that I appreciate their content [#Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/9)
+    * This feature works. By clicking on the desired post, the icon pop up on the bottom of the post and can be liked/unliked. The page updates accordingly.
+
 10. USER STORY:  As a user I want to be able to save posts that I find inspiring in order to check them out at a later point [#Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/10)
+    * This feature work. A user can bookmark a post once they click in on the desired post by clicking on the bookmark Icon on the bottom of the post. A bug was found: When user bookmarks, then removed the bookmark and then tries to bookmark again, it won't work. The user needs to refresh the page in order to re-bookmark. This has been added to the user story KanBan board:
+        * Future Feature User Story
 11. USER STORY:  As a user I can view all the most recent posts to get up to date with topics [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/11)
 12. USER STORY:  As a user I can switch between categories in order to find the topics that I'm most interested in [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/12)
 13. USER STORY:  As a user I can edit my own post title, description or category so I can make corrections or updates after they've been created [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/14)
