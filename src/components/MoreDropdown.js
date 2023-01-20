@@ -1,4 +1,4 @@
-import { Button, Dropdown } from 'react-bootstrap';
+import { Dropdown } from 'react-bootstrap';
 import styles from '../styles/MoreDropdown.module.css'
 import React from 'react';
 

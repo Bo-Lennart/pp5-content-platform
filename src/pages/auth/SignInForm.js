@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import styles from "../../styles/SignInUpForm.module.css";
 import appStyles from "../../App.module.css";
 import axios from 'axios';
 
@@ -42,10 +41,10 @@ function SignInForm() {
     };
 
     return (
-        <Row className={styles.Row}>
+        <Row>
             <Col className="my-auto py-2 p-md-2" md={6}>
                 <Container className={`${appStyles.Content} p-4 `}>
-                    <h1 className={styles.Header}>sign in</h1>
+                    <h1>sign in</h1>
 
                     <Form onSubmit={handleSubmit}>
                         <Form.Group controlId="username">
@@ -84,14 +83,14 @@ function SignInForm() {
 
                 </Container>
                 <Container className={`mt-3 ${appStyles.Content}`}>
-                    <Link className={styles.Link} to="/signup">
+                    <Link to="/signup">
                         Don't have an account yet? <span>Sign up</span>
                     </Link>
                 </Container>
             </Col>
             <Col
                 md={6}
-                className={`my-auto d-none d-md-block p-2 ${styles.SignUpCol}`}
+                className={`my-auto d-none d-md-block p-2`}
             >
             </Col>
         </Row>
