@@ -13,7 +13,6 @@ const Post = (props) => {
         id,
         category,
         owner,
-        profile_id,
         profile_image,
         likes_count,
         like_id,
@@ -23,7 +22,6 @@ const Post = (props) => {
         content,
         image,
         updated_at,
-        postPage,
         setPosts,
         isInPostPage = true
     } = props;
