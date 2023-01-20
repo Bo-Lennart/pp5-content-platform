@@ -36,9 +36,6 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
     - [C.R.U.D](#crud)
     - [Components](#components)
 - [Testing](#testing)
-    - [Validators](#validators)
-    - [Manual Testing](#manual-testing)
-    - [Unfixex Bugs](#unfixed-bugs)
 
 - [Technologies Used](#technologies-used)
     - [Languages](#languages)
@@ -269,8 +266,6 @@ Manual testing has been done from each user story of the project KanBan. Bugs oc
 16. USER STORY:  As a user I can update my account password so I can keep my profile secure [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/18)
     * And this works as well. A minor error is that I couldn't implement a condition to send a user to home page if they are not the same ID och current user.. However, I tried to change id in the field to see if I can change another users password and this does not work. It does not matter which id I write in the URL once I've been linked. The only password that's changed is the current users. [User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/22)
         * Future feature is to let the user write their old password in order to change it. Just to set the security level a snippet higher. This has been added as a 'User Story'. [User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/23)
-
-## Validators
 
 # Technologies Used
 
