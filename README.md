@@ -1,6 +1,6 @@
 # Dagoy - Content Sharing Platform
 
-Dagoy is a content platform for users to share their content. The concept is that you cannot follow any users, to keep content democracy on a high level and nobody gets to ride on the "high follower number bluff = quality".. What you can do on Dagoy is bookmark posts, filter them by category and also like posts if you appreciate a users content. 
+Dagoy is a content platform for users to share their content. The concept is that you cannot follow any users, to keep content democracy on a high level and nobody gets to ride on the "high follower number bluff = quality".. What you can do on Dagoy is bookmark posts, filter them by category, and also like posts if you appreciate a users content.
 
 Each user has access to their own profile once they are signed in where they can create posts, see all their bookmarks, edit their profile image and password.
 
@@ -41,31 +41,28 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
 - [Technologies Used](#technologies-used)
     - [Languages](#languages)
     - [Libraries, Frameworks & Programs used](#libraries-frameworks--programs-used)
-
-
 - [Deployment](#deployment)
     - [Heroku](#heroku)
     - [GitHub](#github)
-
 - [Credits](#credits)
     - [Content](#content)
     - [Media](#media)
 
 # User Experience
-- This content application was built for my Portfolio Project 5 as part of my Diploma in Full-Stack Software Development, Code Institute. 
+- This content application was built for my Portfolio Project 5 as part of my Diploma in Full-Stack Software Development, Code Institute.
 
 ## Site goal
-- The goal of this project is to demonstrate expereience and skills learned throughout the course as a final project within HTML, CSS, JavaScript, React.js and Django REST Framework.
+- The goal of this project is to demonstrate experience and skills learned throughout the course as a final project within HTML, CSS, JavaScript, React.js and Django REST Framework.
 
-- The application is a content sharing app where users can sign up, inspire eachother with content and upload by category for users to filter their field of interest. 
+- The application is a content sharing app where users can sign up, inspire eachother with content, and upload by category for users to filter their field of interest.
 
 ### User Stories
-- The base of this project has consisted of building user stories and plan the project from these.
+- The basis of this project has consisted of building user stories and planning the project from these.
 
     1. USER STORY:  As a user I have a navbar to every page so I can navigate easely [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/1)
     2. USER STORY:  As a user I can sign up for the news page in order to access the features of a signed up user [#Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/2)
     3. USER STORY:  As a user I can sign in to the app and access functionality for users [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/3)
-    4. USER STORY:  As a user I can tell if I'm logged in or not so I can log in if I need to [#Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/4)
+    4. USER STORY:  As a user I can tell if I'm logged in or not so I can log in if I need to [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/4)
     5. USER STORY:  (Refreshin access tokens) as a user I can maintain my logged in status until I choose to log out so that my experience is not compromised [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/4)
     6. USER STORY:  As a user I can see booth sign up/sign in options when I'm not signed in [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/6)
     7. USER STORY:  As a user I can create posts to share my content with images 
@@ -82,7 +79,7 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
 
 ### Agile Methodology
 
-- For this project I used GitHubs own KanBan alike agile project method, where I stored my User Stories and could move them from Todo -> In Progress -> Done. This has helped me to know what was next on my list but also keep track of the projects status in terms of where I am. 
+- For this project I used GitHubs own KanBan agile project method, where I stored my User Stories and could move them from Todo -> In Progress -> Done. This has helped me to know what was next on my list but also keep track of the projects status in terms of where I am.
 
 * Link To GitHub KanBan Project - [LINK](https://github.com/users/Bo-Lennart/projects/10/views/1)
 
@@ -114,14 +111,14 @@ For the design of the page i made a basic layout with wireframes and chose four 
 # Features
 
 ## Foundational Features and Components
-Different components are re-used by other components and nested into each other. For example, the navbar components is reaused on all pages. The post component is re-used to render all posts on bookmark page, profile page, postsfeed etc.
-Furthemorethe ProfileIcon component is re-used inside the post component. The MoreDropdown component is used inside the post component and the Edit profile dropdown is re-used in the profile page. It's a complex architecture that works together to supply clear features and navigation for the user to benefit from and increase their experience of the page.
+Different components are re-used by other components and nested into each other. For example, the navbar components are reused on all pages. The post component is re-used to render all posts on bookmark page, profile page, postsfeed etc.
+Furthemore The ProfileIcon component is re-used inside the post component. The MoreDropdown component is used inside the post component and the Edit profile dropdown is re-used in the profile page. It's a complex architecture that works together to supply clear features and navigation for the user to benefit from and increase their experience of the page.
 
-- Navigation Bar 
-    - The navbar serves a clear navigation through the application where users can access the diffrent parts of the page. Catogories, bookmarks, contact, their profile, sign in and sign out. The navbar changes, depending on if a user is logged in or not (see screen shot below)
-    - Component: 
-        - NavBar.js
-        - ProfileIcon.js
+- Navigation Bar
+   - The navbar serves a clear navigation through the application where users can access the different parts of the page. Categories, bookmarks, contact, profile, sign in and sign out. The navbar changes, depending on if a user is logged in or not (see screen shot below)
+   - Component:
+       - NavBar.js
+       - ProfileIcon.js
 
 ![Color scheme](src/assets/readme_screenshots/navbar_feature.png)
 
@@ -133,9 +130,9 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 ![Post feed](src/assets/readme_screenshots/postsfeed.png)
 
 - Category feature
-    - On the navbar the user has the ability to filter posts on six different categories. These will filter out all posts with the category of choice.
-    - Components: 
-        - PostBookmarks.js 
+   - On the navbar the user has the ability to filter posts into six different categories. These will filter out all posts with the category of choice.
+   - Components:
+       - PostBookmarks.js
 
 ![category feature](src/assets/readme_screenshots/categories.png)
 
@@ -153,12 +150,12 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 ![Contact andcreate post form](src/assets/readme_screenshots/create_post_contact_form.png)
 
 - Edit posts.
-    - When a user scrolls through the feed they will see a pen above their own posts. When they click on this they can delete their posts, or edit them. If they click "edit", they will get redirected to a form, where the data of the post is fetched and the user has the ability to update it accordingly.
-    - Components: 
-        - MoreDropdown.js 
-        - Post.js 
-        - PostEditForm.js 
-        - PostFeed.js
+   - When a user scrolls through the feed they will see a pen above their own posts. When they click on this they can either delete their posts, or edit them. If they click "edit", they will get redirected to a form, where the data of the post is fetched and the user has the ability to update it accordingly.
+   - Components:
+       - MoreDropdown.js
+       - Post.js
+       - PostEditForm.js
+       - PostFeed.js
 
 ![edit post](src/assets/readme_screenshots/edit_post.png)
 
@@ -183,12 +180,12 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 
 - Sign in / Sign up
 
-    - For users who are already members of the Dagoy comunity, they can simply sign in to their profile by clicking on the navbar "sign in".
+- For users who are already members of the Dagoy comunity, they can simply sign in to their profile by clicking on the navbar "sign in".
 
-    - For new users, who wish to take part of all features, such as bookmarking posts, liking posts and most of all, make content themselves.. They can create a new user on the "sign up" navlink.
-    - Components: 
-        - SignInForm.js 
-        - SignUpForm.js 
+- For new users, who wish to take part of all features, such as bookmarking posts, liking posts, and most of all, creating content themselves.. They can create a new user on the "sign up" navlink.
+- Components:
+- SignInForm.js
+- SignUpForm.js
 
 ![Sign up and sign in](src/assets/readme_screenshots/sign_in_up.png)
 
@@ -200,9 +197,9 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 
 ## C.R.U.D
 
-- In terms of C.R.U.D, the app serves a full CRUD feature for posts for the users. They can create, read, update and delete their own posts.
-- When it comes to their own profile they can create their profile, edit profile image and change their password. They can see all their posts on their profile page and delete or edit these, from there!
-- Furthemore the user has access to the bookmark feature. This list is created for each user, they can read their bookmarks, the page is updated when new bookmarks are added/or deleted.
+- In terms of C.R.U.D, the app serves a full CRUD feature for posts for the users. They can create, read, update, and delete their own posts.
+- When it comes to their own profile, they can create their own profile, edit the profile image and change their password. They can see all their posts on their profile page and delete or edit these, from there!
+- Furthemore, the user has access to the bookmark feature. This list is created for each user; they can read their bookmarks; the page is updated when new bookmarks are added/or deleted.
 
 ## Components
 1. AxiosDefault.js: To have a more efficient component to use when communicating with the back end API.
