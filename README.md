@@ -260,9 +260,13 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 13. USER STORY:  As a user I can edit my own post title, description or category so I can make corrections or updates after they've been created [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/14)
     * This has been tested and works. When user clicks on the edit icon of their own post, the previous data of the current post is loaded and the user is able to edit accordingly. (There is a minor glitch when the user is clicking to fast on uploading the new image, where the new image won't be displayed. I have looked into this and I'm not sure what that is about)
 14. USER STORY: As a user I can fill out a form to contact Admin and make them aware of issues, feedback or any other matter of contact. [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/19)
-    * 
+    * [Link to Admin Page](https://pp5-api-bo.herokuapp.com/admin/)
+
 15. USER STORY:  As a user I can change my profile picture and change password [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/16)
+    * This feature has been tested and works without any complications. 
 16. USER STORY:  As a user I can update my account password so I can keep my profile secure [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/18)
+    * And this works as well. A minor error is that I couldn't implement a condition to send a user to home page if they are not the same ID och current user.. However, I tried to change id in the field to see if I can change another users password and this does not work. It does not matter which id I write in the URL once I've been linked. The only password that's changed is the current users.
+        * Future feature is to let the user write their old password in order to change it. Just to set the security level a snippet higher. This has been added as a 'User Story'. 
 
 ## Validators
 
