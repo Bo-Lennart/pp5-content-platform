@@ -54,7 +54,7 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
 ## Site goal
 - The goal of this project is to demonstrate experience and skills learned throughout the course as a final project within HTML, CSS, JavaScript, React.js and Django REST Framework.
 
-- The application is a content sharing app where users can sign up, inspire eachother with content, and upload by category for users to filter their field of interest.
+- The application is a content sharing app where users can sign up, inspire eachother with content, and upload by category for users to filter their category of interest.
 
 ### User Stories
 - The basis of this project has consisted of building user stories and planning the project from these.
