@@ -12,6 +12,7 @@ function PostPage() {
 
     useEffect(() => {
         const handleMount = async () => {
+            // request all posts from the API
             try {
                 const [{ data: post }] = await Promise.all([
                     axiosReq.get(`/blogposts/${id}`)

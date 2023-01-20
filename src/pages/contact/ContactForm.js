@@ -36,6 +36,7 @@ function ContactForm() {
     console.log(contactData)
 
     const handleSubmit = async (event) => {
+        // post data from form to contact database
         event.preventDefault()
         try {
             await axiosReq.post('/contact/', contactData);

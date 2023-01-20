@@ -34,6 +34,7 @@ const PostsCategory = ({ filter = "" }) => {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         {hasLoaded ? (
           <>
+          {/* Take all posts, filter out the onnes that match the category that's pushed into this component */}
             {posts.results.length ? (
               posts.results
               .filter(post => filter.length === 0 || post.category.toLocaleLowerCase() === filter.toLocaleLowerCase())

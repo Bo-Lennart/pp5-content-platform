@@ -48,6 +48,7 @@ const Post = (props) => {
     }
 
     const handleLike = async () => {
+        // fetch all likes from API
         try {
             const { data } = await axiosRes.post("/likes/", { post: id });
             console.log("DATA", data)
@@ -65,6 +66,7 @@ const Post = (props) => {
     };
 
     const handleUnlike = async () => {
+        // Post like to database
         try {
             await axiosRes.delete(`/likes/${like_id}/`);
             setPosts((prevPosts) => ({
@@ -81,6 +83,7 @@ const Post = (props) => {
     };
 
     const handleBookmark = async () => {
+        // post and add bookmark to API
         try {
             const { data } = await axiosRes.post("/bookmark/", { post: id });
             console.log("DATA", data)
@@ -98,6 +101,7 @@ const Post = (props) => {
     };
 
     const handleRemoveBookmark = async () => {
+        // delete bookmarks on the data base
         try {
             await axiosRes.delete(`/bookmark/${bookmark_id}/`);
             setPosts((prevPosts) => ({

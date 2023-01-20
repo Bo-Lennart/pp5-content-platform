@@ -46,7 +46,8 @@ const PostBookmark = () => {
 
   //get all bookmark IDs that belong to current logged in user: Map the filtered bookmarks and get their posts ID.
   const bookmarkedPostIds = bookmarks.filter(bookmark => bookmark.owner === owner).map(bookmark => bookmark.post);
-
+  // Run all posts, run all bookmark IDs and take out their post ID, check these and bring out the matches
+  // stored into this variable
   const bookmarkedPosts = posts.filter(post => bookmarkedPostIds.some(bookmarkedPostId => bookmarkedPostId === post.id))
 
   return (
@@ -54,6 +55,8 @@ const PostBookmark = () => {
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         {hasLoaded ? (
           <> 
+          {/* check if there are and how many bookmarks
+              map the bookmarked post and check if they match the filtered bookmark ids */}
             {bookmarkedPosts.length ? (bookmarkedPosts.map((post) => (
                 <Post key={post.id} {...post} setPosts={setPosts} isInPostPage={false} />
               ))
