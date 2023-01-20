@@ -260,7 +260,7 @@ Manual testing has been done from each user story of the project KanBan. Bugs oc
 13. USER STORY:  As a user I can edit my own post title, description or category so I can make corrections or updates after they've been created [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/14)
     * This has been tested and works. When user clicks on the edit icon of their own post, the previous data of the current post is loaded and the user is able to edit accordingly. (There is a minor glitch when the user is clicking to fast on uploading the new image, where the new image won't be displayed. I have looked into this and I'm not sure what that is about)
 14. USER STORY: As a user I can fill out a form to contact Admin and make them aware of issues, feedback or any other matter of contact. [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/19)
-    * [Link to Admin Page](https://pp5-api-bo.herokuapp.com/admin/) (The CSS of the admin page won't load, even though I set the collect static to the correct settings. I don't seem to find the issu and my code is inline with the code along settings for deployment).
+    * [Link to Admin Page](https://pp5-api-bo.herokuapp.com/admin/) (The CSS of the admin page won't load, even though I set the collect static to the correct settings. I don't seem to find the issue and my code is inline with the code along settings for deployment).
 
 15. USER STORY:  As a user I can change my profile picture and change password [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/16)
     * This feature has been tested and works without any complications. 
