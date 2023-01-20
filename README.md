@@ -69,7 +69,7 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
     3. USER STORY:  As a user I can sign in to the app and access functionality for users [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/3)
     4. USER STORY:  As a user I can tell if I'm logged in or not so I can log in if I need to [#Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/4)
     5. USER STORY:  (Refreshin access tokens) as a user I can maintain my logged in status until I choose to log out so that my experience is not compromised [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/4)
-    6. USER STORY:  As a user I can see booth sign up/sign in options when I'm not signed in [#Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/6)
+    6. USER STORY:  As a user I can see booth sign up/sign in options when I'm not signed in [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/6)
     7. USER STORY:  As a user I can create posts to share my content with images 
     8. USER STORY:  As a user I can view other users posts to get inspired in a posts feed list [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/8)
     9. USER STORY:  As a user I can like other users posts to show that I appreciate their content [#Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/9)
@@ -228,6 +228,31 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 3. UserPasswordForm.js
 
 # Testing
+
+1. USER STORY:  As a user I have a navbar to every page so I can navigate easely [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/1)
+    * All nav links have been tested on the deployed version and they work as intended.
+2. USER STORY:  As a user I can sign up for the news page in order to access the features of a signed up user [#Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/2)
+    * Sign up has been tested, check in the data base and users can login.
+3. USER STORY:  As a user I can sign in to the app and access functionality for users [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/3)
+    * Has been tested and works!
+4. USER STORY:  As a user I can tell if I'm logged in or not so I can log in if I need to [#Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/4)
+    * The navbar updates accordingly if a user is logged in or not.
+5. USER STORY:  (Refreshing access tokens) as a user I can maintain my logged in status until I choose to log out so that my experience is not compromised [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/4)
+    * Has been tested and the the refresh token works.
+6. USER STORY:  As a user I can see booth sign up/sign in options when I'm not signed in [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/6)
+    * Yes, the navbar updates correctly.
+7. USER STORY:  As a user I can create posts to share my content with images 
+    * The create tab loads, the post function works and the database stores the data of the post. Yes, this works.
+8. USER STORY:  As a user I can view other users posts to get inspired in a posts feed list [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/8)
+    * Yes, on the postsfeed you can see all users posts. However, the users can not navigate to specific users to see only a certain users post. This is a future feature and has been added to the KanBan Board.
+9. USER STORY:  As a user I can like other users posts to show that I appreciate their content [#Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/9)
+10. USER STORY:  As a user I want to be able to save posts that I find inspiring in order to check them out at a later point [#Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/10)
+11. USER STORY:  As a user I can view all the most recent posts to get up to date with topics [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/11)
+12. USER STORY:  As a user I can switch between categories in order to find the topics that I'm most interested in [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/12)
+13. USER STORY:  As a user I can edit my own post title, description or category so I can make corrections or updates after they've been created [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/14)
+14. USER STORY: As a user I can fill out a form to contact Admin and make them aware of issues, feedback or any other matter of contact. [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/19)
+15. USER STORY:  As a user I can change my profile picture and change password [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/16)
+16. USER STORY:  As a user I can update my account password so I can keep my profile secure [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/18)
 
 ## Validators
 
