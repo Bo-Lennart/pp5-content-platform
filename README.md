@@ -36,7 +36,8 @@ If anyone needs to get in touch with the admin, they can fill out the contact fo
     - [C.R.U.D](#crud)
     - [Components](#components)
 - [Testing](#testing)
-
+    - [User Story Testing](#user-story-testing)
+    - [Validators](#validators)
 - [Technologies Used](#technologies-used)
     - [Languages](#languages)
     - [Libraries, Frameworks & Programs used](#libraries-frameworks--programs-used)
@@ -228,6 +229,8 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 
 Manual testing has been done from each user story of the project KanBan. Bugs occured and future features that would be good to improve the application have been added as todos on the KanBan as User Stories.
 
+## User Story Testing
+
 1. USER STORY:  As a user I have a navbar to every page so I can navigate easely [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/1)
     * All nav links have been tested on the deployed version and they work as intended.
 2. USER STORY:  As a user I can sign up for the news page in order to access the features of a signed up user [#Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/2)
@@ -266,6 +269,13 @@ Manual testing has been done from each user story of the project KanBan. Bugs oc
 16. USER STORY:  As a user I can update my account password so I can keep my profile secure [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/18)
     * And this works as well. A minor error is that I couldn't implement a condition to send a user to home page if they are not the same ID och current user.. However, I tried to change id in the field to see if I can change another users password and this does not work. It does not matter which id I write in the URL once I've been linked. The only password that's changed is the current users. [User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/22)
         * Future feature is to let the user write their old password in order to change it. Just to set the security level a snippet higher. This has been added as a 'User Story'. [User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/23)
+
+## Validators
+
+The ESLint validator had no error and show the following:
+
+![ESLint Validator](src/assets/readme_screenshots/eslint.png)
+
 
 # Technologies Used
 
