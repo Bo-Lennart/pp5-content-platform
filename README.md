@@ -245,6 +245,7 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
     * The create tab loads, the post function works and the database stores the data of the post. Yes, this works.
 8. USER STORY:  As a user I can view other users posts to get inspired in a posts feed list [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/8)
     * Yes, on the postsfeed you can see all users posts. However, the users can not navigate to specific users to see only a certain users post. This is a future feature and has been added to the KanBan Board.
+        
 9. USER STORY:  As a user I can like other users posts to show that I appreciate their content [#Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/9)
 10. USER STORY:  As a user I want to be able to save posts that I find inspiring in order to check them out at a later point [#Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/10)
 11. USER STORY:  As a user I can view all the most recent posts to get up to date with topics [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/11)
