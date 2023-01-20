@@ -32,6 +32,10 @@ function PostEditForm() {
     const navigate = useNavigate();
     const { id } = useParams();
 
+    const handleCancel = () => {
+        navigate("/");
+    }
+
     useEffect(() => {
         const handleMount = async () => {
             try {
@@ -137,7 +141,7 @@ function PostEditForm() {
             ))}
 
 
-            <Button className={``} onClick={() => { }}>cancel</Button>
+            <Button className={``} onClick={handleCancel}>cancel</Button>
             <Button className={``} type="submit">Save</Button>
         </div>
     );

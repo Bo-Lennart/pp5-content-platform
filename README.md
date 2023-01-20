@@ -252,11 +252,15 @@ Furthemorethe ProfileIcon component is re-used inside the post component. The Mo
 
 10. USER STORY:  As a user I want to be able to save posts that I find inspiring in order to check them out at a later point [#Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/10)
     * This feature work. A user can bookmark a post once they click in on the desired post by clicking on the bookmark Icon on the bottom of the post. A bug was found: When user bookmarks, then removed the bookmark and then tries to bookmark again, it won't work. The user needs to refresh the page in order to re-bookmark. This has been added to the user story KanBan board:
-        * Future Feature User Story
+        * [Bookmark Bug](https://github.com/Bo-Lennart/pp5-content-platform/issues/21)
 11. USER STORY:  As a user I can view all the most recent posts to get up to date with topics [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/11)
+    * By navigating to the home page, a user, both logged out and in can view all the recent posts.
 12. USER STORY:  As a user I can switch between categories in order to find the topics that I'm most interested in [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/12)
+    * This feature has been tested and all categories are filtered correctly.
 13. USER STORY:  As a user I can edit my own post title, description or category so I can make corrections or updates after they've been created [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/14)
+    * This has been tested and works. When user clicks on the edit icon of their own post, the previous data of the current post is loaded and the user is able to edit accordingly. (There is a minor glitch when the user is clicking to fast on uploading the new image, where the new image won't be displayed. I have looked into this and I'm not sure what that is about)
 14. USER STORY: As a user I can fill out a form to contact Admin and make them aware of issues, feedback or any other matter of contact. [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/19)
+    * 
 15. USER STORY:  As a user I can change my profile picture and change password [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/16)
 16. USER STORY:  As a user I can update my account password so I can keep my profile secure [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/18)
 
