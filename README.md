@@ -141,7 +141,8 @@ Furthemore The ProfileIcon component is re-used inside the post component. The M
 
     - If a user wishes to make a new post, they click on the "create" nav link in the navbar. Furthermore, if they need to contact someone from the admin, they can do so via filling out the contact form that they can find on the navlink "contact".
 
-    - The contact feature is open for all and will be accessible for Admin users through the back-end /admin page.
+    - The contact feature is open for all and will be accessible for Admin users through the back-end /admin page. [LINK to Admin Page](https://pp5-api-bo.herokuapp.com/admin/)
+    
     - Components: 
         - PostCreateForm.js 
         - ContactForm.js
