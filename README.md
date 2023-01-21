@@ -262,7 +262,7 @@ Manual testing has been done from each user story of the project KanBan. Bugs oc
     * This has been tested and works. When user clicks on the edit icon of their own post, the previous data of the current post is loaded and the user is able to edit accordingly. (There is a minor glitch when the user is clicking to fast on uploading the new image, where the new image won't be displayed. I have looked into this and I'm not sure what that is about).
     * When a user deletes their post in the posts feed, the page does not update automatically with the removed post. This has been added as a todo user story in the KanBan:
     * [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/14)
-14. USER STORY: As a user I can fill out a form to contact Admin and make them aware of issues, feedback or any other matter of contact. [Link to User Story](https://github.com/Bo-Lennart/pp5-content-platform/issues/19)
+14. USER STORY: As a user I can fill out a form to contact Admin and make them aware of issues, feedback or any other matter of contact. [Link to User Story]([#24](https://github.com/Bo-Lennart/pp5-content-platform/issues/24))
     * [Admin Page Link](https://pp5-api-bo.herokuapp.com/admin/)
     * On the final deployment, I realized that the admin page does not render the static files. Ger Tobin, a mentor contacted through student support, helped me out, checked the code and told me to use cloudinary for storing the static files. This resolved the bug/error.
 
